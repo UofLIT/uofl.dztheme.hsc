@@ -22,17 +22,26 @@ jQuery(function ($) {
 			right: 'month,agendaWeek,agendaDay'
 		},
 		editable: false,
-		disableDragging: false,
-		disableResizing: false,
+		disableDragging: true,
+		disableResizing: true,
 		startParam: 'start:int',
 		endParam: 'end:int',
 		events: 'solgemafullcalendarevents',
 		eventClick: function (event) {
 			if (event.url) {
-			$.get(event.url, function (data) {
-				$.fancybox(data, { maxWidth: 800 });
-			});
-			return false;
+				$.get(event.url + '/SFLight_event_view', function (data) {
+					$.fancybox(data, {
+						maxWidth: 800,
+						title: '<h4>' + event.title + '</h4>',
+						helpers: {
+							title: {
+								type: 'inside',
+								position: 'top'
+							}
+						}
+					});
+				});
+				return false;
 			}
 		}
 	});
