@@ -25,5 +25,6 @@
 
 - turn off icons in navigation
 
-bootstrap row config for pages not working
 Department Title showing up on pages
+
+way to add image caption
