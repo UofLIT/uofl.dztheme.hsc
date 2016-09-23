@@ -1,0 +1,4 @@
+1.0.0 Robert's final version
+1.0.1 Changed Tabbed Pages to be able to use Bootstrap Row instead of Static Text Portlet
+1.0.2 Changed theme.js to build landing page carousel from images found in ./images/banners
+1.0.3 Added support for portlets with "omit border" set

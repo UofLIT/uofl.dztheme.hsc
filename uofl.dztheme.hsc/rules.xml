@@ -139,22 +139,33 @@
 					<xsl:value-of select="$portletClass"/>
 				</xsl:attribute>
 			</xsl:if>
-			<xsl:if test="$portlet/dt[contains(@class, 'Header')]">
-				<xsl:element name="header">
-					<xsl:element name="h1">
-						<xsl:copy-of select="$portlet/dt/*"/>
+
+			<xsl:choose>
+				<xsl:when test="$portlet/dd">
+					<xsl:if test="$portlet/dt[contains(@class, 'Header')]">
+						<xsl:element name="header">
+							<xsl:element name="h1">
+								<xsl:copy-of select="$portlet/dt/*"/>
+							</xsl:element>
+						</xsl:element>
+					</xsl:if>
+					<xsl:element name="div">
+						<xsl:attribute name="class">wrapper</xsl:attribute>
+						<xsl:copy-of select="$portlet/dd[contains(@class, 'Item')]/*"/>
 					</xsl:element>
-				</xsl:element>
-			</xsl:if>
-			<xsl:element name="div">
-				<xsl:attribute name="class">wrapper</xsl:attribute>
-				<xsl:copy-of select="$portlet/dd[contains(@class, 'Item')]/*"/>
-			</xsl:element>
-			<xsl:if test="$portlet/dd[contains(@class, 'Footer')]">
-				<xsl:element name="footer">
-					<xsl:copy-of select="$portlet/dd[contains(@class, 'Footer')]"/>
-				</xsl:element>
-			</xsl:if>
+					<xsl:if test="$portlet/dd[contains(@class, 'Footer')]">
+						<xsl:element name="footer">
+							<xsl:copy-of select="$portlet/dd[contains(@class, 'Footer')]"/>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:element name="div">
+						<xsl:attribute name="class">wrapper</xsl:attribute>
+						<xsl:copy-of select="$portlet/*"/>
+					</xsl:element>
+				</xsl:otherwise>
+			</xsl:choose>
 		</xsl:element>
 	</xsl:template>
 
@@ -662,6 +673,7 @@
 	<notheme css:if-content="body.template-typekit-settings" />
 	<notheme css:if-content="body.template-hnfpicker-settings" />
 	<notheme css:if-content="body.template-useractions" />
+	<notheme css:if-content="body.template-manage-elements" />
 	<notheme if-path="folder_rename_form" />
 	<notheme if-path="folder_constraintypes_form" />
 	<notheme css:if-content="#edit-bar" if="$preview_mode != 'True'" />
@@ -710,9 +722,8 @@
 		<drop css:theme="body > script.noscript" />
 		<before content="/html/head/script[not(contains(@src, 'respond.min.js')) and not(contains(@src, '/bootstrap.js')) and contains(@src, 'p4basetheme')] | /html/head/script[not(@src) and not(contains(text(), 'datepicker'))]" theme="/html/body/script[2]" />
 		<after content="/html/head/script[contains(@src, 'flowplayer')] | /html/head/script[contains(@src, 'typekit')]" theme="/html/head/*[last()]" />
-		<after if-content="//div[starts-with(@id, 'carousel-')]" theme-children="/html/head">
-			<script type="text/javascript" src="makeCarousel.js"></script>
-		</after>
+		<!-- delete carousel JS if not needed -->
+		<drop if-not-content="//div[starts-with(@id, 'carousel-')]" css:theme="script.carouseljs" />
 
 		<!-- merge the body classes -->
 		<merge attributes="class" css:theme="body" css:content="body" />
@@ -1372,10 +1383,12 @@
 				</replace>
 
 				<!-- middle row portlets -->
+				<!-- drop the Call to Action if not used -->
 				<drop theme="//*[contains(@class,'landing-page')]/*[contains(@class,'middle-content')]" if="count(//*[@id='portal-column-two']/div[not(contains(@class,'managePortletsLink'))]/dl[not(contains(@class,'call-to-action'))]) = 0" />
+				<!-- or add Call to Action -->
 				<replace theme="//*[contains(@class,'landing-page')]/*[contains(@class,'middle-content')]">
 					<xsl:call-template name="portlet-rows">
-						<xsl:with-param name="portal-column" select="//*[@id='portal-column-two']/div[not(contains(@class, 'managePortletsLink')) and position() >= $landingPagePortletStart]/dl[not(contains(@class,'call-to-action'))]"/>
+						<xsl:with-param name="portal-column" select="//*[@id='portal-column-two']/div[not(contains(@class, 'managePortletsLink')) and position() >= $landingPagePortletStart]/*[not(contains(@class,'call-to-action'))]"/>
 						<xsl:with-param name="columns" select="3"/>
 					</xsl:call-template>
 				</replace>

@@ -42,6 +42,13 @@ and @2x sizes), breadcrumbs missing on HSC (and department title)
 	padding:5px 0 5px 12px;
 }
 
+/* custom logo image */
+.logo .logo img {
+	height: 70px;
+	width: auto;
+	max-width: none;
+}
+
 #lowerbar nav > ul > li > a {
 	color:#fff;
 	font-size:18px;
@@ -167,7 +174,7 @@ and @2x sizes), breadcrumbs missing on HSC (and department title)
 .hero-panel,
 .hero-image { height:437px; }
 .hero-image {
-	background-position:top center;
+	background-position: center center;
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -253,7 +260,6 @@ h1.med-main-section-title { display:none; }
 	.page-wrapper { margin-top:0; }
 	.hero-panel,
 	.hero-image { height:364px; }
-	.hero-image { background-position:bottom center; background-size:auto; }
 
 	#breadcrumb-social .breadcrumb { display:none; }
 	.social-icons-horizontal { margin-top:0; }

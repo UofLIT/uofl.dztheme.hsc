@@ -1,4 +1,12 @@
 jqbs(function($){
+	// so we can link to the tabs on pages
+	var tabMatch = null;
+	if (tabMatch = location.hash.match(/^#tab(\d+)$/)) {
+		var tab = tabMatch[1];
+		$('a[href="#tab'          + tab + '"]').click();
+		$('a[href="#collapse-tab' + tab + '"]').click();
+	}
+	
 	$('.kwicks.hidden-phone').kwicks({
 		behavior: 'menu',
 		max: '40%',
@@ -12,7 +20,7 @@ jqbs(function($){
 		spacing: 0,
 	});
 
-	$('.med-hero-wrapper').carouFredSel({
+	var carouFredSelOptions = {
 		responsive: true,
 		items: 1,
 		scroll: {
@@ -26,12 +34,42 @@ jqbs(function($){
 		next: '.med-hero .glyphicon-chevron-right',
 		pagination: {
 			container: '.med-hero .button-nav ul',
-			anchorBuilder: function(nr,item) {
+			anchorBuilder: function (nr,item) {
 				return '<li><a href="#' + nr + '"></a></li>';
 			}
 		},
 		swipe: true
-	});
+	};
+
+	$heroWrapper = $('.med-hero-wrapper');
+	if($heroWrapper.is(':empty')) {
+		$.ajax({
+			type:     'POST',
+			url:      '../images/banners/tinymce-jsonimagefolderlisting',
+			data:     'rooted=True&document_base_url=/',
+			dataType: 'json'
+		}).done(function (json) {
+			var images = $.grep(json.items, function (item) {
+					return item.portal_type === 'Image';
+			});
+			$.each(images, function (i, image) {
+				var $slide = $('<div class="slide slide-bg slide-minimal" style="background-image: url(' + image.url + ');"><h1><span>' + image.title + '</span></h1></div>');
+				$.get(image.url + '/Description', function (result) {
+					var lines = result.split('\n');
+					if(lines[0]) $slide.append('<div class="description"><div class="container">' + marked(lines[0]) + '</div></div>');
+					if(lines[1]) $slide.css({backgroundPosition: lines[1]});
+				});
+				$heroWrapper.append($slide);
+			});
+		
+			$heroWrapper.carouFredSel(carouFredSelOptions);
+		});
+	}
+	else {
+		$heroWrapper.carouFredSel(carouFredSelOptions);
+	}
+
+	
 
 	$(document).on('click', '.med-nav-toggle, .med-nav-pane-collapse a, .upperbar-accounts-collapse, .tab-pane-collapse a', function(e) {
 		e.stopPropagation();
