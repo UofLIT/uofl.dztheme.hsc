@@ -1704,7 +1704,9 @@ templates['tablist'] = template({"1":function(container,depth0,helpers,partials,
       function createObjTree (oParentNode, nVerb, bFreeze, bNesteAttr) {
         var
           nLevelStart = aCache.length, bChildren = oParentNode.hasChildNodes(),
-          bAttributes = oParentNode.nodeType === oParentNode.ELEMENT_NODE && oParentNode.hasAttributes(), bHighVerb = Boolean(nVerb & 2);
+          //bAttributes = oParentNode.nodeType === oParentNode.ELEMENT_NODE && oParentNode.hasAttributes(), bHighVerb = Boolean(nVerb & 2);
+          //patched by Derek to work in IE9
+          bAttributes = oParentNode.nodeType === Node.ELEMENT_NODE && oParentNode.attributes.length, bHighVerb = Boolean(nVerb & 2);
 
         var
           sProp, vContent, nLength = 0, sCollectedTxt = "",

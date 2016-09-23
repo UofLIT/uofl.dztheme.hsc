@@ -13,3 +13,4 @@
 1.0.10 Hero Banner now looks for 'hero' sized images which must be set in @@imaging-controlpanel
 1.1	Changed nav to use handlebars templates. Code added to theme.js
 1.1.1	Changed hr background, removed patern to work on any background
+1.1.2	Fixed JXON code for nav to work in IE9
