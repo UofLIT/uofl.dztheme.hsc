@@ -132,6 +132,12 @@
 	<xsl:template name="portlet-default">
 		<xsl:param name="portlet" />
 		<xsl:param name="portletClass" />
+		<xsl:variable name="wrapperClass">
+			<xsl:text>wrapper</xsl:text>
+			<xsl:if test="contains($portlet/../@class, 'minimal')">
+				<xsl:text> minimal</xsl:text>
+			</xsl:if>
+		</xsl:variable>
 
 		<xsl:element name="section">
 			<xsl:if test="$portletClass">
@@ -150,7 +156,9 @@
 						</xsl:element>
 					</xsl:if>
 					<xsl:element name="div">
-						<xsl:attribute name="class">wrapper</xsl:attribute>
+						<xsl:attribute name="class">
+							<xsl:value-of select="$wrapperClass"/>
+						</xsl:attribute>
 						<xsl:copy-of select="$portlet/dd[contains(@class, 'Item')]/*"/>
 					</xsl:element>
 					<xsl:if test="$portlet/dd[contains(@class, 'Footer')]">
@@ -161,7 +169,9 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:element name="div">
-						<xsl:attribute name="class">wrapper</xsl:attribute>
+						<xsl:attribute name="class">
+							<xsl:value-of select="$wrapperClass"/>
+						</xsl:attribute>
 						<xsl:copy-of select="$portlet/*"/>
 					</xsl:element>
 				</xsl:otherwise>

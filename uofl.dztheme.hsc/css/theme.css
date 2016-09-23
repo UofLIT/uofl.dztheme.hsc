@@ -660,6 +660,8 @@ footer.grey .dropdown-menu > li > a { font-size:10px; line-height:1.7; padding:3
 }
 .main-content [class*='span'] > .wrapper,
 .med-sidebars section .wrapper { line-height:1.7; margin:10px 12px; }
+.main-content [class*='span'] > .wrapper.minimal,
+.med-sidebars section .wrapper.minimal { margin:0; }
 
 .main-content .focal > [class*='span'] { border-top:0; }
 .main-content .focal .wrapper { color:#666; }
@@ -1489,7 +1491,7 @@ blockquote { background-position:center -102px;}
 
 @media (max-width:767px) {
 	body { padding:0; }
-	.container,
+	.container { padding: 0; }
 	#lowerbar.navbar .container { padding-left:20px; padding-right:20px; }
 	#lowerbar.navbar-static-top { margin-left:0; margin-right:0; }
 
@@ -1677,6 +1679,7 @@ blockquote { background-position:center -102px;}
 	.main-content > [class*='row'] > [class*='span'] { margin:20px auto 0 auto; }
 	.main-content > [class*='row'] > [class*='span']:first-child { margin-top:0; }
 	.main-content [class*='span'] > .wrapper { margin:0; padding:10px 12px; }
+	.main-content [class*='span'] > .wrapper.minimal { padding:0; }
 	.main-content > [class*='row'] > #sidebar-left > section:last-child { margin-bottom:20px; }
 
 	.main-content > [class*='row'] section[class*='span'] header,
