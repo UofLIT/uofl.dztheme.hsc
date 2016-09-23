@@ -1,0 +1,22 @@
+/*
+
+Things that are different between themes: header (upper bar, lower bar), hero (hsc), special button colors (include in main theme),
+carousel colors/treatment, focus boxes on homepage (hsc different), call to action colors, navigation, body background images (normal
+and @2x sizes), breadcrumbs missing on HSC (and department title)
+
+*/
+body { background:url('../img/redox_01.png') #f7f7f7; }
+
+#masthead { background:url('../img/noise_lines.png') #ececec; border-bottom-color:#ddd; }
+
+.cta { background:#666; }
+
+@media only screen and (-moz-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 144dpi) {
+	body { background-image:url('../img/redox_01@2x.jpg'); background-size:150px 150px; }
+	#masthead { background-image:url('../img/nosie_lines@2x.png'); background-size:147px 147px; }
+}
+

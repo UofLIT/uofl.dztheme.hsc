@@ -1,0 +1,274 @@
+/*
+
+Things that are different between themes: header (upper bar, lower bar), hero (hsc), special button colors (include in main theme),
+carousel colors/treatment, focus boxes on homepage (hsc different), call to action colors, navigation, body background images (normal
+and @2x sizes), breadcrumbs missing on HSC (and department title)
+
+*/
+#masthead {
+	background:transparent;
+	border:0;
+	-moz-box-shadow:0 5px 5px rgba(0,0,0,0.1);
+	-webkit-box-shadow:0 5px 5px rgba(0,0,0,0.1);
+	box-shadow:0 5px 5px rgba(0,0,0,0.1);
+	left:0;
+	position:absolute;
+	right:0;
+	top:0;
+	z-index:1;
+}
+
+#lowerbar { background:#000; background:rgba(0,0,0,0.6); }
+
+.upperbar .hsc-link,
+#lowerbar > .navbar-inner.non-hsc,
+.homepage-wrapper .med-hero,
+.focal img { display:none; }
+#lowerbar > .navbar-inner.hsc,
+.homepage-wrapper .hero-content { display:block; }
+
+.logo { line-height:1; }
+#lowerbar .sprite-ligature { float:left; margin:19px auto; }
+.logo a, .logo a:active, .logo a:hover { text-decoration:none; }
+.logo .logo { display:block; }
+.logo .logo-name { padding:12px 0; }
+.logo .logo span {
+	border-left:1px solid #ccc;
+	color:#fff;
+	display:block;
+	font-size:18px;
+	line-height:1;
+	margin-left:69px;
+	padding:5px 0 5px 12px;
+}
+
+#lowerbar nav > ul > li > a {
+	color:#fff;
+	font-size:18px;
+	line-height:1;
+	padding:20px 8px;
+	text-align:left;
+}
+#lowerbar nav > ul > li > a.collapsed { color:#fff; text-shadow:1px 1px 2px rgba(0,0,0,0.75); }
+#lowerbar nav > ul > li > a small { display:block; font-size:0.778em; }
+
+#lowerbar .nav-pane { left:0; }
+
+.page-wrapper { margin-top:20px; position:relative; }
+.landing-wrapper { margin-top:106px; }
+.page-wrapper > .hero-content { min-height:73px; }
+.page-wrapper > .hero-content > .hero-inner {
+	background:url('../img/green-fibers.jpg');
+	min-height:91px;
+	position:relative;
+	z-index:0;
+}
+.kwicks { height:518px; margin:0 auto; max-width:1500px; }
+.kwicks > li { border-left:1px solid #ccc; height:518px; position:relative; }
+.kwicks > li:first-child { border:0; }
+.kwicks .panel-shadow {
+	background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.40) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.40)));
+	background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.40) 100%);
+	background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.40) 100%);
+	background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.40) 100%);
+	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.40) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#66000000',GradientType=1 );
+	height:518px;
+	position:absolute;
+	right:0;
+	width:20px;
+}
+.kwicks > li:last-child .panel-shadow { display:none; }
+.kwicks .panel-image { background-position:top center; background-repeat:no-repeat; height:458px; }
+.kwicks .panel-content {
+	background-color:#000;
+	background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.4), rgba(0,0,0,.02) 20%, rgba(23,23,23,0) 21%, rgba(255,255,255,0) 31%, rgba(255,255,255,.4));
+	background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.4), rgba(0,0,0,.02) 20%, rgba(23,23,23,0) 21%, rgba(255,255,255,0) 31%, rgba(255,255,255,.4));
+	background-image: -o-linear-gradient(bottom, rgba(0,0,0,.4), rgba(0,0,0,.02) 20%, rgba(23,23,23,0) 21%, rgba(255,255,255,0) 31%, rgba(255,255,255,.4));
+	background-image: -ms-linear-gradient(bottom, rgba(0,0,0,.4), rgba(0,0,0,.02) 20%, rgba(23,23,23,0) 21%, rgba(255,255,255,0) 31%, rgba(255,255,255,.4));
+	background-image: linear-gradient(to top, rgba(0,0,0,.4), rgba(0,0,0,.02) 20%, rgba(23,23,23,0) 21%, rgba(255,255,255,0) 31%, rgba(255,255,255,.4));
+	color:#fff;
+	font-size:20px;
+	height:60px;
+	text-shadow: 0 1px #000;
+}
+.kwicks .panel-content a { color:#fff; }
+.kwicks .panel-content p { padding:16px 19px; white-space:nowrap; }
+.kwicks .panel-content span {
+	font-size:.7em;
+	opacity:0;
+	padding-left:20px;
+	text-transform:uppercase;
+	-webkit-transition:opacity 0.5s;
+	transition:opacity 0.5s;
+}
+.kwicks > li:hover .panel-content span,
+.kwicks > li:focus .panel-content span { opacity:1; }
+
+.kwicks .panel-medicine .panel-content { background-color:#00703c; }
+.kwicks .panel-dentistry .panel-content { background-color:#56004e; }
+/*.kwicks .panel-sphis .panel-content { background-color:#e5b53a; }*/
+.kwicks .panel-sphis .panel-content { background-color:#eb8373; }
+.kwicks .panel-nursing .panel-content { background-color:#e36f1e; }
+.kwicks .panel-research .panel-content { background-color:#ad0000; }
+
+.kwicks-vertical { height:620px; /*margin-top:73px;*/ }
+.kwicks-vertical > li { border-left:0; border-top:1px solid #fff; width:100%; }
+.kwicks-vertical .panel-image { background-position:center center; background-size:cover; height:200px; }
+.kwicks-vertical .panel-shadow {
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.4)), color-stop(100%,rgba(0,0,0,0)));
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);
+	background: -o-linear-gradient(top,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#00000000',GradientType=0 );
+	height:20px;
+	right:auto;
+	top:0;
+	width:100%;
+}
+.kwicks-vertical > li:last-child .panel-shadow { display:block; }
+.kwicks-vertical [class*='panel-'] .panel-content {
+	background-image:none;
+	bottom:0;
+	height:30px;
+	position:absolute;
+	width:100%;
+}
+.kwicks-vertical .panel-content p { padding:5px; text-align:center; }
+.kwicks-vertical .panel-content span { display:none; }
+
+.main-content .focal > [class*='span'] {
+	background-position:top center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	border-top:0;
+}
+.main-content .focal .wrapper {
+	background-color:#fff;
+	background-color:rgba(255,255,255,0.85);
+	color:#333;
+	margin:150px 0 0 0;
+	padding:0 12px 10px 12px;
+	-webkit-transition:background-color 0.2s;
+	transition:background-color 0.2s;
+}
+.main-content .focal [class*='span']:hover .wrapper { background-color:rgba(255,255,255,0.9); }
+.main-content .focal .wrapper h1,
+.main-content .focal .wrapper h2 { font-size:26px; line-height:1.3; }
+.main-content .focal .wrapper h1 a,
+.main-content .focal .wrapper h2 a { color:#333; }
+.main-content .focal .wrapper p { font-size:16px; line-height:1.6; margin:1em 0 0 0; }
+
+.main-content.homepage { margin-top:20px; }
+
+.hero-panel,
+.hero-image { height:437px; }
+.hero-image {
+	background-position:top center;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.hero-shadow-wrapper {
+	bottom:0;
+	left:0;
+	position:absolute;
+	right:0;
+}
+.hero-shadow {
+	height: 147px;
+	background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.6), rgba(0,0,0,0));
+	background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.6), rgba(0,0,0,0));
+	background-image: -o-linear-gradient(bottom, rgba(0,0,0,.6), rgba(0,0,0,0));
+	background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0));
+}
+
+#breadcrumb-social { margin:-350px auto 205px auto; position:relative; }
+.social-icons-horizontal { height:26px; margin-bottom:15px; }
+h1.med-main-section-title { display:none; }
+#breadcrumb-social .breadcrumb { visibility:hidden; }
+
+.landing-wrapper #breadcrumb-social { margin:15px auto 10px auto; }
+.landing-wrapper h1.med-main-section-title { display:block; }
+.landing-wrapper .social-icons-horizontal { margin-bottom:0; }
+
+.main-content { position:relative; }
+
+.main-content > h1 { color:#fff; text-shadow:0 1px 2px #000; }
+
+.bio-page > header { margin-top:-20px; }
+.bio-page > header h1,
+.bio-page > header h2 { color:#fff; text-shadow: 0 1px 2px #000; }
+
+@media (max-width:1199px) {
+	.bio-page > header { margin-top:0; padding-top:3px; }
+	.bio-page > header h1 { font-size:46px; margin-bottom:.2em; }
+	.bio-page > header h2 { font-size:30px; }
+}
+
+@media (max-width:1199px) and (min-width:980px) {
+	#lowerbar nav > ul > li { width:auto; }
+	#lowerbar nav > ul > li > a { padding-left:6px; padding-right:6px; }
+
+	#lowerbar .nav-pane { width:100%; }
+}
+
+@media (max-width:1199px) and (min-width:768px) {
+	#lowerbar form.search { margin-top:19px; }
+	#lowerbar form.search input { width:161px; }
+	#lowerbar form.search .input-append { margin-left:auto; }
+
+	#lowerbar nav > ul > li { margin-left:8px; }
+	#lowerbar nav > ul > li > a { font-size:15px; padding-bottom:22px; padding-top:22px; }
+}
+
+@media (max-width:979px) and (min-width:768px) {
+	.logo .logo span { font-size:13px; }
+	.bio-page > header h1 { white-space:nowrap; }
+}
+
+@media (max-width:767px) {
+	#masthead { position:relative; }
+	#lowerbar { border-top-width:7px; }
+	.logo .logo span { max-width:170px; }
+
+	#lowerbar nav a, #lowerbar nav > ul > li > a,
+	#lowerbar nav a, #lowerbar nav > ul > li > a.collapsed { color:#333; text-shadow:none; }
+
+	#lowerbar nav.nav-collapse .nav > li > a,
+	#lowerbar .tabbable,
+	#lowerbar .nav-pane .nav-pane-inner,
+	#lowerbar #nav-academics .nav-pane-inner { font-size:14px; }
+
+	.upperbar .account.nav > li > a,
+	#lowerbar nav > ul > li > a.collapsed,
+	#lowerbar nav > ul > li > a { padding:10px 14px; }
+
+	#lowerbar nav > ul > li > a small { display:inline; font-size:1em; margin-right:.25em; }
+
+	#lowerbar .nav-pane h3 { color:#000; font-weight:bold; }
+
+	.page-wrapper { margin-top:0; }
+	.hero-panel,
+	.hero-image { height:364px; }
+	.hero-image { background-position:bottom center; background-size:auto; }
+
+	#breadcrumb-social .breadcrumb { display:none; }
+	.social-icons-horizontal { margin-top:0; }
+
+	.bio-page > header { margin-top:120px; }
+	.bio-page > header h1 { color:#ad0000; }
+	.bio-page > header h2 { color:#666; }
+	.bio-page > header h1,
+	.bio-page > header h2 { text-shadow:none; }
+
+	.main-content [class*='span'] > .wrapper { margin:0; padding:10px 12px; }
+	.main-content .focal > [class*='span'],
+	.main-content.homepage > [class*='row'] > section[class*='span'] { max-width:370px; }
+}
+
+
+
+

@@ -1,0 +1,21 @@
+- add css so masthead nav works correctly while not logged in
+- footer login: add redmed (turn dropdown into xpath template - can't because it's 2 distinct footers...)
+
++ make navigation the top portlet, regardless of which column it sits in or where it is in the portlet list.
+  + if in left column only, stay as is
+  - if in right column only, put in left column and make visible phone (maybe not?)
+  + if in left column and right column, stay as is
++ Add timestamps to news/event items
+  - style news collection
+
++ adjust call to action portlet to use footer link/text as action link
++ account for more than X columns in landing pages
++ need to account for no left column in bio page
++ calendar view
++ pfg view
+  + go through form submission process.
+  + check pfg thank you page
+  + don't forget to account for the call to action portlet
+
+
+- turn off icons in navigation

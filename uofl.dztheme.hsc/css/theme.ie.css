@@ -1,0 +1,112 @@
+/* targeting ie7 */
+#masthead,
+.upperbar,
+.med-landing-top nav .nav { *position:relative; *z-index:1; }
+
+.breadcrumb > li { *display:inline !important; }
+
+#masthead,.upperbar { *z-index:2; }
+
+.med-hero .slide.slide-picture img { *display:none; }
+
+#main-content > [class*='row'] > section[class*='span'] header { *overflow:hidden; }
+#main-content > [class*='row'] > section[class*='span'] header h1 { *float:left; }
+
+.med-landing-top nav .glyphicon-chevron-down {
+	*border-left: 4px solid transparent;
+	*border-right: 4px solid transparent;
+	*border-top: 4px solid #000;
+	*content: "";
+	*display: inline-block;
+	*height: 0;
+	*margin-top:6px;
+	*vertical-align: top;
+	*width: 0;
+}
+
+#prefooter h1 .glyphicon { *margin-left:0; }
+
+
+/* all ie */
+.upperbar { height:20px; overflow:visible; }
+
+#lowerbar .sprite-medicine { margin-bottom:9px; margin-top:14px; }
+#lowerbar form.search { margin-top:14px; }
+#lowerbar form.search input { width:180px; }
+#lowerbar form.search .input-append { margin-left:28px; }
+
+#lowerbar nav > ul > li { margin-right:6px; margin-top:8px; width:21%; }
+#lowerbar nav > ul > li > a { font-size:13px; padding:9px 0 13px 0; }
+#lowerbar .nav-pane { left:-46px; top:48px; width:106%; }
+#lowerbar .social { padding-top:15px; width:36px; }
+
+.med-hero,
+.med-hero .slide,
+.med-hero .caroufredsel_wrapper { height:360px !important; }
+.med-hero .slide h1 { margin-top:90px; padding-left:60px; padding-right:60px; }
+.med-hero .slide h1,
+.med-hero .slide h1 span { font-size:28px; line-height:1.2; }
+.med-hero .slide .description { font-size:22px; }
+.med-hero .slide.slide-title-left h1,
+.med-hero .slide.slide-title-right h1,
+.med-hero .slide.slide-title-body-left h1,
+.med-hero .slide.slide-title-body-right h1,
+.med-hero .slide.slide-body-left .description,
+.med-hero .slide.slide-body-right .description,
+.med-hero .slide.slide-title-body-left .description,
+.med-hero .slide.slide-title-body-right .description { margin-top:40px; }
+.med-hero .slide.slide-picture img { margin-top:60px; }
+.med-hero-nav .glyphicon { margin-top:-210px; }
+
+.med-hero-nav .glyphicon { background:url('../img/med-sprite.png') no-repeat; height:48px; width:34px; }
+.med-hero-nav .glyphicon:before { content:""; }
+.med-hero-nav .glyphicon-chevron-left { background-position:-924px 0; }
+.med-hero-nav .glyphicon-chevron-right { background-position:-958px 0; }
+
+.cta { font-size:19px; }
+.cta a { border-left:5px solid #fff; }
+.cta .span3 a:after,
+.cta .span3 a:before,
+#lowerbar .tabs-left > .nav-tabs > .active:after { display:none; }
+
+#main-content .focal .wrapper h1 { font-size:22px; }
+#main-content > [class*='row'] > [class*='span'] header h1,
+#main-content .med-spotlight h1,
+.tabs-info .tab-content > .tab-pane h1 { font-size:20px; }
+#main-content > [class*='row'] > [class*='span'] header h2 { margin-top:7px; }
+
+#main-content .med-events > ul > li a { height:41px; }
+#main-content .med-events > ul > li > a:hover,
+#main-content .med-events > ul > li > a:active,
+#main-content .med-events > ul > li > a:focus,
+#main-content .med-events > ul > li > .take-2 { height:51px; }
+#main-content .med-events .event-title { font-size:14px; }
+#main-content .med-events .date-bg { font-size:88px; }
+#main-content .med-events .date { font-size:12px; margin-bottom:0; }
+#main-content .med-events .date-month,
+#main-content .med-events .date-day { top:-13px; }
+
+#main-content .med-news > ul > li a { padding-left:0; padding-right:0; }
+
+.tab-pane.collapse,
+.med-sidenav .nav.collapse,
+.landing-page .nav.collapse { height:auto !important; overflow:visible !important; }
+
+.med-landing-top > nav {
+	background:transparent;
+	border-top:0;
+	box-shadow:none;
+}
+
+.bio-page > header h1 { font-size:46px; margin-bottom:.2em; }
+.bio-page > header h2 { font-size:30px; }
+.bio-page > header h3 { font-size:18px; }
+.bio-page > header h2,
+.bio-page > header h3 { line-height:1.2; }
+.bio-page > header p { margin-bottom:20px; }
+.bio-page > header hr { margin:15px; }
+
+#breadcrumb-social h1 { margin-bottom:10px; }
+
+.sprite-medicine { background-position:-609px 0; height:27px; width:133px; }
+.sprite-ulp { background-position:-742px 0; height:33px; width:182px; }

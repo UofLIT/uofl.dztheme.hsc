@@ -1,0 +1,109 @@
+/*
+
+Things that are different between themes: header (upper bar, lower bar), hero (hsc), special button colors (include in main theme),
+carousel colors/treatment, focus boxes on homepage (hsc different), call to action colors, navigation, body background images (normal
+and @2x sizes), breadcrumbs missing on HSC (and department title)
+
+*/
+#masthead { background:url('../img/kindajean.png') #e0e0e0; border-bottom:1px solid #989898; }
+
+.upperbar { background:transparent; }
+.account.nav-pills > li > a { color:#666; }
+.account.nav .dropdown-toggle .caret { border-bottom-color:#666; border-top-color:#666; }
+.upperbar .glyphicon { color:#828282; }
+
+.account.nav-pills > li > a:hover,
+.account.nav-pills > li > a:active,
+.account.nav-pills > li > a:focus { color:#ad0000; }
+.upperbar a:hover .glyphicon,
+.upperbar a:active .glyphicon,
+.upperbar a:focus .glyphicon,
+.upperbar .dropdown.open .glyphicon { color:#ad0000; text-shadow:0 -1px rgba(148,0,0,0.25); }
+.account.nav .dropdown-toggle:hover .caret,
+.account.nav .dropdown-toggle:active .caret,
+.account.nav .dropdown-toggle:focus .caret,
+.account.nav .dropdown.open .caret,
+.account.nav .dropdown.open.active .caret,
+.account.nav .dropdown.open a:hover .caret,
+.account.nav .dropdown.open a:focus .caret { border-bottom-color:#ad0000; border-top-color:#ad0000; }
+
+#lowerbar { background:#ad0000; margin-bottom:7px; }
+
+#lowerbar nav > ul > li { margin:11px 8px 0 0; width:18.5%; }
+#lowerbar nav > ul > li > a {
+	background-color:#fff;
+	background-image:-moz-linear-gradient(top, #c3c3c3, #fff);
+	background-image:-webkit-gradient(linear,0 0,0 100%,from(#c3c3c3),to(#fff));
+	background-image:-webkit-linear-gradient(top, #c3c3c3, #fff);
+	background-image:-o-linear-gradient(top, #c3c3c3, #fff);
+	background-image:linear-gradient(to bottom, #c3c3c3, #fff);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc3c3c3',endColorstr='#ffffffff',GradientType=0);
+	border:1px solid #fff;
+	-moz-box-shadow:0 -1px 4px rgba(0,0,0,0.4);
+	-webkit-box-shadow:0 -1px 4px rgba(0,0,0,0.4);
+	box-shadow:0 -1px 4px rgba(0,0,0,0.4);
+	color:#666;
+	padding:13px 0 14px 0;
+	text-shadow:0 -1px #fff;
+}
+#lowerbar nav > ul > li > a.collapsed {
+	background-color:transparent;
+	background-image:none;
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	border-color:transparent;
+	color:#fff;
+	text-shadow:1px 1px 2px rgba(0,0,0,0.75);
+}
+
+#lowerbar .nav-pane { border-top:7px solid #fff; top:59px; }
+
+@media (max-width: 1199px) and (min-width: 980px) {
+	#lowerbar nav > ul > li { margin-right:6px; margin-top:8px; width:21%; }
+	#lowerbar nav > ul > li > a { padding:9px 0 13px; }
+
+	#lowerbar .nav-pane { top:48px; }
+}
+
+@media (max-width:767px) {
+	#lowerbar { margin-top:7px; }
+
+	.upperbar .account.nav > li,
+	#lowerbar nav > ul > li {  margin:5px 0; width:auto; }
+
+	#lowerbar nav a,
+	#lowerbar nav > ul > li > a.collapsed { color:#333; text-shadow:none; }
+
+	#lowerbar .nav-pane { border:0; }
+
+	#lowerbar nav > ul > li > a,
+	#lowerbar .nav-pane,
+	#lowerbar .nav-pane .nav-pane-inner,
+	#lowerbar .tabs-left > .nav-tabs > .active:after,
+	#lowerbar .tabs-left > .nav-tabs > .active > a,
+	#lowerbar .tabs-left > .nav-tabs > .active > a:hover,
+	#lowerbar .tabs-left > .nav-tabs > .active > a:focus,
+	#lowerbar .tabs-left > .nav > li > a:hover,
+	#lowerbar .tabs-left > .nav > li > a:focus,
+	#lowerbar .tabbable .tab-content { background:transparent; }
+
+	.upperbar .account.nav > li > a,
+	#lowerbar nav > ul > li > a.collapsed,
+	#lowerbar nav > ul > li > a {
+		border:0;
+		-moz-box-shadow:none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+		color:#333;
+		padding:10px 14px;
+	}
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 144dpi) {
+	#masthead { background-image:url('../img/kindajean@2x.png'); background-size:147px 147px; }
+}
+
+

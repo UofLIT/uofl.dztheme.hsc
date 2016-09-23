@@ -1,0 +1,23 @@
+/*
+
+Things that are different between themes: header (upper bar, lower bar), hero (hsc), special button colors (include in main theme),
+carousel colors/treatment, focus boxes on homepage (hsc different), call to action colors, navigation, body background images (normal
+and @2x sizes), breadcrumbs missing on HSC (and department title)
+
+*/
+.med-hero .slide h1 span {
+	background:#56004e;
+	background:rgba(86,0,78,0.67);
+	-moz-box-shadow:15px 0 rgba(86,0,78,0.67), -15px 0 rgba(86,0,78,0.67);
+	-webkit-box-shadow:15px 0 rgba(86,0,78,0.67), -15px 0 rgba(86,0,78,0.67);
+	box-shadow:15px 0 rgba(86,0,78,0.67), -15px 0 rgba(86,0,78,0.67);
+}
+.med-hero:hover h1 span {
+	background:#56004e;
+	background:rgba(86,0,78,0.9);
+	-moz-box-shadow:15px 0 rgba(86,0,78,0.9), -15px 0 rgba(86,0,78,0.9);
+	-webkit-box-shadow:15px 0 rgba(86,0,78,0.9), -15px 0 rgba(86,0,78,0.9);
+	box-shadow:15px 0 rgba(86,0,78,0.9), -15px 0 rgba(86,0,78,0.9);
+}
+
+.cta { background:#56004e; }
