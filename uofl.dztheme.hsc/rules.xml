@@ -296,7 +296,9 @@
 								<xsl:value-of select="./@class"/>
 							</xsl:attribute>
 							<xsl:if test="contains(./a/@class, 'navTreeCurrentItem')">
-								<xsl:attribute name="class">active <xsl:value-of select="./@class"/></xsl:attribute>
+								<xsl:attribute name="class">
+									active <xsl:value-of select="./@class"/>
+								</xsl:attribute>
 							</xsl:if>
 							<xsl:copy-of select="./a | ./div/a"/>
 							<xsl:if test="contains(./@class, 'navTreeFolderish')">
@@ -305,7 +307,9 @@
 									<xsl:for-each select="./ul/li">
 										<xsl:element name="li">
 											<xsl:if test="contains(./a/@class, 'navTreeCurrentItem')">
-												<xsl:attribute name="class">active <xsl:value-of select="./@class"/></xsl:attribute>
+												<xsl:attribute name="class">
+													active <xsl:value-of select="./@class"/>
+												</xsl:attribute>
 											</xsl:if>
 											<xsl:copy-of select="./*"/>
 										</xsl:element>
@@ -472,16 +476,22 @@
 		<xsl:param name="ulClasses" />
 
 		<xsl:element name="ul">
-			<xsl:attribute name="class"><xsl:value-of select="$ulClasses" /></xsl:attribute>
+			<xsl:attribute name="class">
+				<xsl:value-of select="$ulClasses" />
+			</xsl:attribute>
 			<xsl:for-each select="$panels">
 				<xsl:element name="li">
-					<xsl:attribute name="class"><xsl:copy-of select="substring-after(./dt/span[2]/text(),'kwicks-')" /></xsl:attribute>
+					<xsl:attribute name="class">
+						<xsl:copy-of select="substring-after(./dt/span[2]/text(),'kwicks-')" />
+					</xsl:attribute>
 					<xsl:element name="div">
 						<xsl:attribute name="class">panel-shadow</xsl:attribute>
 					</xsl:element>
 					<xsl:element name="div">
 						<xsl:attribute name="class">panel-image</xsl:attribute>
-						<xsl:attribute name="style">background-image:url('<xsl:value-of select=".//img/@src" />');</xsl:attribute>
+						<xsl:attribute name="style">
+							background-image:url('<xsl:value-of select=".//img/@src" />');
+						</xsl:attribute>
 					</xsl:element>
 					<xsl:element name="div">
 						<xsl:attribute name="class">panel-content</xsl:attribute>
@@ -700,6 +710,9 @@
 		<drop css:theme="body > script.noscript" />
 		<before content="/html/head/script[not(contains(@src, 'respond.min.js')) and not(contains(@src, '/bootstrap.js')) and contains(@src, 'p4basetheme')] | /html/head/script[not(@src) and not(contains(text(), 'datepicker'))]" theme="/html/body/script[2]" />
 		<after content="/html/head/script[contains(@src, 'flowplayer')] | /html/head/script[contains(@src, 'typekit')]" theme="/html/head/*[last()]" />
+		<after if-content="//div[starts-with(@id, 'carousel-')]" theme-children="/html/head">
+			<script type="text/javascript" src="makeCarousel.js"></script>
+		</after>
 
 		<!-- merge the body classes -->
 		<merge attributes="class" css:theme="body" css:content="body" />
@@ -786,7 +799,9 @@
 							<xsl:element name="a">
 								<xsl:attribute name="data-toggle">collapse</xsl:attribute>
 								<xsl:attribute name="class">upperbar-accounts-collapse collapsed chevron-collapse visible-phone</xsl:attribute>
-								<xsl:attribute name="href">#account-dropdown-<xsl:value-of select="position()"/></xsl:attribute>
+								<xsl:attribute name="href">
+									#account-dropdown-<xsl:value-of select="position()"/>
+								</xsl:attribute>
 								<xsl:value-of select="./a//text()"/>
 								<xsl:element name="i">
 									<xsl:attribute name="class">glyphicon glyphicon-chevron-right visible-phone</xsl:attribute>
@@ -794,7 +809,9 @@
 							</xsl:element>
 							<xsl:element name="div">
 								<xsl:attribute name="class">account-collapse collapse</xsl:attribute>
-								<xsl:attribute name="id">account-dropdown-<xsl:value-of select="position()"/></xsl:attribute>
+								<xsl:attribute name="id">
+									account-dropdown-<xsl:value-of select="position()"/>
+								</xsl:attribute>
 								<xsl:element name="ul">
 									<xsl:choose>
 										<xsl:when test="$siteTemplate = 'medicine' and position() = '2'">
@@ -922,7 +939,9 @@
 			<before css:theme-children=".hero-content .hero-inner">
 				<xsl:element name="div">
 					<xsl:attribute name="class">hero-image</xsl:attribute>
-					<xsl:attribute name="style">background-image:url(<xsl:value-of select="//*[@id='hero-rows']//*[contains(@class,'hero-image')][1]//img/@src"/>);</xsl:attribute>
+					<xsl:attribute name="style">
+						background-image:url(<xsl:value-of select="//*[@id='hero-rows']//*[contains(@class,'hero-image')][1]//img/@src"/>);
+					</xsl:attribute>
 					<xsl:if test="//*[@id='hero-rows']//*[contains(@class,'hero-panel')][1]">
 						<xsl:element name="div">
 							<xsl:attribute name="class">hero-panel</xsl:attribute>
@@ -1012,7 +1031,9 @@
 							<xsl:for-each select="//*[@id='portal-column-one']//*[contains(@class,'portlet-static-focal')]">
 								<xsl:element name="div">
 									<xsl:attribute name="class">span4</xsl:attribute>
-									<xsl:attribute name="style">background-image:url('<xsl:value-of select="./dd//img/@src"/>')</xsl:attribute>
+									<xsl:attribute name="style">
+										background-image:url('<xsl:value-of select="./dd//img/@src"/>')
+									</xsl:attribute>
 									<xsl:element name="div">
 										<xsl:attribute name="class">wrapper</xsl:attribute>
 										<xsl:copy-of select="./dd/*"/>
@@ -1847,7 +1868,7 @@
 					<xsl:element name="ul">
 						<xsl:attribute name="class">nav nav-tabs responsive tab-collapse-nav hidden-phone</xsl:attribute>
 						<xsl:attribute name="id">tab-collapse</xsl:attribute>
-						<xsl:for-each select="//*[@id='prefooter-rows']/dl[contains(@class,'tabbed-page')]">
+						<xsl:for-each select="//*[@id='prefooter-rows']/*[contains(@class,'tabbed-page')]">
 							<xsl:if test="position() = 1">
 								<xsl:element name="li">
 									<xsl:attribute name="class">active</xsl:attribute>
@@ -1871,7 +1892,16 @@
 										<xsl:value-of select="concat('#tab',position())"/>
 									</xsl:attribute>
 									<xsl:attribute name="data-toggle">tab</xsl:attribute>
-									<xsl:value-of select="substring-after(./dt[contains(@class,'Header')]/span[not(contains(@class,'portletTop'))]/text(),'tabbed page ')"/>
+									<xsl:choose>
+										<xsl:when test="name() = 'dl'">
+											<!-- static text portlet -->
+											<xsl:value-of select="substring-after(./dt[contains(@class,'Header')]/span[not(contains(@class,'portletTop'))]/text(),'tabbed page ')"/>
+										</xsl:when>
+										<xsl:otherwise>
+											<!-- bootstrap row -->
+											<xsl:value-of select="substring-after(./preceding-sibling::h3[1]/text(),'tabbed page ')"/>
+										</xsl:otherwise>
+									</xsl:choose>
 								</xsl:element>
 							</xsl:element>
 						</xsl:for-each>
@@ -1879,7 +1909,7 @@
 					<xsl:element name="div">
 						<xsl:attribute name="class">tab-content responsive</xsl:attribute>
 						<xsl:attribute name="id">tab-collapse-info</xsl:attribute>
-						<xsl:for-each select="//*[@id='prefooter-rows']/dl[contains(@class,'tabbed-page')]">
+						<xsl:for-each select="//*[@id='prefooter-rows']/*[contains(@class,'tabbed-page')]">
 							<xsl:if test="position() = 1">
 								<xsl:element name="div">
 									<xsl:attribute name="class">tab-pane in active</xsl:attribute>
@@ -1892,7 +1922,16 @@
 								<xsl:attribute name="id">
 									<xsl:value-of select="concat('tab',position())"/>
 								</xsl:attribute>
-								<xsl:copy-of select="./dd/*[not(contains(@class,'portletBottom'))]"/>
+								<xsl:choose>
+									<xsl:when test="name() = 'dl'">
+										<!-- static text portlet -->
+										<xsl:copy-of select="./dd/*[not(contains(@class,'portletBottom'))]"/>
+									</xsl:when>
+									<xsl:otherwise>
+										<!-- bootstrap row -->
+										<xsl:copy-of select="./*"/>
+									</xsl:otherwise>
+								</xsl:choose>
 							</xsl:element>
 						</xsl:for-each>
 					</xsl:element>
