@@ -50,6 +50,7 @@ blockquote p:last-child { margin-bottom:0 !important; }
 
 /* image captioning, works with theme.js script to look for image.caption */
 figure.caption, figure.caption figcaption {
+	background-color:white;
 	border:1px solid #ddd;
 }
 figure.caption {

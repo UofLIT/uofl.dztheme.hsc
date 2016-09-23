@@ -68,7 +68,8 @@ jqbs(function($){
 						return item.portal_type === 'Image';
 				});
 				$.each(images, function (i, image) {
-					var $slide = $('<div class="slide slide-bg slide-minimal" style="background-image: url(' + image.url + ');"><h1><span>' + image.title + '</span></h1></div>');
+					var $slide = $('<div class="slide slide-bg slide-minimal" style="background-image: url(' + image.url + ');"></div>')
+						.append((image.id == image.title) ? '' : '<h1><span>' + image.title + '</span></h1>');
 					$.get(image.url + '/Description', function (result) {
 						var lines = result.split('\n');
 						if(lines[0]) $slide.append('<div class="description"><div class="container">' + marked(lines[0]) + '</div></div>');
