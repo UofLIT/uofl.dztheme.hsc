@@ -123,9 +123,29 @@ jQuery(function ($) {
 					var $slide = $('<div class="slide slide-bg slide-minimal" style="background-image: url(' + image.url + '/image_hero);"></div>')
 						.append((image.id == image.title) ? '' : '<h1><span>' + image.title + '</span></h1>');
 					$.get(image.url + '/Description', function (result) {
-						var lines = result.split('\n');
+						var lines = result.split('\n'), colonIndex;
 						if (lines[0]) $slide.append('<div class="description"><div class="container">' + marked(lines[0]) + '</div></div>');
-						if (lines[1]) $slide.css({backgroundPosition: lines[1]});
+						for (var i = 1; i < lines.length; i++) {
+							colonIndex = lines[i].indexOf(':');
+							// back compat
+							if (colonIndex == -1)
+								$slide.css({backgroundPosition: lines[i]});
+							else {
+								var key = lines[i].substring(0, colonIndex);
+								var val = lines[i].substring(colonIndex+1);
+								switch (key) {
+									case 'bgcolor':
+										$slide.css({backgroundColor: val, backgroundSize: 'contain'});
+										break;
+									case 'hpos':
+										$slide.css({backgroundPositionX: val});
+										break;
+									case 'vpos':
+										$slide.css({backgroundPositionY: val});
+										break;
+								}
+							}
+						}
 					});
 					$heroWrapper.append($slide);
 				});
