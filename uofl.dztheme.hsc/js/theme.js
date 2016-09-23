@@ -11,6 +11,9 @@ for (var i = 0; i < fbPages.length; i++) {
 }
 
 jQuery(function ($) {
+	// fix useless RSS links
+	$('a[href="http://www.rssmix.com/"]').attr('href', 'https://louisville.edu/hsc')
+
 	var date = new Date();
 	var d = date.getDate();
 	var m = date.getMonth();
@@ -106,6 +109,16 @@ jQuery(function ($) {
 				var images = $.grep(json.items, function (item) {
 						return item.portal_type === 'Image';
 				});
+				if (json.path[0].title.indexOf('random') != -1) {
+					var count = images.length;
+					var rand, temp;
+					while (count) {
+						rand = Math.random() * count-- | 0;
+						temp = images[count];
+						images[count] = images[rand];
+						images[rand]  = temp;
+					}
+				}
 				$.each(images, function (i, image) {
 					var $slide = $('<div class="slide slide-bg slide-minimal" style="background-image: url(' + image.url + '/image_hero);"></div>')
 						.append((image.id == image.title) ? '' : '<h1><span>' + image.title + '</span></h1>');
@@ -150,7 +163,7 @@ jQuery(function ($) {
 							$('<h3>').text(captionText)
 						),
 						$('<div class="modal-body">').append(
-							$('<img/>').attr('src', match[1])
+							$('<img/>', {src: match[1]})
 						)
 					).insertAfter($figure);
 				}
@@ -1898,7 +1911,7 @@ templates['tablist'] = template({"1":function(container,depth0,helpers,partials,
 (function(){
 var xhr = new XMLHttpRequest();
 xhr.addEventListener('load', load);
-xhr.open('GET', '/nursing/nav.xml');
+xhr.open('GET', document.getElementsByClassName('logo')[0].href + '/nav.xml');
 xhr.send();
 
 function load(xml) {

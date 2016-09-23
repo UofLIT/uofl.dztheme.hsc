@@ -641,6 +641,8 @@
 	<theme if-path="login" href="page-inside-noleft-noright.html" />
 	<notheme css:if-not-content="#visual-portal-wrapper" />
 	<notheme css:if-content="body.template-manage-portlets" />
+	<notheme css:if-content="body.template-plone-portlet-static-static" />
+	<notheme css:if-content="body.template-uofl-bootstraprowportlet" />
 	<notheme if-content="//body[contains(@class, 'BootstrapRowPortlet')]" />
 	<notheme if-content="//body[contains(@class, 'ContentRule')]" />
 	<notheme if-content="//body[contains(@class, 'Static')]" />
