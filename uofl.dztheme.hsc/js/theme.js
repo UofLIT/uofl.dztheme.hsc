@@ -1,3 +1,15 @@
+// currently (April 8, 2015) FB Page embeds do not have variable/responsive width
+// the width is hard coded inside the frame so it cannot be modified
+// for now the best thing to do is set the width to whatever the size of the container is at load
+// resizing the page will of course break this
+// the FB Page embed would have to be entirely reloaded on resize
+var fbPages = document.getElementsByClassName('fb-page');
+for (var i = 0; i < fbPages.length; i++) {
+	if (fbPages[i].getAttribute('data-width') == 'auto') {
+		fbPages[i].setAttribute('data-width', fbPages[i].parentNode.scrollWidth);
+	}
+}
+
 jqbs(function($){
 	// so we can link to the tabs on pages
 	var tabMatch = null;

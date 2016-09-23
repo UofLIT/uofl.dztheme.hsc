@@ -3,3 +3,4 @@
 1.0.2 Changed theme.js to build landing page carousel from images found in ./images/banners
 1.0.3 Added support for portlets with "omit border" set
 1.0.4 Added support for minimal portlets
+1.0.5 Added fb pages width auto support script to theme.js
