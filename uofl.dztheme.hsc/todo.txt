@@ -1,3 +1,8 @@
+- change bio theme to show description
+- add tags and related items to theme
+- change tab page links to use class instead of #tab0 and make it change url
+- then change tab links to not jump down (aka use a different ID)
+
 - add css so masthead nav works correctly while not logged in
 - footer login: add redmed (turn dropdown into xpath template - can't because it's 2 distinct footers...)
 
@@ -19,3 +24,6 @@
 
 
 - turn off icons in navigation
+
+bootstrap row config for pages not working
+Department Title showing up on pages

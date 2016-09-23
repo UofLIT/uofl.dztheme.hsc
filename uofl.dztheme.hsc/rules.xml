@@ -503,20 +503,18 @@
 			<xsl:for-each select="$panels">
 				<xsl:element name="li">
 					<xsl:attribute name="class">
-						<xsl:copy-of select="substring-after(./dt/span[2]/text(),'kwicks-')" />
+						<xsl:copy-of select="substring-after(./@class,'kwicks-')" />
 					</xsl:attribute>
 					<xsl:element name="div">
 						<xsl:attribute name="class">panel-shadow</xsl:attribute>
 					</xsl:element>
 					<xsl:element name="div">
 						<xsl:attribute name="class">panel-image</xsl:attribute>
-						<xsl:attribute name="style">
-							background-image:url('<xsl:value-of select=".//img/@src" />');
-						</xsl:attribute>
+						<xsl:attribute name="style">background-image:url('<xsl:value-of select=".//img/@src" />');</xsl:attribute>
 					</xsl:element>
 					<xsl:element name="div">
 						<xsl:attribute name="class">panel-content</xsl:attribute>
-						<xsl:copy-of select="./dd/p[2]" />
+						<xsl:copy-of select=".//p[2]" />
 					</xsl:element>
 				</xsl:element>
 			</xsl:for-each>

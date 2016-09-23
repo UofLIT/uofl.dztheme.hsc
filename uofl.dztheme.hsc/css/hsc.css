@@ -70,7 +70,7 @@ and @2x sizes), breadcrumbs missing on HSC (and department title)
 	position:relative;
 	z-index:0;
 }
-.kwicks { height:518px; margin:0 auto; max-width:1500px; }
+.kwicks { height:518px; margin:0 auto; }
 .kwicks > li { border-left:1px solid #ccc; height:518px; position:relative; }
 .kwicks > li:first-child { border:0; }
 .kwicks .panel-shadow {
@@ -87,7 +87,11 @@ and @2x sizes), breadcrumbs missing on HSC (and department title)
 	width:20px;
 }
 .kwicks > li:last-child .panel-shadow { display:none; }
-.kwicks .panel-image { background-position:top center; background-repeat:no-repeat; height:458px; }
+.kwicks .panel-image {
+	background-position:center center;
+	background-size:cover;
+	height:458px;
+}
 .kwicks .panel-content {
 	background-color:#000;
 	background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.4), rgba(0,0,0,.02) 20%, rgba(23,23,23,0) 21%, rgba(255,255,255,0) 31%, rgba(255,255,255,.4));
