@@ -48,6 +48,47 @@ blockquote small {
 blockquote small:before { content:'\002D \00A0'; }
 blockquote p:last-child { margin-bottom:0 !important; }
 
+/* image captioning, works with theme.js script to look for image.caption */
+figure.caption, figure.caption figcaption {
+	border:1px solid #ddd;
+}
+figure.caption {
+	display:table;
+	border-radius:4px 4px 0 0;
+	border-bottom-width:0;
+}
+figure.caption.image-inline {
+	margin:0;
+}
+figure.caption img {
+	display:block;
+	padding:6px;
+	padding-bottom:0;
+}
+figure.caption img.click {
+	cursor:pointer;
+}
+figure.caption figcaption {
+	display:table-caption;
+	caption-side:bottom;
+	color:#666;
+	font-family:small-caption,serif;
+	font-size:75%;
+	padding:0 6px 2px;
+	border-radius:0 0 4px 4px;
+	border-top-width:0;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.075);
+}
+@media (min-width:768px) {
+	figure.caption + .modal {
+		width:768px;
+		margin-left:-384px;
+	}
+	figure.caption + .modal .modal-body {
+		max-height: 553px;
+	}
+}
+
 /* localist fixes */
 #lwe {
 	margin: 0;
