@@ -10,7 +10,37 @@ for (var i = 0; i < fbPages.length; i++) {
 	}
 }
 
-jqbs(function($){
+jQuery(function ($) {
+	var date = new Date();
+	var d = date.getDate();
+	var m = date.getMonth();
+	var y = date.getFullYear();
+	$('#calendar').fullCalendar({
+		header: {
+			left: 'prev,next today',
+			center: 'title',
+			right: 'month,agendaWeek,agendaDay'
+		},
+		editable: false,
+		disableDragging: false,
+		disableResizing: false,
+		startParam: 'start:int',
+		endParam: 'end:int',
+		events: 'solgemafullcalendarevents',
+		eventClick: function (event) {
+			if (event.url) {
+			$.get(event.url, function (data) {
+				$.fancybox(data, { maxWidth: 800 });
+			});
+			return false;
+			}
+		}
+	});
+
+	$('.dropdown-toggle').dropdown();
+	$('#portlet-accordion').tab('show');
+	$('#featured-links-accordion').tab('show');
+
 	// so we can link to the tabs on pages
 	var tabMatch = null;
 	if (tabMatch = location.hash.match(/^#tab(\d+)$/)) {
@@ -72,8 +102,8 @@ jqbs(function($){
 						.append((image.id == image.title) ? '' : '<h1><span>' + image.title + '</span></h1>');
 					$.get(image.url + '/Description', function (result) {
 						var lines = result.split('\n');
-						if(lines[0]) $slide.append('<div class="description"><div class="container">' + marked(lines[0]) + '</div></div>');
-						if(lines[1]) $slide.css({backgroundPosition: lines[1]});
+						if (lines[0]) $slide.append('<div class="description"><div class="container">' + marked(lines[0]) + '</div></div>');
+						if (lines[1]) $slide.css({backgroundPosition: lines[1]});
 					});
 					$heroWrapper.append($slide);
 				});
@@ -118,7 +148,7 @@ jqbs(function($){
 		}
 	});
 
-	$(document).on('click', '.med-nav-toggle, .med-nav-pane-collapse a, .upperbar-accounts-collapse, .tab-pane-collapse a', function(e) {
+	$(document).on('click', '.med-nav-toggle, .med-nav-pane-collapse a, .upperbar-accounts-collapse, .tab-pane-collapse a', function (e) {
 		e.stopPropagation();
 		var $this = $(this);
 		var l = $this.next().length;
@@ -135,7 +165,7 @@ jqbs(function($){
 			actives.collapse('hide');
 			if (actives['length'] > 1) {
 				var a = [ $(actives[0]).attr('id'), $(actives[1]).attr('id') ];
-				var old = $.grep(a,function(b){
+				var old = $.grep(a,function (b) {
 					return b == id;
 				}, true);
 				var $old = $('#' + old);
@@ -158,7 +188,7 @@ jqbs(function($){
 		});
 	});*/
 
-	$(document).on('click',function(e){
+	$(document).on('click',function (e) {
 		var $navpane = $(e.target).closest('.nav-pane');
 		if ($navpane.length == 0) {
 			$('.nav-pane.collapse.in,.account-collapse.collapse.in').collapse('hide');

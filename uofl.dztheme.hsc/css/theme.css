@@ -48,6 +48,11 @@ blockquote small {
 blockquote small:before { content:'\002D \00A0'; }
 blockquote p:last-child { margin-bottom:0 !important; }
 
+/* template selector */
+form[action$="++contextportlets++uofl.heromanager/config/edit"] {
+	display: none;
+}
+
 /* image captioning, works with theme.js script to look for image.caption */
 figure.caption, figure.caption figcaption {
 	background-color:white;

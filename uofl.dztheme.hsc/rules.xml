@@ -530,13 +530,13 @@
 	<xsl:variable name="bioContact" select="//*[@id='portal-column-one']//*[contains(@class,'bio-contact')]/dd"/>
 
 	<!-- set config variables -->
-	<xsl:variable name="siteTemplate" select="//*[@id='hero-rows']//i[@class='site-template'][1]" />
-	<xsl:variable name="pageTemplate" select="//*[@id='hero-rows']//i[@class='page-template'][1]" />
-	<xsl:variable name="mainLogo" select="//*[@id='hero-rows']//i[@class='main-logo'][1]" />
-	<xsl:variable name="mainLogoURL" select="//*[@id='hero-rows']//i[@class='main-logo-url'][1]" />
-	<xsl:variable name="departmentTitle" select="//*[@id='hero-rows']//i[@class='department-title'][1]" />
-	<xsl:variable name="tabbedPageInitialTabName" select="//*[@id='hero-rows']//i[@class='tabbed-page-initial-tab-name'][1]" />
-	<xsl:variable name="navigationLocation" select="//*[@id='hero-rows']//i[@class='navigation-location'][1]" />
+	<xsl:variable name="siteTemplate" select="(//*[@id='hero-rows']//i[@class='site-template'])[1]" />
+	<xsl:variable name="pageTemplate" select="(//*[@id='hero-rows']//i[@class='page-template'])[1]" />
+	<xsl:variable name="mainLogo" select="(//*[@id='hero-rows']//i[@class='main-logo'])[1]" />
+	<xsl:variable name="mainLogoURL" select="(//*[@id='hero-rows']//i[@class='main-logo-url'])[1]" />
+	<xsl:variable name="departmentTitle" select="(//*[@id='hero-rows']//i[@class='department-title'])[1]" />
+	<xsl:variable name="tabbedPageInitialTabName" select="(//*[@id='hero-rows']//i[@class='tabbed-page-initial-tab-name'])[1]" />
+	<xsl:variable name="navigationLocation" select="(//*[@id='hero-rows']//i[@class='navigation-location'])[1]" />
 	<xsl:variable name="landingPagePortletStart">
 		<xsl:choose>
 			<xsl:when test="$pageTemplate/text() = 'right-content-top-nav-homepage'">
@@ -892,7 +892,7 @@
 					</xsl:choose>
 				</xsl:attribute>
 				<xsl:attribute name="class">logo</xsl:attribute>
-				<xsl:copy-of select="$mainLogo/*"/>
+				<xsl:copy-of select="$mainLogo/node()"/>
 			</xsl:element>
 		</replace>
 

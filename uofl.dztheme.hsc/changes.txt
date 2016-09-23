@@ -6,3 +6,6 @@
 1.0.5 Added fb pages width auto support script to theme.js
 1.0.6 Added image captioning and "full size" viewing. Images must have class "caption" and have an alt or title attribute.
 1.0.7 Changed hero banner to not show a title if the title and filename are the same
+1.0.8 Fixed bug in rules.xml where XPath was selecting more than one config variable, now only the top-most is selected
+	Fixed Main Logo XPath that didn't select text nodes as well
+	Due to base theme change, changed scripts to use jQuery instead of jqbs
