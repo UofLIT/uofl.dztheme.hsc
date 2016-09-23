@@ -9,4 +9,5 @@
 1.0.8 Fixed bug in rules.xml where XPath was selecting more than one config variable, now only the top-most is selected
 	Fixed Main Logo XPath that didn't select text nodes as well
 	Due to base theme change, changed scripts to use jQuery instead of jqbs
-1.0.9 jQuery compatibility fixes: FullCalendar 1.6.2 (calendar.js); FancyBox 2.1.5 (plugins.js)
+1.0.9 jQuery compatibility fixes: FullCalendar 1.6.2 (calendar.js); FancyBox 2.1.5 (plugins.js
+1.0.10 Hero Banner now looks for 'hero' sized images which must be set in @@imaging-controlpanel

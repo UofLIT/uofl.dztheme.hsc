@@ -107,7 +107,7 @@ jQuery(function ($) {
 						return item.portal_type === 'Image';
 				});
 				$.each(images, function (i, image) {
-					var $slide = $('<div class="slide slide-bg slide-minimal" style="background-image: url(' + image.url + ');"></div>')
+					var $slide = $('<div class="slide slide-bg slide-minimal" style="background-image: url(' + image.url + '/image_hero);"></div>')
 						.append((image.id == image.title) ? '' : '<h1><span>' + image.title + '</span></h1>');
 					$.get(image.url + '/Description', function (result) {
 						var lines = result.split('\n');
@@ -118,6 +118,8 @@ jQuery(function ($) {
 				});
 			
 				$heroWrapper.carouFredSel(carouFredSelOptions);
+			}).fail(function () {
+				$heroWrapper.hide();
 			});
 		}
 		else {
