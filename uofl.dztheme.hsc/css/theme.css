@@ -418,6 +418,39 @@ footer.grey .dropdown-menu > li > a { font-size:10px; line-height:1.7; padding:3
 #lowerbar .nav-pane h3 a:hover .glyphicon { color:#fff; }
 #lowerbar .nav-pane .tab-pane h3 { margin-top:.5em; }
 
+#alert {
+	display: none;
+}
+
+#alert section {
+	margin: 7px auto;
+}
+
+#emergency_alert {
+	background-color: #fcf8e3;
+	border: 1px solid #faebcc !important;
+	color: #8a6d3b;
+}
+
+#weather_alert {
+	background-color: #d9edf7;
+	border: 1px solid #cbd6dd !important;
+	color: #518b9c;
+}
+
+#alert .alert {
+	padding: 15px;
+	margin-bottom: 0;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: transparent;
+	color: inherit;
+}
+	
+#alert h4 {
+	color: inherit;
+}
+
 .med-hero { overflow:hidden; position:relative; }
 .med-hero,
 .med-hero .slide,

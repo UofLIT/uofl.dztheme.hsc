@@ -534,6 +534,7 @@
 	<xsl:variable name="mainLogoURL" select="(//*[@id='hero-rows']//i[@class='main-logo-url'])[1]" />
 	<xsl:variable name="departmentTitle" select="(//*[@id='hero-rows']//i[@class='department-title'])[1]" />
 	<xsl:variable name="tabbedPageInitialTabName" select="(//*[@id='hero-rows']//i[@class='tabbed-page-initial-tab-name'])[1]" />
+	<xsl:variable name="showAlert" select="(//*[@id='hero-rows']//i[@class='show-alert'])[1]" />
 	<xsl:variable name="navigationLocation" select="(//*[@id='hero-rows']//i[@class='navigation-location'])[1]" />
 	<xsl:variable name="landingPagePortletStart">
 		<xsl:choose>
@@ -1007,6 +1008,10 @@
 			<!-- check for main homepage -->
 			<rules if="$pageTemplate/text() = 'homepage'">
 				<theme href="page-homepage.html" />
+				<!-- alerts -->
+				<drop if="not($showAlert)" css:theme="#alert" />
+				<drop if="$showAlert" css:theme-children="#alert .span12" />
+				
 				<!-- carousel -->
 				<replace css:theme-children=".med-hero .med-hero-wrapper" css:content="#hero-rows .portlet-static-hero-slider .portletItem div.slide" />
 

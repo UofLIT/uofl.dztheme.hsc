@@ -10,6 +10,8 @@ for (var i = 0; i < fbPages.length; i++) {
 	}
 }
 
+
+
 jQuery(function ($) {
 	// fix useless RSS links
 	$('a[href="http://www.rssmix.com/"]').attr('href', 'https://louisville.edu/hsc')
@@ -1929,26 +1931,37 @@ templates['tablist'] = template({"1":function(container,depth0,helpers,partials,
 
 /* nav template code */
 (function(){
-var xhr = new XMLHttpRequest();
-xhr.addEventListener('load', load);
-xhr.open('GET', document.getElementsByClassName('logo')[0].href + '/nav.xml');
-xhr.send();
-
-function load(xml) {
-	Handlebars.partials = Handlebars.templates;
-	Handlebars.registerHelper('titleToId', function (title) {
-		return title.toLowerCase().replace(/\W+/g, '-');
-	});
-
-	JXON.config({
-		valueKey:    'text',
-		attrPrefix:  '$',
-		trueIsEmpty: false,
-		autoDate:    false,
-		parseValues: false
-	});
-	var json = JXON.build(this.responseXML);
-	var html = Handlebars.templates.nav(json.nav);
-	document.getElementById('masthead-nav').innerHTML = html;
-}
+	var mastheadNav = document.getElementById('masthead-nav');
+	if (!mastheadNav.hasChildNodes()) {
+		var xhr = new XMLHttpRequest();
+		xhr.addEventListener('load', load);
+		xhr.open('GET', document.getElementsByClassName('logo')[0].href + '/nav.xml');
+		xhr.send();
+		
+		function load(xml) {
+			Handlebars.partials = Handlebars.templates;
+			Handlebars.registerHelper('titleToId', function (title) {
+				return title.toLowerCase().replace(/\W+/g, '-');
+			});
+		
+			JXON.config({
+				valueKey:    'text',
+				attrPrefix:  '$',
+				trueIsEmpty: false,
+				autoDate:    false,
+				parseValues: false
+			});
+			var json = JXON.build(this.responseXML);
+			var html = Handlebars.templates.nav(json.nav);
+			mastheadNav.innerHTML = html;
+		}
+	}
 })();
+/* alert */
+(function ($) {
+	$('#alert .span12').load('//louisville.edu/alert/alert.html', function () {
+		if ($.trim(this.textContent)) {
+			$('#alert').show();
+		}
+	});
+})(jQuery);
