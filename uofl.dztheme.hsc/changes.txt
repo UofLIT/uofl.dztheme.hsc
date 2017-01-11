@@ -21,3 +21,4 @@
 1.1.5 Added alert option to homepage
 	nav.xml only loaded if no nav HTML
 	moved config.js into theme
+1.1.6 Added config.css into theme

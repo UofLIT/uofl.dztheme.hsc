@@ -1,0 +1,11 @@
+.page-template .row-fluid label input {
+	display: none;
+}
+
+.page-template label img {
+	cursor: pointer;
+}
+
+.page-template label input:checked + img {
+	outline: medium dotted #ad0000;
+}
