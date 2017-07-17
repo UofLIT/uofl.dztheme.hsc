@@ -22,3 +22,6 @@
 	nav.xml only loaded if no nav HTML
 	moved config.js into theme
 1.1.6 Added config.css into theme
+1.1.7	Made hero banner options (from 1.1.4) accepted on first line of description
+	moved form help text
+	added table of contents support

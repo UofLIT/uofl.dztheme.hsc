@@ -15,6 +15,12 @@ div.configlet label,
 ul.configlets label,
 body.template-hnfpicker-settings label.horizontal { display:block; margin-left:0; }
 
+.formHelp {
+	display: block;
+	font-size: 85%;
+	color: #595959;
+}
+
 body {
 	background:url('../img/gray_jean.png') #f0f0f0;
 	color:#333;
@@ -929,6 +935,15 @@ footer.grey .dropdown-menu > li > a { font-size:10px; line-height:1.7; padding:3
 .core-content .newsImageContainer img { max-width:none; }
 .core-content .newsImageContainer .discreet { font-size:.8em; margin:.25em 0 0 0; }
 .core-content .newsImageContainer:hover { border-color:#ad0000; }
+
+/* table of contents */
+#document-toc {
+	float: right;
+}
+#document-toc li.h3 {
+	margin-left: 1em;
+	list-style-type: circle;
+}
 
 .documentModified {
 	border-bottom:1px solid #eaeaea;

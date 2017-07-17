@@ -685,6 +685,7 @@
 	<notheme css:if-content="body.template-hnfpicker-settings" />
 	<notheme css:if-content="body.template-useractions" />
 	<notheme css:if-content="body.template-manage-elements" />
+	<notheme css:if-content="body.template-plone-portlet-collection-collection" />
 	<notheme if-path="folder_rename_form" />
 	<notheme if-path="folder_constraintypes_form" />
 	<notheme css:if-content="#edit-bar" if="$preview_mode != 'True'" />
@@ -821,9 +822,7 @@
 							<xsl:element name="a">
 								<xsl:attribute name="data-toggle">collapse</xsl:attribute>
 								<xsl:attribute name="class">upperbar-accounts-collapse collapsed chevron-collapse visible-phone</xsl:attribute>
-								<xsl:attribute name="href">
-									#account-dropdown-<xsl:value-of select="position()"/>
-								</xsl:attribute>
+								<xsl:attribute name="href">#account-dropdown-<xsl:value-of select="position()"/></xsl:attribute>
 								<xsl:value-of select="./a//text()"/>
 								<xsl:element name="i">
 									<xsl:attribute name="class">glyphicon glyphicon-chevron-right visible-phone</xsl:attribute>
@@ -1965,7 +1964,8 @@
 					</xsl:element>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:copy-of select="//*[@id='content-core']/*"/>
+					<xsl:copy-of select="//*[@id='document-toc']"/>
+					<xsl:copy-of select="//*[@id='content-core']"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</replace>

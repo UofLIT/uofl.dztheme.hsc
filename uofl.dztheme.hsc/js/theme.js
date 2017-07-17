@@ -14,7 +14,40 @@ for (var i = 0; i < fbPages.length; i++) {
 
 jQuery(function ($) {
 	// fix useless RSS links
-	$('a[href="http://www.rssmix.com/"]').attr('href', 'https://louisville.edu/hsc')
+	$('a[href="http://www.rssmix.com/"]').attr('href', 'https://louisville.edu/hsc');
+	
+	// make table of contents
+	var $tocDl = $('#document-toc');
+	if ($tocDl.length) {
+		$tocDl.show();
+		var $toc = $('<ul>');
+		$tocDl.children('.portletItem').append($toc);
+		var $backToTop = $('<a>', { text: 'Back to Top', href: '#document-toc' });
+		var firstH2 = true;
+		var titleId = ''
+		$('#content-core > div h2, #content-core > div h3').each(function (i, h) {
+			var $h = $(h);
+			var hTag = h.tagName.toLowerCase();
+			var hText = $.trim($h.text());
+			var id = hText.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+			if (hTag == 'h2') {
+				if (titleId) {
+					$h.before($backToTop.clone());
+				}
+				titleId = id;
+			}
+			else if (titleId) {
+				id = titleId + '_' + id;
+			}
+			$h.attr({id: id});
+			$toc.append(
+				$('<li>', { 'class': h.tagName.toLowerCase() }).append(
+					$('<a>', { text: hText, href: '#' + id })
+				)
+			);
+		});
+		$('#content-core > div').append($backToTop);
+	}
 
 	var date = new Date();
 	var d = date.getDate();
@@ -125,16 +158,16 @@ jQuery(function ($) {
 					var $slide = $('<div class="slide slide-bg slide-minimal" style="background-image: url(' + image.url + '/image_hero);"></div>')
 						.append((image.id == image.title) ? '' : '<h1><span>' + image.title + '</span></h1>');
 					$.get(image.url + '/Description', function (result) {
-						var lines = result.split('\n'), colonIndex;
-						if (lines[0]) $slide.append('<div class="description"><div class="container">' + marked(lines[0]) + '</div></div>');
-						for (var i = 1; i < lines.length; i++) {
+						var lines = result.split('\n'),
+						    colonIndex,
+						    validKey,
+						    hasDescr = false;
+						for (var i = 0; i < lines.length; i++) {
 							colonIndex = lines[i].indexOf(':');
-							// back compat
-							if (colonIndex == -1)
-								$slide.css({backgroundPosition: lines[i]});
-							else {
+							if (colonIndex !== -1) {
 								var key = lines[i].substring(0, colonIndex);
-								var val = lines[i].substring(colonIndex+1);
+								var val = lines[i].substring(colonIndex + 1);
+								validKey = true;
 								switch (key) {
 									case 'bgcolor':
 										$slide.css({backgroundColor: val, backgroundSize: 'contain'});
@@ -145,6 +178,18 @@ jQuery(function ($) {
 									case 'vpos':
 										$slide.css({backgroundPositionY: val});
 										break;
+									default:
+										validKey = false;
+								}
+							}
+							if (colonIndex === -1 || !validKey) {
+								if (!hasDescr) {
+									$slide.append('<div class="description"><div class="container">' + marked(lines[0]) + '</div></div>');
+									hasDescr = true;
+								}
+								// back compat
+								else {
+									$slide.css({backgroundPosition: lines[i]});
 								}
 							}
 						}
