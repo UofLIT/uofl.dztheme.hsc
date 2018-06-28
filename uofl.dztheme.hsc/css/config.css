@@ -9,3 +9,15 @@
 .page-template label input:checked + img {
 	outline: medium dotted #ad0000;
 }
+
+a.empty::after {
+	content: 'There is an empty link here. Edit the html to remove it.';
+	color: black;
+	background-color: red;
+}
+
+img.alt::after {
+	content: 'This image has no alt tag. Edit the image, and give it a title.';
+	color: black;
+	background-color: red;
+}

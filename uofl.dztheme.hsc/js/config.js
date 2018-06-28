@@ -1,20 +1,41 @@
-String.prototype.endsWith = function (suffix) {
-	return this.indexOf(suffix, this.length - suffix.length) !== -1;
-};
+// from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+if (!String.prototype.endsWith)
+	String.prototype.endsWith = function (searchStr, Position) {
+		// This works much better than >= because it compensates for NaN:
+		if (!(Position < this.length))
+			Position = this.length;
+		else
+			Position |= 0; // round position
+		return this.substr(Position - searchStr.length, searchStr.length) === searchStr;
+	};
 
 (function ($) {
 	"use strict";
 
-	// patch to fix broken image alt tags
-	var text = tinyMCE;
+	$('head').append('<link rel="stylesheet" href="++theme++uofl.dztheme.hsc/css/config.css" type="text/css" />');
+	
 	$(function () {
+		// patch to fix broken image alt tags
 		var text = tinyMCE;
 		if (document.forms['edit_form'] && document.forms['edit_form'].elements['text']) {
 			$(document.forms['edit_form']).on('submit', function (e) {
 				this.elements['text'].value = this.elements['text'].value.replace(/"http[^"]*\/(?=resolveuid\/)/g, '"').replace(/alt=""/g, '');
 			});
 		}
+
+		// find empty links and images without alt for ADA compliance
+		var snapshot = document.evaluate('//*[@id="content-core" or @id="portal-column-two" or @id="prefooter-rows"]//a[@href][not(.//text()[normalize-space()])][not(.//img[@alt]) or .//img[@alt=""]]', document.body, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+		for (var i = 0, link = snapshot.snapshotItem(i); i < snapshot.snapshotLength; link = snapshot.snapshotItem(++i)) {
+			$(link).addClass('empty');
+		}
+	
+		// Plone should always add an alt tag, so this should never find anything
+		snapshot = document.evaluate('//*[@id="content-core" or @id="portal-column-two" or @id="prefooter-rows"]//img[not(@alt) or @alt=""]', document.body, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+		for (var i = 0, img = snapshot.snapshotItem(i); i < snapshot.snapshotLength; img = snapshot.snapshotItem(++i)) {
+			$(img).addClass('alt');
+		}
 	});
+
 
 	var base = $('base').attr('href');
 	var $body = $(document.body);
@@ -45,7 +66,6 @@ String.prototype.endsWith = function (suffix) {
 	if ((base.endsWith(heromanagerPath + 'config') || (isNewConfig = (base.endsWith(heromanagerPath + '+') && location.search.indexOf('newConfig') !== -1))) && location.search.indexOf('tinymce.suppress=form.text') === -1) {
 		//TinyMCEConfig = function () { this.init = $.noop };
 		tinyMCE = function () { this._init = $.noop; };
-		$('head').append('<link rel="stylesheet" href="++theme++uofl.dztheme.hsc/css/config.css" type="text/css" />');
 		$(makeConfigForm);
 	}
 	else if ((base.endsWith(leftPortletsPath + 'bio-picture')) || (isNewBioPicture = (location.search == '?newBioPicture'))) {

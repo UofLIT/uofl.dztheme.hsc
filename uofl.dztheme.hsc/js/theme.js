@@ -123,8 +123,8 @@ jQuery(function ($) {
 		next: '.med-hero .glyphicon-chevron-right',
 		pagination: {
 			container: '.med-hero .button-nav ul',
-			anchorBuilder: function (nr,item) {
-				return '<li><a href="#' + nr + '"></a></li>';
+			anchorBuilder: function (nr, item) {
+				return '<li><a href="#' + nr + '"><div class="sr-only">slide ' + nr + '</div></a></li>';
 			}
 		},
 		swipe: true

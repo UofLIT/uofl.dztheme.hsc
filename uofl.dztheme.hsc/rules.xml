@@ -401,14 +401,7 @@
 							<xsl:copy-of select="./a/@*"/>
 							<xsl:element name="span">
 								<xsl:attribute name="class">date</xsl:attribute>
-								<xsl:choose>
-									<xsl:when test="$portletNews">
-										<xsl:copy-of select="./span/text()"/>
-									</xsl:when>
-									<xsl:otherwise>
-										<xsl:copy-of select="./a/span/text()"/>
-									</xsl:otherwise>
-								</xsl:choose>
+								<xsl:copy-of select=".//span/text()"/>
 							</xsl:element>
 							<xsl:copy-of select="./a/text()"/>
 						</xsl:element>
@@ -686,6 +679,7 @@
 	<notheme css:if-content="body.template-useractions" />
 	<notheme css:if-content="body.template-manage-elements" />
 	<notheme css:if-content="body.template-plone-portlet-collection-collection" />
+	<notheme css:if-content="body.template-content-checkout" />
 	<notheme if-path="folder_rename_form" />
 	<notheme if-path="folder_constraintypes_form" />
 	<notheme css:if-content="#edit-bar" if="$preview_mode != 'True'" />
@@ -830,9 +824,7 @@
 							</xsl:element>
 							<xsl:element name="div">
 								<xsl:attribute name="class">account-collapse collapse</xsl:attribute>
-								<xsl:attribute name="id">
-									account-dropdown-<xsl:value-of select="position()"/>
-								</xsl:attribute>
+								<xsl:attribute name="id">account-dropdown-<xsl:value-of select="position()"/></xsl:attribute>
 								<xsl:element name="ul">
 									<xsl:choose>
 										<xsl:when test="$siteTemplate = 'medicine' and position() = '2'">
@@ -960,9 +952,7 @@
 			<before css:theme-children=".hero-content .hero-inner">
 				<xsl:element name="div">
 					<xsl:attribute name="class">hero-image</xsl:attribute>
-					<xsl:attribute name="style">
-						background-image:url(<xsl:value-of select="//*[@id='hero-rows']//*[contains(@class,'hero-image')][1]//img/@src"/>);
-					</xsl:attribute>
+					<xsl:attribute name="style">background-image:url(<xsl:value-of select="//*[@id='hero-rows']//*[contains(@class,'hero-image')][1]//img/@src"/>);</xsl:attribute>
 					<xsl:if test="//*[@id='hero-rows']//*[contains(@class,'hero-panel')][1]">
 						<xsl:element name="div">
 							<xsl:attribute name="class">hero-panel</xsl:attribute>
@@ -1003,7 +993,7 @@
 						no right theme
 			end of checks
 		-->
-		<rules css:if-content="#hero-rows .portlet-static-config">
+		<rules if-content="//div[@id='hero-rows']/*[contains(@class,'portlet-static-config') or contains(@class,'portlet-bootstraprow-config')]">
 			<!-- check for main homepage -->
 			<rules if="$pageTemplate/text() = 'homepage'">
 				<theme href="page-homepage.html" />
@@ -1056,9 +1046,7 @@
 							<xsl:for-each select="//*[@id='portal-column-one']//*[contains(@class,'portlet-static-focal')]">
 								<xsl:element name="div">
 									<xsl:attribute name="class">span4</xsl:attribute>
-									<xsl:attribute name="style">
-										background-image:url('<xsl:value-of select="./dd//img/@src"/>')
-									</xsl:attribute>
+									<xsl:attribute name="style">background-image:url('<xsl:value-of select="./dd//img/@src"/>')</xsl:attribute>
 									<xsl:element name="div">
 										<xsl:attribute name="class">wrapper</xsl:attribute>
 										<xsl:copy-of select="./dd/*"/>
@@ -1084,7 +1072,7 @@
 						<xsl:for-each select="//*[@id='portal-column-two']/div[not(contains(./@class,'managePortletsLink'))]/dl">
 							<xsl:choose>
 								<xsl:when test="contains(./@class,'call-to-action')"></xsl:when>
-								<xsl:when test="contains(./@class, 'News')">
+								<xsl:when test="contains(./@class, 'News') or contains(./@class, 'collection-news')">
 									<xsl:call-template name="portlet-news">
 										<xsl:with-param name="portlet" select="."/>
 										<xsl:with-param name="portletClass">
@@ -1095,7 +1083,7 @@
 										</xsl:with-param>
 									</xsl:call-template>
 								</xsl:when>
-								<xsl:when test="contains(./@class, 'feedmixer') or contains(./@class, 'Rss')">
+								<xsl:when test="contains(./@class, 'feedmixer') or contains(./@class, 'Rss') or contains(./@class, 'Collection')">
 									<xsl:call-template name="portlet-news">
 										<xsl:with-param name="portlet" select="."/>
 										<xsl:with-param name="portletClass">
@@ -1167,6 +1155,10 @@
 										</xsl:attribute>
 										<xsl:element name="i">
 											<xsl:attribute name="class">glyphicon glyphicon-chevron-right</xsl:attribute>
+											<xsl:element name="div">
+												<xsl:attribute name="class">sr-only</xsl:attribute>
+												<xsl:text>Show</xsl:text>
+											</xsl:element>
 										</xsl:element>
 									</xsl:element>
 									<xsl:element name="a">
@@ -1191,6 +1183,10 @@
 									<xsl:element name="a" use-attribute-sets="a-dropdown-toggle">
 										<xsl:element name="i">
 											<xsl:attribute name="class">glyphicon glyphicon-chevron-right</xsl:attribute>
+											<xsl:element name="div">
+												<xsl:attribute name="class">sr-only</xsl:attribute>
+												<xsl:text>Show</xsl:text>
+											</xsl:element>
 										</xsl:element>
 									</xsl:element>
 									<xsl:element name="a">
@@ -1305,6 +1301,10 @@
 										</xsl:attribute>
 										<xsl:element name="i">
 											<xsl:attribute name="class">glyphicon glyphicon-chevron-right</xsl:attribute>
+											<xsl:element name="div">
+												<xsl:attribute name="class">sr-only</xsl:attribute>
+												<xsl:text>Show</xsl:text>
+											</xsl:element>
 										</xsl:element>
 									</xsl:element>
 									<xsl:element name="a">
@@ -1333,6 +1333,10 @@
 									<xsl:element name="a" use-attribute-sets="a-dropdown-toggle">
 										<xsl:element name="i">
 											<xsl:attribute name="class">glyphicon glyphicon-chevron-down</xsl:attribute>
+											<xsl:element name="div">
+												<xsl:attribute name="class">sr-only</xsl:attribute>
+												<xsl:text>Show</xsl:text>
+											</xsl:element>
 										</xsl:element>
 									</xsl:element>
 									<xsl:element name="ul">
@@ -1489,6 +1493,10 @@
 										<xsl:text>Navigation </xsl:text>
 										<xsl:element name="i">
 											<xsl:attribute name="class">glyphicon glyphicon-chevron-right</xsl:attribute>
+											<xsl:element name="div">
+												<xsl:attribute name="class">sr-only</xsl:attribute>
+												<xsl:text>Show</xsl:text>
+											</xsl:element>
 										</xsl:element>
 									</xsl:element>
 								</xsl:element>
