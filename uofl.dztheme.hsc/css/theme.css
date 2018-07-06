@@ -473,6 +473,13 @@ footer.grey .dropdown-menu > li > a { font-size:10px; line-height:1.7; padding:3
 .med-hero,
 .med-hero .slide,
 .med-hero .caroufredsel_wrapper { height:448px !important; }
+/* fix for Chrome bug, scrolls to slides on transition */
+.med-hero-wrapper::before {
+	content: '';
+	position:absolute;
+	width:100%;
+	height:100%;
+}
 
 .landing-page .med-hero .container { width:auto; }
 .landing-page .med-hero .med-hero-nav .container { margin:0 0.97em; }

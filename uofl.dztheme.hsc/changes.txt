@@ -29,3 +29,4 @@
 1.1.9	Fixed ADA support
 	remove Google+
 1.1.10	Changed search form to Cludo
+1.1.11	Fixed Google scroll bug
