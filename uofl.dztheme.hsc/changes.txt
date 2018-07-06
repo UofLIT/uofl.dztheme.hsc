@@ -28,3 +28,4 @@
 1.1.8	cleaned up white space in attributes
 1.1.9	Fixed ADA support
 	remove Google+
+1.1.10	Changed search form to Cludo

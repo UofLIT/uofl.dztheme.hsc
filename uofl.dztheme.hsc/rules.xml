@@ -726,7 +726,7 @@
 
 		<!-- script tags go at the end before the theme defined -->
 		<drop css:theme="body > script.noscript" />
-		<before content="/html/head/script[not(contains(@src, 'respond.min.js')) and not(contains(@src, '/bootstrap.js')) and contains(@src, 'p4basetheme')] | /html/head/script[not(@src) and not(contains(text(), 'datepicker'))]" theme="/html/body/script[2]" />
+		<before content="/html/head/script[not(contains(@src, 'respond.min.js')) and not(contains(@src, '/bootstrap.js')) and contains(@src, 'p4basetheme')] | /html/head/script[not(@src) and not(contains(text(), 'datepicker'))] | /html/head/script[contains(@src, 'cludo')]" theme="/html/body/script[2]" />
 		<after content="/html/head/script[contains(@src, 'flowplayer')] | /html/head/script[contains(@src, 'typekit')]" theme="/html/head/*[last()]" />
 		<!-- delete carousel JS if not needed -->
 		<drop if-not-content="//div[starts-with(@id, 'carousel-')]" css:theme="script.carouseljs" />
@@ -888,7 +888,7 @@
 			</xsl:element>
 		</replace>
 
-		<!-- insert lowerbar search form -->
+		<!-- insert lowerbar search form >
 		<replace css:theme="#lowerbar form.search">
 			<xsl:element name="form">
 				<xsl:attribute name="class">search</xsl:attribute>
@@ -913,7 +913,7 @@
 					</xsl:for-each>
 				</xsl:element>
 			</xsl:element>
-		</replace>
+		</replace -->
 
 		<!-- masthead portlet items -->
 		<replace css:theme="#masthead-nav" css:content="#masthead-nav" />
