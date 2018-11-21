@@ -1,0 +1,35 @@
+1.0.0 Robert's final version
+1.0.1 Changed Tabbed Pages to be able to use Bootstrap Row instead of Static Text Portlet
+1.0.2 Changed theme.js to build landing page carousel from images found in ./images/banners
+1.0.3 Added support for portlets with "omit border" set
+1.0.4 Added support for minimal portlets
+1.0.5 Added fb pages width auto support script to theme.js
+1.0.6 Added image captioning and "full size" viewing. Images must have class "caption" and have an alt or title attribute.
+1.0.7 Changed hero banner to not show a title if the title and filename are the same
+1.0.8 Fixed bug in rules.xml where XPath was selecting more than one config variable, now only the top-most is selected
+	Fixed Main Logo XPath that didn't select text nodes as well
+	Due to base theme change, changed scripts to use jQuery instead of jqbs
+1.0.9 jQuery compatibility fixes: FullCalendar 1.6.2 (calendar.js); FancyBox 2.1.5 (plugins.js
+1.0.10 Hero Banner now looks for 'hero' sized images which must be set in @@imaging-controlpanel
+1.1	Changed nav to use handlebars templates. Code added to theme.js
+1.1.1	Changed hr background, removed patern to work on any background
+1.1.2	Fixed JXON code for nav to work in IE9
+1.1.3	Updated norules for new static text portlet page
+	Added random hero banner option
+	Added jQuery to remove rssmix links
+1.1.4	Added hero options for bgcolor, hpos, vpos
+1.1.5 Added alert option to homepage
+	nav.xml only loaded if no nav HTML
+	moved config.js into theme
+1.1.6 Added config.css into theme
+1.1.7	Made hero banner options (from 1.1.4) accepted on first line of description
+	moved form help text
+	added table of contents support
+1.1.8	cleaned up white space in attributes
+1.1.9	Fixed ADA support
+	remove Google+
+1.1.10	Changed search form to Cludo
+1.1.11	Fixed Google scroll bug
+1.1.12	Cludo search
+	small updates to enable more Bootstrap row usage instead of Static Text portlets
+	new view for bio pages for directory script
