@@ -685,12 +685,26 @@
 	<notheme css:if-content="#edit-bar" if="$preview_mode != 'True'" />
 	<notheme if="$ajax_load" />
 
+	<rules if="$bio-info">
+		<theme href="bio-info.xml" />
+		<replace
+			theme-children="html/body/div[@id='bio-picture']"
+			content="//div[@id='portal-column-one']/div/dl[contains(@class, 'portlet-static-bio-picture')]/dd//img"/>
+		<replace
+			theme-children="html/body/div[@id='bio-contact']"
+			content="//div[@id='portal-column-one']/div/dl[contains(@class, 'portlet-static-bio-contact')]/dd/*[not(contains(@class,'portletBottom'))]"/>
+		<replace
+			theme-children="html/body/div[@id='bio-ulp']"
+			content="//div[@id='portal-column-one']/div/dl[contains(@class, 'portlet-static-bio-ulp')]/dd/*[not(contains(@class,'portletBottom'))]"/>
+		<replace
+			theme-children="html/body/div[@id='bio']"
+			content-children="//div[@id='content-core']/div"/>
+	</rules>
+
 	<!-- this rules block is always executed -->
-	<rules>
+	<rules if-not="$bio-info">
 		<!-- login screen adjust -->
 		<drop css:theme=".hero-content > .hero-inner, #breadcrumb-social" if-path="login" />
-
-		<theme href="page-inside.html" />
 
 		<!-- drop the static resource links of the theme -->
 		<drop theme="/html/head/style" />
@@ -994,6 +1008,7 @@
 			end of checks
 		-->
 		<rules if-content="//div[@id='hero-rows']/*[contains(@class,'portlet-static-config') or contains(@class,'portlet-bootstraprow-config')]">
+
 			<!-- check for main homepage -->
 			<rules if="$pageTemplate/text() = 'homepage'">
 				<theme href="page-homepage.html" />
@@ -1544,6 +1559,7 @@
 			</rules>
 			<theme href="page-inside-noright.html" />
 		</rules>
+		<theme href="page-inside.html" />
 
 		<!-- inside-pages portlet columns -->
 		<drop css:theme-children=".med-sidebars" />

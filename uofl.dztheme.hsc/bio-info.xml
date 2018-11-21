@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="bio-picture"></div>
+		<div id="bio-contact"></div>
+		<div id="bio-ulp"></div>
+		<div id="bio"></div>
+	</body>
+</html>

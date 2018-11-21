@@ -30,3 +30,6 @@
 	remove Google+
 1.1.10	Changed search form to Cludo
 1.1.11	Fixed Google scroll bug
+1.1.12	Cludo search
+	small updates to enable more Bootstrap row usage instead of Static Text portlets
+	new view for bio pages for directory script
