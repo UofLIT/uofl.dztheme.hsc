@@ -39,7 +39,7 @@ if (!String.prototype.endsWith)
 
 	var base = $('base').attr('href');
 	var $body = $(document.body);
-	var $documentationPortlet = $('.portlet-static-documentation .portletItem');
+	var $documentationPortlet = $('.portlet-static-documentation .portletItem, .portlet-bootstraprow-documentation');
 	var heromanagerPath  = '/++contextportlets++uofl.heromanager/';
 	var leftPortletsPath = '/++contextportlets++plone.leftcolumn/';
 
