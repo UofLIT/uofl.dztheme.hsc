@@ -105,7 +105,7 @@
 					<div class="span6">
 						<nav class="nav-collapse collapse med-nav-collapse">
 							<div class="visible-tablet visible-phone dropdown">
-								<a class="btn btn-small hidden-phone" data-toggle="dropdown" data-target=".tablet-search"><i class="glyphicon glyphicon-search"><div class="sr-only">Search</div></i></a>
+								<a class="btn btn-small hidden-phone" data-toggle="dropdown" data-target=".tablet-search"><i class="glyphicon glyphicon-search"><span class="sr-only">Search</span></i></a>
 								<div class="tablet-search visible-phone">
 									<form class="search" id="mobile-search-form">
 										<label for="search-box">Search UofL</label>
@@ -538,65 +538,7 @@
 </header>
 
 <div class="page-wrapper homepage-wrapper">
-	<div id="alert" class="container">
-		<div class="row">
-			<div class="span12">
-				<section id="emergency_alert">
-					<div class="alert alert-warning" role="alert">
-						<div class="media">
-							<div class="media-left">
-								<i class="fa fa-exclamation-triangle fa-3x"></i>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading">University Closed</h4>
-								<p>
-									<strong>Oct 12, 2015 05:25AM</strong> : The University of
-									Louisville classes and offices will operate on a delayed
-									schedule beginning at xx a.m. All classes that end before xx
-									a.m. will be canceled. Students who normally would be in a class
-									at xx a.m. should go to that class at that time. Classes
-									beginning at or after xx a.m. will begin and end at their
-									regular times.
-								</p>
-								<p>Offices will open at xx a.m.</p>
-								<p>
-									Visit www.UofLphysicians.com for closings or delays of the
-									practices or clinics.
-									<a href="#">More info <i class="fa fa-arrow-circle-o-right"></i></a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section id="weather_alert">
-					<div class="alert alert-warning" role="alert">
-						<div class="media">
-							<div class="media-left">
-								<i class="fa fa-exclamation-triangle fa-3x"></i>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading">University Closed</h4>
-								<p>
-									<strong>Oct 12, 2015 05:25AM</strong> : The University of
-									Louisville classes and offices will operate on a delayed
-									schedule beginning at xx a.m. All classes that end before xx
-									a.m. will be canceled. Students who normally would be in a class
-									at xx a.m. should go to that class at that time. Classes
-									beginning at or after xx a.m. will begin and end at their
-									regular times.
-								</p>
-								<p>Offices will open at xx a.m.</p>
-								<p>
-									Visit www.UofLphysicians.com for closings or delays of the
-									practices or clinics.
-									<a href="#">More info <i class="fa fa-arrow-circle-o-right"></i></a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-		</div>
+	<div id="alert" class="container" style="display: block;">
 	</div>
 
 	<div class="hero-content">
@@ -725,6 +667,15 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div id="hsc-banner">
+		<div data-widget-host="hsc-banner">
+			<script type="text/props">
+				{ "href": "test"}
+			</script>
+		</div>
+		<script async src="//louisville.edu/hsc/js/hsc-banner.js"></script>
 	</div>
 
 	<div class="container cta">

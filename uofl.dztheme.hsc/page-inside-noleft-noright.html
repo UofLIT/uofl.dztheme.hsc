@@ -104,7 +104,7 @@
 					<div class="span6">
 						<nav class="nav-collapse collapse med-nav-collapse">
 							<div class="visible-tablet visible-phone dropdown">
-								<a class="btn btn-small hidden-phone" data-toggle="dropdown" data-target=".tablet-search"><i class="glyphicon glyphicon-search"><div class="sr-only">Search</div></i></a>
+								<a class="btn btn-small hidden-phone" data-toggle="dropdown" data-target=".tablet-search"><i class="glyphicon glyphicon-search"><span class="sr-only">Search</span></i></a>
 								<div class="tablet-search visible-phone">
 									<form class="search" id="mobile-search-form">
 										<label for="search-box">Search UofL</label>
@@ -577,21 +577,12 @@
 
 	<a class="skip-marker" name="view-main-content"></a>
 
-	<div class="container" id="breadcrumb-social">
+	<div class="container" id="title-social">
 		<div class="row-fluid">
-			<div class="span12">
+			<div class="span8">
 				<h1 class="med-main-section-title">Department Title</h1>
 			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span6">
-				<ul class="breadcrumb">
-					<li><a href="#">Home</a> <span class="divider">/</span> </li>
-					<li><a href="#">Name</a> <span class="divider">/</span> </li>
-					<li class="active"><a href="#">Other Name</a> </li>
-				</ul>
-			</div>
-			<div class="span6">
+			<div class="span4">
 				<ul class="social-icons-horizontal">
 					<li>
 						<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Flouisville.edu%2Fmedschool&amp;width=100&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
@@ -607,12 +598,114 @@
 			</div>
 		</div>
 	</div>
+	
+	<div id="alert" class="container" style="display: block;"></div>
 
 	<div class="container main-content" id="main-content">
-		<h1 class="hidden-phone">This is a title for an Inside Page with no left or right columns</h1>
+		<nav class="top-nav">
+			<header class="visible-phone">
+				<h1><a href="#top-nav-collapse" class="chevron-collapse collapsed" data-toggle="collapse">Navigation <i class="glyphicon glyphicon-chevron-right"></i></a></h1>
+			</header>
+			<ul class="nav nav-pills collapse" id="top-nav-collapse">
+				<li class="selected"><a href="#"><span>Home</span></a></li>
+				<li class="folder visible-phone">
+					<a class="folder-toggle collapsed pull-right" data-toggle="collapse" href="#folder2"><i class="glyphicon glyphicon-chevron-right"></i></a>
+					<a class="folder-link" href="#">Welcome</a>
+					<ul class="nav nav-pills nav-collapse collapse" id="folder2">
+						<li><a href="#"><span>Director's Welcome Note</span></a></li>
+						<li><a href="#" class="hasChildrens"><span>Director's Info</span></a></li>
+						<li><a href="#"><span>Mission Statement</span></a></li>
+					</ul>
+				</li>
+				<li class="dropdown hidden-phone"><a href="#">Welcome</a><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><span>Director's Welcome Note</span></a></li>
+						<li><a href="#" class="hasChildrens"><span>Director's Info</span></a></li>
+						<li><a href="#"><span>Mission Statement</span></a></li>
+					</ul>
+				</li>
+				<li class="folder visible-phone"><a class="folder-toggle collapsed pull-right" data-toggle="collapse" href="#folder3"><i class="glyphicon glyphicon-chevron-right"></i></a><a class="folder-link" href="#">Residents</a>
+					<ul class="nav nav-pills nav-collapse collapse" id="folder3">
+						<li><a href="#"><span>Class of 2016</span></a></li>
+						<li><a href="#"><span>Class of 2015</span></a></li>
+						<li><a href="#"><span>Class of 2014</span></a></li>
+						<li><a href="#"><span>Alumni 2013</span></a></li>
+					</ul>
+				</li>
+				<li class="dropdown hidden-phone"><a href="#">Residents</a><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><span>Class of 2016</span></a></li>
+						<li><a href="#"><span>Class of 2015</span></a></li>
+						<li><a href="#"><span>Class of 2014</span></a></li>
+						<li><a href="#"><span>Alumni 2013</span></a></li>
+					</ul>
+				</li>
+				<li class="plain"><a href="#"><span>Our Team</span></a></li>
+				<li class="folder visible-phone"><a class="folder-toggle collapsed pull-right" data-toggle="collapse" href="#folder5"><i class="glyphicon glyphicon-chevron-right"></i></a><a class="folder-link" href="#">Program Info</a>
+					<ul class="nav nav-pills nav-collapse collapse" id="folder5">
+						<li><a href="#"><span>Program Goals</span></a></li>
+						<li><a href="#"><span>Curriculum</span></a></li>
+						<li><a href="#"><span>Benefits</span></a></li>
+						<li><a href="#"><span>How to Apply</span></a></li>
+						<li><a href="#"><span>Our Policies</span></a></li>
+					</ul>
+				</li>
+				<li class="dropdown hidden-phone"><a href="#">Program Info</a><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><span>Program Goals</span></a></li>
+						<li><a href="#"><span>Curriculum</span></a></li>
+						<li><a href="#"><span>Benefits</span></a></li>
+						<li><a href="#"><span>How to Apply</span></a></li>
+						<li><a href="#"><span>Our Policies</span></a></li>
+					</ul>
+				</li>
+				<li class="folder visible-phone"><a class="folder-toggle collapsed pull-right" data-toggle="collapse" href="#folder6"><i class="glyphicon glyphicon-chevron-right"></i></a><a class="folder-link" href="#">Our Community</a>
+					<ul class="nav nav-pills nav-collapse collapse" id="folder6">
+						<li><a href="#"><span>Location</span></a></li>
+						<li><a href="#"><span>Quality of Life</span></a></li>
+						<li><a href="#"><span>Urbanspoon Louisville</span></a></li>
+						<li><a href="#"><span>Louisville Home Finder</span></a></li>
+						<li><a href="#"><span>Arts, Entertainment &amp; Recreation</span></a></li>
+					</ul>
+				</li>
+				<li class="dropdown hidden-phone"><a href="#">Our Community</a><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><span>Location</span></a></li>
+						<li><a href="#"><span>Quality of Life</span></a></li>
+						<li><a href="#"><span>Urbanspoon Louisville</span></a></li>
+						<li><a href="#"><span>Louisville Home Finder</span></a></li>
+						<li><a href="#"><span>Arts, Entertainment &amp; Recreation</span></a></li>
+					</ul>
+				</li>
+				<li class="folder visible-phone"><a class="folder-toggle collapsed pull-right" data-toggle="collapse" href="#folder7"><i class="glyphicon glyphicon-chevron-right"></i></a><a class="folder-link" href="#">Resources</a>
+					<ul class="nav nav-pills nav-collapse collapse" id="folder7">
+						<li><a href="#"><span>OB List</span></a></li>
+						<li><a href="#"><span>New Innovations</span></a></li>
+						<li><a href="#"><span>Family &amp; Geriatric Medicine Library Guide</span></a></li>
+						<li><a href="#"><span>Family Medicine Interst Group (FMIG)</span></a></li>
+						<li><a href="#"><span>Academic Chronic Care Collaborative</span></a></li>
+					</ul>
+				</li>
+				<li class="dropdown hidden-phone"><a href="#">Resources</a><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="#"><span>OB List</span></a></li>
+						<li><a href="#"><span>New Innovations</span></a></li>
+						<li><a href="#"><span>Family &amp; Geriatric Medicine Library Guide</span></a></li>
+						<li><a href="#"><span>Family Medicine Interst Group (FMIG)</span></a></li>
+						<li><a href="#"><span>Academic Chronic Care Collaborative</span></a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		
+		<ul id="breadcrumb" class="breadcrumb">
+			<li><a href="#">Home</a> <span class="divider">/</span> </li>
+			<li><a href="#">Name</a> <span class="divider">/</span> </li>
+			<li class="active"><a href="#">Other Name</a> </li>
+		</ul>
 		<div class="row-fluid">
 			<div class="span12 content">
-				<h1 class="visible-phone">This is a title for an Inside Page with no left or right columns</h1>
+				<h1 id="content-title">This is a title for an Inside Page with no left or right columns</h1>
 
 				<div class="description">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non vestibulum enim. Praesent vitae pretium odio. Pellentesque id odio eu est vehicula posuere ut eget risus. Sed quis euismod odio. Vestibulum lacinia lorem id odio.</p>
@@ -960,6 +1053,7 @@
 <script src="js/responsive-tabs-2.3.2.js" type="text/javascript"></script>
 <script type="text/javascript">fakewaffle.responsiveTabs(['phone']);</script>
 <script type="text/javascript" class="delete">var jqbs = jQuery.noConflict();</script>
+<script src="js/makeCarousel.js" class="carouseljs" type="text/javascript"></script>
 <script src="js/jquery.kwicks.min.js" type="text/javascript"></script>
 <script src="js/jquery.carouFredSel-6.2.1-packed.js" type="text/javascript"></script>
 <script src="js/jquery.touchSwipe.min.js" type="text/javascript"></script>

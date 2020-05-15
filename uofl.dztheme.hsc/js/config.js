@@ -58,8 +58,6 @@ if (!String.prototype.endsWith)
 		TYPE |= PAGE;
 	}
 
-
-
 	var isConfigPortlet = false;
 	var isNewConfig = false,
 		isNewBioPicture = false;
@@ -82,14 +80,15 @@ if (!String.prototype.endsWith)
 	}
 
 	function makeConfigForm() {
+		var home = $('#portal-globalnav > li:first-child > a').attr('href');
 		var $content = $('#content');
 		var $heading = $content.find('.documentFirstHeading');
 		$content.find('.documentDescription').hide();
 
-		var configs = {};
+		var config = {};
 		if (TYPE & PAGE) {
 			$heading.text('Configure Page');
-			$.extend(configs, {
+			$.extend(config, {
 				'page-template': {
 					label: 'Template',
 					value: '',
@@ -122,7 +121,7 @@ if (!String.prototype.endsWith)
 		else if (TYPE & FOLDER) {
 			if (TYPE & SITE) {
 				$heading.text('Configure Site');
-				$.extend(configs, {
+				$.extend(config, {
 					'site-template': {
 						label: 'Site Template',
 						value: '',
@@ -140,7 +139,7 @@ if (!String.prototype.endsWith)
 				$heading.text('Configure Folder');
 			}
 
-			$.extend(configs, {
+			$.extend(config, {
 				'department-title': {
 					label: 'Department Title',
 					help : 'adds a title above the breadcrumb on all pages except the Home Page and Landing Pages',
@@ -154,6 +153,11 @@ if (!String.prototype.endsWith)
 						top: 'Show'
 					},
 					type: 'checkbox'
+				},
+				'nav-path': {
+					label: '',
+					type: 'hidden',
+					value: location.href.substring(home.length + 1, location.href.indexOf(heromanagerPath)),
 				},
 				'main-logo' : {
 					label: 'Main Logo',
@@ -170,43 +174,43 @@ if (!String.prototype.endsWith)
 		}
 
 
-		var $configs = !isNewConfig ? $('.portlet-static-config:eq(0) i[class], .portlet-bootstraprow-config:eq(0) i[class]') : $();
-		var $allConfigs = $('.portlet-static-config i[class], .portlet-bootstraprow-config i[class]');
+		var $settings = !isNewConfig ? $('.portlet-static-config, .portlet-bootstraprow-config').eq(0).find('i[class]') : $();
+		var $allSettings = $('.portlet-static-config i[class], .portlet-bootstraprow-config i[class]');
 		var $configForm = $('<form name="config">');
 		var $form = $('#zc\\.page\\.browser_form');
 		$form.find('legend, .field').hide();
 
 		document.getElementById('form.header').value = 'config';
 
-		for (var config in configs) {
-			var $config = $configs.filter('.' + config);
-			if ($config.length) {
-				configs[config].value = $.trim($config.html());
+		for (var setting in config) {
+			var $setting = $settings.filter('.' + setting);
+			if ($setting.length) {
+				config[setting].value = $.trim($setting.html());
 			}
 
-			if (!configs[config].placeholder && (TYPE & FOLDER)) {
-				var $nextConfig = $allConfigs.filter('.' + config);
+			if (!config[setting].placeholder && (TYPE & FOLDER)) {
+				var $nextSetting = $allSettings.filter('.' + setting);
 				//if ($config.length) {
-					configs[config].placeholder = $.trim($nextConfig.not($config[0]).first().html() || 'none' );
+					config[setting].placeholder = $.trim($nextSetting.not($setting[0]).first().html() || 'none' );
 				//}
 				//else {
 				//	configs[config].placeholder = $.trim($nextConfig.first().html() || 'none' );
 				//}
 			}
-			$configForm.append('<h3>' + configs[config].label + '</h3>');
-			var $wrapper = $('<div>').addClass(config);
-			if (configs[config].help) {
-				$wrapper.append('<span class="help-block">' + configs[config].help + '</span>');
+			config[setting].label && $configForm.append('<h3>' + config[setting].label + '</h3>');
+			var $wrapper = $('<div>').addClass(setting);
+			if (config[setting].help) {
+				$wrapper.append('<span class="help-block">' + config[setting].help + '</span>');
 			}
-			switch (config) {
+			switch (setting) {
 				case 'page-template':
 					var $row = $('<div class="row-fluid">');
-					for (var template in configs[config].options) {
+					for (var template in config[setting].options) {
 						$row.append(
 							$('<label class="span2">').append(
-								$('<input type="radio" name="page-template">').prop('checked', template == configs['page-template'].value).val(template),
+								$('<input type="radio" name="page-template">').prop('checked', template == config['page-template'].value).val(template),
 								'<img src="++theme++uofl.dztheme.hsc/img/config/' + template + '.jpg" />',
-								document.createTextNode(configs[config].options[template])
+								document.createTextNode(config[setting].options[template])
 							)
 						)
 					}
@@ -214,14 +218,13 @@ if (!String.prototype.endsWith)
 					// add special homepage option
 					$wrapper.append($row).append(
 						$('<label>').append(
-							$('<input type="radio" name="page-template" value="homepage">').prop('checked', 'homepage' == configs['page-template'].value).on('click', function () {
+							$('<input type="radio" name="page-template" value="homepage">').prop('checked', 'homepage' == config['page-template'].value).on('click', function () {
 								if (typeof isFrontPage === 'undefined') {
 									// see if this is a root page
 									var here = $('#portal-globalnav > li.selected > a:last-child').attr('href') || false;
 									if (here) {
 										// only get once
 										if (typeof frontPageGet === 'undefined') {
-											var home = $('#portal-globalnav > li:first-child > a').attr('href');
 											var $this = $(this);
 											frontPageGet = $.get(home + '/getDefaultPage').done(function (defaultPage) {
 												isFrontPage = defaultPage === here.substring(home.length + 1);
@@ -246,22 +249,22 @@ if (!String.prototype.endsWith)
 					);
 					break;
 				default:
-					if (configs[config].options) {
-						if (configs[config].type && configs[config].type == 'checkbox') {
-							for (var value in configs[config].options) break;
+					if (config[setting].options) {
+						if (config[setting].type && config[setting].type == 'checkbox') {
+							for (var value in config[setting].options) break;
 							$wrapper.append(
 								$('<label class="checkbox">').append(
-									$('<input type="checkbox">').attr({ name: config }).val(value).prop('checked', value == configs[config].value),
-									document.createTextNode(configs[config].options[value])
+									$('<input type="checkbox">').attr({ name: setting }).val(value).prop('checked', value == config[setting].value),
+									document.createTextNode(config[setting].options[value])
 								)
 							);
 						}
 						else {
 							$wrapper.append(
-								$('<select>', { name: config }).append(
-									$.map(configs[config].options, function (text, value) {
+								$('<select>', { name: setting }).append(
+									$.map(config[setting].options, function (text, value) {
 										var option = new Option(text, value);
-										if (value == configs[config].value) {
+										if (value == config[setting].value) {
 											option.selected = 'selected';
 										}
 										return option;
@@ -271,8 +274,8 @@ if (!String.prototype.endsWith)
 						}
 					}
 					else {
-						var $element = configs[config].type && (configs[config].type == 'textarea') ? $('<textarea>') : $('<input type="text">');
-						$wrapper.append($element.attr({ name: config, placeholder: configs[config].placeholder }).val(configs[config].value));
+						var $element = config[setting].type && (config[setting].type == 'textarea') ? $('<textarea>') : $('<input type="text">');
+						$wrapper.append($element.attr({ name: setting, type: config[setting].type, placeholder: config[setting].placeholder }).val(config[setting].value));
 					}
 			}
 
@@ -281,17 +284,17 @@ if (!String.prototype.endsWith)
 		$configForm.append($('.suppressVisualEditor').removeAttr('style'));
 
 		$configForm.find('textarea, input[type=text], input[type=radio], select').on('change', function () {
-			configs[this.name].value = this.value;
+			config[this.name].value = this.value;
 		});
 		$configForm.find('input[type=checkbox]').on('change', function () {
-			configs[this.name].value = this.checked ? this.value : '';
+			config[this.name].value = this.checked ? this.value : '';
 		});
 		
 		$form.on('submit', function (e) {
 			var value = '';
-			for (var config in configs) {
-				if ($.trim(configs[config].value)) {
-					value += '<i class="' + config + '">' + configs[config].value + '</i>\n';
+			for (var setting in config) {
+				if ($.trim(config[setting].value)) {
+					value += '<i class="' + setting + '">' + config[setting].value + '</i>\n';
 				}
 			}
 			$form[0].elements['form.text'].value = value || '&nbsp;';

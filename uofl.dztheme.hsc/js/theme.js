@@ -2002,11 +2002,17 @@ templates['tablist'] = template({"1":function(container,depth0,helpers,partials,
 		}
 	}
 })();
-/* alert */
+/* alert 
 (function ($) {
-	$('#alert .span12').load('//louisville.edu/alert/alert.html', function () {
+	$('#alert #global-alert').load('//louisville.edu/alert/alert.html', function () {
+		if ($.trim(this.textContent)) {
+			$('#alert').show();
+		}
+	});
+	$('#alert #local-alert').load('alert.html', function () {
 		if ($.trim(this.textContent)) {
 			$('#alert').show();
 		}
 	});
 })(jQuery);
+*/

@@ -16,7 +16,7 @@ only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5),
 only screen and (min-resolution: 144dpi) {
-	body { background-image:url('../img/redox_01@2x.jpg'); background-size:150px 150px; }
-	#masthead { background-image:url('../img/nosie_lines@2x.png'); background-size:147px 147px; }
+	body { background-image:url('../img/redox_01@2x.png'); background-size:150px 150px; }
+	#masthead { background-image:url('../img/noise_lines@2x.png'); background-size:147px 147px; }
 }
 

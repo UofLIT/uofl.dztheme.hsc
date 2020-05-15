@@ -22,6 +22,93 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template name="top-nav">
+		<xsl:param name="ul" />
+		<xsl:param name="depth" select="1" />
+		<xsl:param name="parent-id" />
+
+		<xsl:for-each select="$ul/li">
+			<xsl:choose>
+				<xsl:when test="contains(./a/@class,'hasChildrens')">
+					<xsl:variable name="id" select="concat($parent-id, '-', position())" />
+					<xsl:element name="li">
+						<xsl:attribute name="class">folder visible-phone<xsl:if test="contains(./@class,'selected')"> selected</xsl:if></xsl:attribute>
+						<xsl:element name="a">
+							<xsl:attribute name="class">folder-toggle collapsed pull-right</xsl:attribute>
+							<xsl:attribute name="data-toggle">collapse</xsl:attribute>
+							<xsl:attribute name="href">
+								<xsl:value-of select="concat('#folder', $id)"/>
+							</xsl:attribute>
+							<xsl:element name="i">
+								<xsl:attribute name="class">glyphicon glyphicon-chevron-right</xsl:attribute>
+								<xsl:element name="div">
+									<xsl:attribute name="class">sr-only</xsl:attribute>
+									<xsl:text>Show</xsl:text>
+								</xsl:element>
+							</xsl:element>
+						</xsl:element>
+						<xsl:element name="a">
+							<xsl:attribute name="class">folder-link</xsl:attribute>
+							<xsl:copy-of select="./a/@href"/>
+							<xsl:value-of select="./a/span"/>
+						</xsl:element>
+						<xsl:element name="ul">
+							<xsl:attribute name="class">nav nav-pills nav-collapse collapse</xsl:attribute>
+							<xsl:attribute name="id">
+								<xsl:value-of select="concat('folder', $id)"/>
+							</xsl:attribute>
+							<xsl:call-template name="top-nav">
+								<xsl:with-param name="ul" select="./ul" />
+								<xsl:with-param name="depth" select="$depth + 1" />
+								<xsl:with-param name="parent-id" select="$id" />
+							</xsl:call-template>
+						</xsl:element>
+					</xsl:element>
+					<xsl:if test="$depth = 1">
+						<xsl:element name="li">
+							<xsl:attribute name="class">dropdown hidden-phone</xsl:attribute>
+							<xsl:element name="a">
+								<xsl:copy-of select="./a/@href"/>
+								<xsl:value-of select="./a/span"/>
+							</xsl:element>
+							<xsl:element name="a" use-attribute-sets="a-dropdown-toggle">
+								<xsl:element name="i">
+									<xsl:attribute name="class">glyphicon glyphicon-chevron-down</xsl:attribute>
+									<xsl:element name="div">
+										<xsl:attribute name="class">sr-only</xsl:attribute>
+										<xsl:text>Show</xsl:text>
+									</xsl:element>
+								</xsl:element>
+							</xsl:element>
+							<xsl:element name="ul">
+								<xsl:attribute name="class">
+									<xsl:choose>
+										<xsl:when test="position() = last()">
+											<xsl:text>dropdown-menu pull-right</xsl:text>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:text>dropdown-menu</xsl:text>
+										</xsl:otherwise>
+									</xsl:choose>
+								</xsl:attribute>
+								<xsl:for-each select="./ul/li">
+									<xsl:element name="li">
+										<xsl:copy-of select="./a"/>
+									</xsl:element>
+								</xsl:for-each>
+							</xsl:element>
+						</xsl:element>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:copy-of select="."/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+
+
+
 	<xsl:template name="portlet-rows">
 		<!-- match id of portal column -->
 		<xsl:param name="portal-column" />
@@ -408,21 +495,23 @@
 					</xsl:element>
 				</xsl:for-each>
 			</xsl:element>
-			<xsl:element name="footer">
-				<xsl:element name="a">
-					<xsl:attribute name="href">
-						<xsl:value-of select="$portlet/dd[contains(@class,'portletFooter')]//a/@href"/>
-					</xsl:attribute>
-					<xsl:choose>
-						<xsl:when test="$portletNews">
-							<xsl:text>More News</xsl:text>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:text>View More</xsl:text>
-						</xsl:otherwise>
-					</xsl:choose>
+			<xsl:if test="$portlet/dd[contains(@class,'portletFooter')]//a">
+				<xsl:element name="footer">
+					<xsl:element name="a">
+						<xsl:attribute name="href">
+							<xsl:value-of select="$portlet/dd[contains(@class,'portletFooter')]//a/@href"/>
+						</xsl:attribute>
+						<xsl:choose>
+							<xsl:when test="$portletNews">
+								<xsl:text>More News</xsl:text>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:text>View More</xsl:text>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:element>
 				</xsl:element>
-			</xsl:element>
+			</xsl:if>
 		</xsl:element>
 	</xsl:template>
 
@@ -529,6 +618,9 @@
 	<xsl:variable name="tabbedPageInitialTabName" select="(//*[@id='hero-rows']//i[@class='tabbed-page-initial-tab-name'])[1]" />
 	<xsl:variable name="showAlert" select="(//*[@id='hero-rows']//i[@class='show-alert'])[1]" />
 	<xsl:variable name="navigationLocation" select="(//*[@id='hero-rows']//i[@class='navigation-location'])[1]" />
+	<xsl:variable name="navPath" select="(//*[@id='hero-rows']//i[@class='nav-path'])[1]" />
+	<xsl:variable name="navRoot" select="//ul[@id='portal-globalnav']//li[a/@href=concat(//ul[@id='portal-globalnav']/li[1]/a/@href, '/', $navPath)]" />
+	
 	<xsl:variable name="landingPagePortletStart">
 		<xsl:choose>
 			<xsl:when test="$pageTemplate/text() = 'right-content-top-nav-homepage'">
@@ -704,7 +796,7 @@
 	<!-- this rules block is always executed -->
 	<rules if-not="$bio-info">
 		<!-- login screen adjust -->
-		<drop css:theme=".hero-content > .hero-inner, #breadcrumb-social" if-path="login" />
+		<drop css:theme=".hero-content > .hero-inner, #title-social" if-path="login" />
 
 		<!-- drop the static resource links of the theme -->
 		<drop theme="/html/head/style" />
@@ -927,14 +1019,20 @@
 					</xsl:for-each>
 				</xsl:element>
 			</xsl:element>
-		</replace -->
+		</replace>
+		<! -->
+
+		<!-- insert lowerbar search form -->
+		<replace css:theme="#lowerbar form.search" css:content="#search-form" />
+
+		
 
 		<!-- masthead portlet items -->
 		<replace css:theme="#masthead-nav" css:content="#masthead-nav" />
 		<replace css:theme="#lowerbar .social" css:content-children="#masthead-social" />
 
 		<!-- breadcrumbs -->
-		<replace css:theme-children="#breadcrumb-social .breadcrumb">
+		<replace css:theme-children="#breadcrumb">
 			<xsl:for-each select="//*[@id='portal-breadcrumbs']/span">
 				<xsl:if test="position() != 1">
 					<xsl:element name="li">
@@ -1018,6 +1116,17 @@
 				
 				<!-- carousel -->
 				<replace css:theme-children=".med-hero .med-hero-wrapper" css:content="#hero-rows .portlet-static-hero-slider .portletItem div.slide" />
+				
+				<replace css:if-content="#hero-rows .portlet-bootstraprow-hero-static" css:theme-children=".med-hero" css:content-children="#hero-rows .portlet-bootstraprow-hero-static" />
+
+				<drop css:if-content="#hero-rows .portlet-collection-banner" css:theme=".med-hero" />
+				<drop css:if-not-content="#hero-rows .portlet-collection-banner" css:theme="#hsc-banner" />
+				<drop css:if-not-content="#hero-rows .portlet-collection-banner" css:theme="#hsc-banner" />
+				<replace css:if-content="#hero-rows .portlet-collection-banner .portletItem a" css:theme-children="#hsc-banner script">
+					<xsl:text>{ "href": "</xsl:text>
+					<xsl:value-of select="//div[@id='hero-rows']/dl[contains(@class, 'portlet-collection-banner')]/dd[1]/a/@href"/>
+					<xsl:text>" }</xsl:text>
+				</replace>
 
 				<!-- kwicks hero content -->
 				<replace css:theme-children=".hero-content .hero-inner">
@@ -1146,7 +1255,7 @@
 
 				<!-- left-hand navigation -->
 				<before theme-children="//*[contains(@class,'med-landing-left')]//nav/header/h1/a">
-					<xsl:attribute name="href">.med-landing-left .left-nav-collapse</xsl:attribute>
+					<xsl:attribute name="href">#left-nav-collapse</xsl:attribute>
 				</before>
 				<replace css:theme-children=".landing-page nav > ul">
 					<xsl:element name="li">
@@ -1385,7 +1494,7 @@
 			<!-- $pageTemplate/text() = 'left-nav-homepage' or $pageTemplate/text() = 'top-nav-homepage' -->
 			<rules if="contains($pageTemplate/text(),'-homepage')">
 				<!-- add title -->
-				<replace css:theme-children="#breadcrumb-social h1" css:content-children="#parent-fieldname-title" />
+				<replace css:theme-children="#title-social h1" css:content-children="#parent-fieldname-title" />
 
 				<!-- insert carousel -->
 				<replace css:theme-children=".landing-page .med-hero .med-hero-wrapper" css:content="#hero-rows .portlet-static-hero-slider .portletItem div.slide" />
@@ -1488,61 +1597,100 @@
 				</replace>
 			</rules>
 
+			<!-- alert -->
+			<replace css:theme-children="#alert" css:content-children=".portlet-bootstraprow-alert" />
+
 			<!-- add department title -->
-			<drop if="not($departmentTitle) and not(contains($pageTemplate/text(),'-nav-homepage'))" theme="//*[@id='breadcrumb-social']/div[1]" />
-			<replace if-content="$departmentTitle" theme-children="//*[@id='breadcrumb-social']/div[1]/div/h1" content-children="$departmentTitle" />
+			<drop if="not($departmentTitle) and not(contains($pageTemplate/text(),'-nav-homepage'))" theme="//*[@id='title-social']/div[1]" />
+			<replace if-content="$departmentTitle" theme-children="//*[@id='title-social']/div[1]/div/h1">
+				<xsl:choose>
+					<xsl:when test="$navRoot">
+						<xsl:element name="a">
+							<xsl:attribute name="href">
+								<xsl:value-of select="$navRoot/a[1]/@href"/>
+							</xsl:attribute>
+							<xsl:value-of select="$departmentTitle" />
+						</xsl:element>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="$departmentTitle" />
+					</xsl:otherwise>
+				</xsl:choose>
+			</replace>
 
 			<!-- top-level navigation -->
-			<rules if="not($pageTemplate/text() = 'bio-page') and not($pageTemplate/text() = 'homepage') and not(contains($pageTemplate/text(), '-nav-homepage')) and $navigationLocation = 'top'">
-				<after css:theme="#breadcrumb-social">
-					<xsl:element name="div">
-						<xsl:attribute name="class">container normal-top-nav hidden-phone</xsl:attribute>
-						<xsl:element name="nav">
-							<xsl:element name="header">
-								<xsl:attribute name="class">visible-phone</xsl:attribute>
-								<xsl:element name="h1">
+			<rules if="not($pageTemplate/text() = 'homepage') and not(contains($pageTemplate/text(), '-nav-homepage'))">
+				<rules if-not="$navigationLocation = 'top'">
+					<drop css:theme="#main-content nav.top-nav" />
+				</rules>
+				<rules if="$navigationLocation = 'top'">
+					<rules if="$navRoot">
+							<!-- drop down -->
+							<before theme-children="//*[contains(@class,'med-landing-top')]//nav/header/h1/a">
+								<xsl:attribute name="href">#top-nav-collapse</xsl:attribute>
+							</before>
+							<replace css:theme-children="#main-content nav.top-nav > ul">
+								<xsl:element name="li">
 									<xsl:element name="a">
-										<xsl:attribute name="href">#top-nav-collapse</xsl:attribute>
-										<xsl:attribute name="class">chevron-collapse collapsed</xsl:attribute>
-										<xsl:attribute name="data-toggle">collapse</xsl:attribute>
-										<xsl:text>Navigation </xsl:text>
-										<xsl:element name="i">
-											<xsl:attribute name="class">glyphicon glyphicon-chevron-right</xsl:attribute>
-											<xsl:element name="div">
-												<xsl:attribute name="class">sr-only</xsl:attribute>
-												<xsl:text>Show</xsl:text>
+										<xsl:attribute name="href">
+											<xsl:value-of select="$navRoot/a[1]/@href"/>
+										</xsl:attribute>
+										<xsl:text>Home</xsl:text>
+									</xsl:element>
+								</xsl:element>
+								<xsl:call-template name="top-nav">
+									<xsl:with-param name="ul" select="$navRoot/ul" />
+									<xsl:with-param name="depth" select="1" />
+								</xsl:call-template>
+							</replace>
+						</rules>
+						<rules if-not="$navRoot">
+							<replace css:theme-children="#main-content nav">
+									<xsl:element name="header">
+										<xsl:attribute name="class">visible-phone</xsl:attribute>
+										<xsl:element name="h1">
+											<xsl:element name="a">
+												<xsl:attribute name="href">#top-nav-collapse</xsl:attribute>
+												<xsl:attribute name="class">chevron-collapse collapsed</xsl:attribute>
+												<xsl:attribute name="data-toggle">collapse</xsl:attribute>
+												<xsl:text>Navigation </xsl:text>
+												<xsl:element name="i">
+													<xsl:attribute name="class">glyphicon glyphicon-chevron-right</xsl:attribute>
+													<xsl:element name="div">
+														<xsl:attribute name="class">sr-only</xsl:attribute>
+														<xsl:text>Show</xsl:text>
+													</xsl:element>
+												</xsl:element>
 											</xsl:element>
 										</xsl:element>
 									</xsl:element>
-								</xsl:element>
-							</xsl:element>
-							<xsl:element name="ul">
-								<xsl:attribute name="id">top-nav-collapse</xsl:attribute>
-								<xsl:attribute name="class">nav nav-pills collapse top-nav-collapse</xsl:attribute>
-								<xsl:for-each select="//*[contains(@class,'NavigationTree')]/dd/ul/li">
-									<xsl:choose>
-										<xsl:when test="contains(./@class,'navTreeTopNode')">
-											<xsl:element name="li">
-												<xsl:element name="a">
-													<xsl:attribute name="href">
-														<xsl:value-of select=".//a/@href"/>
-													</xsl:attribute>
-													<xsl:text>Home</xsl:text>
-												</xsl:element>
-											</xsl:element>
-										</xsl:when>
-										<xsl:otherwise>
-											<xsl:element name="li">
-												<xsl:attribute name="class">plain</xsl:attribute>
-												<xsl:copy-of select="./a"/>
-											</xsl:element>
-										</xsl:otherwise>
-									</xsl:choose>
-								</xsl:for-each>
-							</xsl:element>
-						</xsl:element>
-					</xsl:element>
-				</after>
+									<xsl:element name="ul">
+										<xsl:attribute name="id">top-nav-collapse</xsl:attribute>
+										<xsl:attribute name="class">nav nav-pills collapse</xsl:attribute>
+										<xsl:for-each select="//*[contains(@class,'NavigationTree')]/dd/ul/li">
+											<xsl:choose>
+												<xsl:when test="contains(./@class,'navTreeTopNode')">
+													<xsl:element name="li">
+														<xsl:element name="a">
+															<xsl:attribute name="href">
+																<xsl:value-of select=".//a/@href"/>
+															</xsl:attribute>
+															<xsl:text>Home</xsl:text>
+														</xsl:element>
+													</xsl:element>
+												</xsl:when>
+												<xsl:otherwise>
+													<xsl:element name="li">
+														<xsl:attribute name="class">plain</xsl:attribute>
+														<xsl:copy-of select="./a"/>
+													</xsl:element>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:for-each>
+									</xsl:element>
+							</replace>
+						</rules>
+				</rules>
 			</rules>
 		</rules>
 
@@ -1995,7 +2143,7 @@
 		</replace>
 
 		<!-- add news byline date -->
-		<after css:if-content="body[class*='newsitem_view']" css:theme="#main-content .content > h1.visible-phone">
+		<after css:if-content="body[class*='newsitem_view']" css:theme="#main-content .content > h1#content-title">
 			<xsl:element name="div">
 				<xsl:attribute name="class">documentModified</xsl:attribute>
 				<xsl:copy-of select="//*[@id='content']//*[contains(@class,'documentByLine')]//*[contains(@class,'documentModified')]/text()"/>
