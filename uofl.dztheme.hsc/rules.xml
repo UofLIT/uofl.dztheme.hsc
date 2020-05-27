@@ -793,10 +793,11 @@
 			content-children="//div[@id='content-core']/div"/>
 	</rules>
 
-	<!-- this rules block is always executed -->
+	<!-- all pages except bio info -->
 	<rules if-not="$bio-info">
 		<!-- login screen adjust -->
 		<drop css:theme=".hero-content > .hero-inner, #title-social" if-path="login" />
+		<drop if-path="login" css:theme="#main-content nav.top-nav" />
 
 		<!-- drop the static resource links of the theme -->
 		<drop theme="/html/head/style" />

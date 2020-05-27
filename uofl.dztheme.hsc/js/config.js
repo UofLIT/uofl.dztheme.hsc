@@ -81,6 +81,7 @@ if (!String.prototype.endsWith)
 
 	function makeConfigForm() {
 		var home = $('#portal-globalnav > li:first-child > a').attr('href');
+		var here = $('#portal-globalnav li.selected > a').last().attr('href') || home;
 		var $content = $('#content');
 		var $heading = $content.find('.documentFirstHeading');
 		$content.find('.documentDescription').hide();
@@ -157,7 +158,7 @@ if (!String.prototype.endsWith)
 				'nav-path': {
 					label: '',
 					type: 'hidden',
-					value: location.href.substring(home.length + 1, location.href.indexOf(heromanagerPath)),
+					value: here.substring(home.length + 1),
 				},
 				'main-logo' : {
 					label: 'Main Logo',
