@@ -158,7 +158,7 @@ jQuery(function ($) {
 					var $slide = $('<div class="slide slide-bg slide-minimal" style="background-image: url(' + image.url + '/image_hero);"></div>')
 						.append((image.id == image.title) ? '' : '<h1><span>' + image.title + '</span></h1>');
 					$.get(image.url + '/Description', function (result) {
-						var lines = result.split('\n'),
+						var lines = result ? result.split('\n') : '',
 						    colonIndex,
 						    validKey,
 						    hasDescr = false;
