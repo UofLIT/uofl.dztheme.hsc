@@ -2908,3 +2908,19 @@ table.fc-border-separate {
 		background-size: 24px 24px; /*The size of the normal image, half the size of the hi-res image*/
 	}
 }
+
+@media (min-width: 768px) {
+	.nav-collapse.collapse {
+		display: block !important;
+	}
+}
+
+.tab-content>.tab-pane.out,
+.pill-content>.pill-pane.out {
+	display: none;
+}
+
+.tab-content>.active.out,
+.pill-content>.active.out {
+	display: block;
+}
