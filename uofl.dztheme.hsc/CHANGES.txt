@@ -33,3 +33,4 @@
 1.1.12	Cludo search
 	small updates to enable more Bootstrap row usage instead of Static Text portlets
 	new view for bio pages for directory script
+1.1.13	Remove plugins.js because it's in base theme so it's running twice
