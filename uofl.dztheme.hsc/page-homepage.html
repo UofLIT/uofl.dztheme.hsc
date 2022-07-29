@@ -1,112 +1,404 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>School of Medicine - University of Louisville</title>
 
-<!-- HTML5 shim, for IE6-8 support of HTML elements -->
-<!--[if lt IE 9]>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>School of Medicine - University of Louisville</title>
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<link class="themecss" rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-<link class="themecss" rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" />
-<link class="themecss" rel="stylesheet" type="text/css" href="css/bootstrap-glyphicons.css" />
-<link rel="stylesheet" type="text/css" href="css/breadcrumbs.css" />
-<link rel="stylesheet" type="text/css" href="css/footers.css" />
-<link class="themecss" rel="stylesheet" type="text/css" href="css/jquery.kwicks.min.css" />
-<link class="themecss" rel="stylesheet" type="text/css" href="css/theme.css" />
-<!--[if lt IE 9]>
+	<link class="themecss" rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link class="themecss" rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" />
+	<link class="themecss" rel="stylesheet" type="text/css" href="css/bootstrap-glyphicons.css" />
+	<link rel="stylesheet" type="text/css" href="css/breadcrumbs.css" />
+	<link rel="stylesheet" type="text/css" href="css/footers.css" />
+	<link class="themecss" rel="stylesheet" type="text/css" href="css/jquery.kwicks.min.css" />
+	<link class="themecss" rel="stylesheet" type="text/css" href="css/theme.css" />
+	<!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="css/theme.ie.css" />
 <![endif]-->
-<link class="themecss site-theme hsc-theme" rel="stylesheet" type="text/css" href="css/hsc.css" />
-<link class="themecss site-theme dentistry-theme" rel="stylesheet" type="text/css" href="css/dentistry.css" />
-<link class="themecss site-theme medicine-theme" rel="stylesheet" type="text/css" href="css/medicine.css" />
-<link class="themecss site-theme nursing-theme" rel="stylesheet" type="text/css" href="css/nursing.css" />
+	<link class="themecss site-theme hsc-theme" rel="stylesheet" type="text/css" href="css/hsc.css" />
+	<link class="themecss site-theme dentistry-theme" rel="stylesheet" type="text/css" href="css/dentistry.css" />
+	<link class="themecss site-theme medicine-theme" rel="stylesheet" type="text/css" href="css/medicine.css" />
+	<link class="themecss site-theme nursing-theme" rel="stylesheet" type="text/css" href="css/nursing.css" />
 </head>
 
 <body>
 
-<a href="#view-main-content" class="reader-skip">Skip to Main Content</a>
+	<a href="#view-main-content" class="reader-skip">Skip to Main Content</a>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+	<div id="fb-root"></div>
+	<script>(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
 
-<header id="masthead">
-	<div id="upperbar" class="med-nav-collapse nav-collapse collapse upperbar">
-		<div class="container">
-			<ul class="nav nav-pills pull-right account">
-				<li><a href="http://louisville.edu"><i class="glyphicon glyphicon-home"></i>louisville.edu</a></li>
-				<li><a href="http://louisville.edu/hsc"><i class="glyphicon glyphicon-globe"></i>Health Sciences Center</a></li>
-				<li class="dropdown hidden-phone"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="glyphicon glyphicon-user"></i>My Accounts<b class="caret"></b></a>
-					<ul class="dropdown-menu pull-right">
-						<li><a href="#">Exchange</a></li>
-						<li class="divider"></li>
-						<li><a href="#">CardMail</a></li>
-						<li class="divider"></li>
-						<li><a href="#">PeopleSoft</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Ulink</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Blackboard</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Plone</a></li>
-					</ul>
-				</li>
-				<li class="visible-phone">
-					<a data-toggle="collapse" class="upperbar-accounts-collapse collapsed chevron-collapse" href="#account-dropdown">
-						My Accounts
-						<i class="glyphicon glyphicon-chevron-right visible-phone"></i>
-					</a>
-					<div class="account-collapse collapse" id="account-dropdown">
-						<ul>
+	<header id="masthead">
+		<div id="upperbar" class="med-nav-collapse nav-collapse collapse upperbar">
+			<div class="container">
+				<ul class="nav nav-pills pull-right account">
+					<li><a href="http://louisville.edu"><i class="glyphicon glyphicon-home"></i>louisville.edu</a></li>
+					<li><a href="http://louisville.edu/hsc"><i class="glyphicon glyphicon-globe"></i>Health Sciences Center</a></li>
+					<li class="dropdown hidden-phone"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="glyphicon glyphicon-user"></i>My Accounts<b class="caret"></b></a>
+						<ul class="dropdown-menu pull-right">
 							<li><a href="#">Exchange</a></li>
+							<li class="divider"></li>
 							<li><a href="#">CardMail</a></li>
+							<li class="divider"></li>
 							<li><a href="#">PeopleSoft</a></li>
+							<li class="divider"></li>
 							<li><a href="#">Ulink</a></li>
+							<li class="divider"></li>
 							<li><a href="#">Blackboard</a></li>
+							<li class="divider"></li>
 							<li><a href="#">Plone</a></li>
 						</ul>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div id="lowerbar" class="navbar navbar-static-top">
-		<div class="navbar-inner non-hsc">
-			<div class="container">
-				<div class="row-fluid">
-					<div class="span2">
-						<a class="btn btn-navbar" data-toggle="collapse" data-target=".med-nav-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<div class="sr-only">Menu</div>
+					</li>
+					<li class="visible-phone">
+						<a data-toggle="collapse" class="upperbar-accounts-collapse collapsed chevron-collapse" href="#account-dropdown">
+							My Accounts
+							<i class="glyphicon glyphicon-chevron-right visible-phone"></i>
 						</a>
-						<a href="page-homepage.html" class="logo"><div class="sprite sprite-dentistry"></div></a>
+						<div class="account-collapse collapse" id="account-dropdown">
+							<ul>
+								<li><a href="#">Exchange</a></li>
+								<li><a href="#">CardMail</a></li>
+								<li><a href="#">PeopleSoft</a></li>
+								<li><a href="#">Ulink</a></li>
+								<li><a href="#">Blackboard</a></li>
+								<li><a href="#">Plone</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="lowerbar" class="navbar navbar-static-top">
+			<div class="navbar-inner non-hsc">
+				<div class="container">
+					<div class="row-fluid">
+						<div class="span2">
+							<a class="btn btn-navbar" data-toggle="collapse" data-target=".med-nav-collapse">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<div class="sr-only">Menu</div>
+							</a>
+							<a href="page-homepage.html" class="logo">
+								<div class="sprite sprite-dentistry"></div>
+							</a>
+						</div>
+						<div class="span4 visible-desktop">
+							<form class="search" id="search-form">
+								<label for="search-box">Search UofL</label>
+								<div class="input-append">
+									<input type="search" class="search" placeholder="Search pages, people" name="q" size="25" results="10" id="search-box" />
+									<button type="submit" value="Go" name="btnHeaderSearch" class="btn">Go</button>
+								</div>
+							</form>
+						</div>
+						<div class="span6">
+							<nav class="nav-collapse collapse med-nav-collapse">
+								<div class="visible-tablet visible-phone dropdown">
+									<a class="btn btn-small hidden-phone" data-toggle="dropdown" data-target=".tablet-search"><i class="glyphicon glyphicon-search"><span class="sr-only">Search</span></i></a>
+									<div class="tablet-search visible-phone">
+										<form class="search" id="mobile-search-form">
+											<label for="search-box">Search UofL</label>
+											<div class="input-append">
+												<input type="search" class="search" placeholder="Search pages, people" name="q" size="25" results="10" id="search-box" />
+												<button type="submit" value="Go" name="btnHeaderSearch" class="btn">Go</button>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="social hidden-phone">
+									<a href="#"><i class="sprite sprite-facebook-header-blue"></i></a>
+								</div>
+								<ul class="nav" id="masthead-nav">
+									<li>
+										<a href="#nav-academics" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed">Academics</a>
+										<div class="nav-pane collapse" id="nav-academics">
+											<div class="nav-pane-inner">
+												<div class="tabbable tabs-left">
+													<ul class="nav nav-tabs hidden-phone">
+														<li class="active"><a data-toggle="tab" href="#nav-future">Future Students</a></li>
+														<li><a data-toggle="tab" href="#nav-current">Current Students</a></li>
+														<li><a data-toggle="tab" href="#nav-faculty-staff">Faculty &amp; Staff</a></li>
+														<li><a data-toggle="tab" href="#nav-residents">Residents &amp; Fellows</a></li>
+														<li><a data-toggle="tab" href="#nav-alumni">Alumni &amp; Visitors</a></li>
+														<li><a data-toggle="tab" href="#nav-web">Site Templates</a></li>
+													</ul>
+													<div class="tab-content">
+														<div class="med-nav-pane-collapse visible-phone">
+															<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-future">Future Students<i class="glyphicon glyphicon-chevron-right"></i></a>
+														</div>
+														<div class="tab-pane active collapse" id="nav-future">
+															<h3><a href="#"><span class="visible-phone">View All </span>Future Students Information <i class="glyphicon glyphicon-share"></i></a></h3>
+															<div class="row-fluid">
+																<div class="span6">
+																	<p><a href="#">Academic Programs</a></p>
+																	<p><a href="#">Advising</a></p>
+																	<p><a href="#">Clicinal Rotations</a></p>
+																	<p><a href="#">Departments</a></p>
+																	<p><a href="#">Financial Aid</a></p>
+																	<p><a href="#">Housing</a></p>
+																</div>
+																<div class="span6">
+																	<p><a href="#">Medical Student Affairs</a></p>
+																	<p><a href="#">Patient Simulation Lab</a></p>
+																	<p><a href="#">Residency Programs</a></p>
+																	<p><a href="#">School of Medicine Admissions</a></p>
+																	<p><a href="#">Standardized Patient Program</a></p>
+																	<p><a href="#" class="btn">Contact us</a></p>
+																</div>
+															</div>
+														</div>
+														<div class="med-nav-pane-collapse visible-phone">
+															<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-current">Current Students<i class="glyphicon glyphicon-chevron-right"></i></a>
+														</div>
+														<div class="tab-pane collapse" id="nav-current">
+															<h3><a href="#"><span class="visible-phone">View All </span>Current Students Information <i class="glyphicon glyphicon-share"></i></a></h3>
+															<div class="row-fluid">
+																<div class="span6">
+																	<p><a href="#">Academic Programs</a></p>
+																	<p><a href="#">Advising</a></p>
+																	<p><a href="#">Clicinal Rotations</a></p>
+																	<p><a href="#">Departments</a></p>
+																	<p><a href="#">Financial Aid</a></p>
+																	<p><a href="#">Housing</a></p>
+																</div>
+																<div class="span6">
+																	<p><a href="#">Medical Student Affairs</a></p>
+																	<p><a href="#">Patient Simulation Lab</a></p>
+																	<p><a href="#">Residency Programs</a></p>
+																	<p><a href="#">School of Medicine Admissions</a></p>
+																	<p><a href="#">Standardized Patient Program</a></p>
+																	<p><a href="#" class="btn">Contact us</a></p>
+																</div>
+															</div>
+														</div>
+														<div class="med-nav-pane-collapse visible-phone">
+															<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-faculty-staff">Faculty &amp; Staff<i class="glyphicon glyphicon-chevron-right"></i></a>
+														</div>
+														<div class="tab-pane collapse" id="nav-faculty-staff">
+															<h3><a href="#"><span class="visible-phone">View All </span>Faculty &amp; Staff Information <i class="glyphicon glyphicon-share"></i></a></h3>
+															<div class="row-fluid">
+																<div class="span6">
+																	<p><a href="#">Academic Programs</a></p>
+																	<p><a href="#">Advising</a></p>
+																	<p><a href="#">Clicinal Rotations</a></p>
+																	<p><a href="#">Departments</a></p>
+																	<p><a href="#">Financial Aid</a></p>
+																	<p><a href="#">Housing</a></p>
+																</div>
+																<div class="span6">
+																	<p><a href="#">Medical Student Affairs</a></p>
+																	<p><a href="#">Patient Simulation Lab</a></p>
+																	<p><a href="#">Residency Programs</a></p>
+																	<p><a href="#">School of Medicine Admissions</a></p>
+																	<p><a href="#">Standardized Patient Program</a></p>
+																	<p><a href="#" class="btn">Contact us</a></p>
+																</div>
+															</div>
+														</div>
+														<div class="med-nav-pane-collapse visible-phone">
+															<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-residents">Residents &amp; Fellows<i class="glyphicon glyphicon-chevron-right"></i></a>
+														</div>
+														<div class="tab-pane collapse" id="nav-residents">
+															<h3><a href="#"><span class="visible-phone">View All </span>Residents &amp; Fellows Information <i class="glyphicon glyphicon-share"></i></a></h3>
+															<div class="row-fluid">
+																<div class="span6">
+																	<p><a href="#">Academic Programs</a></p>
+																	<p><a href="#">Advising</a></p>
+																	<p><a href="#">Clicinal Rotations</a></p>
+																	<p><a href="#">Departments</a></p>
+																	<p><a href="#">Financial Aid</a></p>
+																	<p><a href="#">Housing</a></p>
+																</div>
+																<div class="span6">
+																	<p><a href="#">Medical Student Affairs</a></p>
+																	<p><a href="#">Patient Simulation Lab</a></p>
+																	<p><a href="#">Residency Programs</a></p>
+																	<p><a href="#">School of Medicine Admissions</a></p>
+																	<p><a href="#">Standardized Patient Program</a></p>
+																	<p><a href="#" class="btn">Contact us</a></p>
+																</div>
+															</div>
+														</div>
+														<div class="med-nav-pane-collapse visible-phone">
+															<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-alumni">Alumni &amp; Visitors<i class="glyphicon glyphicon-chevron-right"></i></a>
+														</div>
+														<div class="tab-pane collapse" id="nav-alumni">
+															<h3><a href="#"><span class="visible-phone">View All </span>Alumni &amp; Visitors Information <i class="glyphicon glyphicon-share"></i></a></h3>
+															<div class="row-fluid">
+																<div class="span6">
+																	<p><a href="#">Academic Programs</a></p>
+																	<p><a href="#">Advising</a></p>
+																	<p><a href="#">Clicinal Rotations</a></p>
+																	<p><a href="#">Departments</a></p>
+																	<p><a href="#">Financial Aid</a></p>
+																	<p><a href="#">Housing</a></p>
+																</div>
+																<div class="span6">
+																	<p><a href="#">Medical Student Affairs</a></p>
+																	<p><a href="#">Patient Simulation Lab</a></p>
+																	<p><a href="#">Residency Programs</a></p>
+																	<p><a href="#">School of Medicine Admissions</a></p>
+																	<p><a href="#">Standardized Patient Program</a></p>
+																	<p><a href="#" class="btn">Contact us</a></p>
+																</div>
+															</div>
+														</div>
+														<div class="med-nav-pane-collapse visible-phone">
+															<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-web">Site Templates<i class="glyphicon glyphicon-chevron-right"></i></a>
+														</div>
+														<div class="tab-pane collapse" id="nav-web">
+															<div class="row-fluid">
+																<div class="span12">
+																	<p><a href="page-homepage.html">Medicine Homepage</a></p>
+																	<p><a href="page-inside.html">3-Column Inside Page</a></p>
+																	<p><a href="page-inside-noleft.html">2-Column Inside Page (Middle-Right Columns)</a></p>
+																	<p><a href="page-inside-noright.html">2-Column Inside Page (Left-Middle Columns)</a></p>
+																	<p><a href="page-inside-noleft-noright.html">1-Column Inside Page (Middle Column)</a></p>
+																	<p><a href="page-landing-topnav.html">Landing Page - Top Nav</a></p>
+																	<p><a href="page-landing-leftnav.html">Landing Page - Left Nav</a></p>
+																	<p><a href="page-landing-dept.html">Landing Page - Simple (plain inside page)</a></p>
+																	<p><a href="page-bio.html">Faculty/Staff Bio Page</a></p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#nav-research" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed">Research</a>
+										<div class="nav-pane collapse" id="nav-research">
+											<div class="nav-pane-inner">
+												<h3><a href="#">Research Information <i class="glyphicon glyphicon-share"></i></a></h3>
+												<div class="row-fluid">
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#nav-patientcare" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed">Patient Care</a>
+										<div class="nav-pane collapse" id="nav-patientcare">
+											<div class="nav-pane-inner">
+												<h3><a href="#">Patient Care Information <i class="glyphicon glyphicon-share"></i></a></h3>
+												<div class="row-fluid">
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#nav-outreach" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed">Outreach</a>
+										<div class="nav-pane collapse" id="nav-outreach">
+											<div class="nav-pane-inner">
+												<h3><a href="#">Community Outreach Information <i class="glyphicon glyphicon-share"></i></a></h3>
+												<div class="row-fluid">
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
 					</div>
-					<div class="span4 visible-desktop">
-						<form class="search" id="search-form">
-							<label for="search-box">Search UofL</label>
-							<div class="input-append">
-								<input type="search" class="search" placeholder="Search pages, people" name="q" size="25" results="10" id="search-box" />
-								<button type="submit" value="Go" name="btnHeaderSearch" class="btn">Go</button>
-							</div>
-						</form>
-					</div>
-					<div class="span6">
-						<nav class="nav-collapse collapse med-nav-collapse">
-							<div class="visible-tablet visible-phone dropdown">
-								<a class="btn btn-small hidden-phone" data-toggle="dropdown" data-target=".tablet-search"><i class="glyphicon glyphicon-search"><span class="sr-only">Search</span></i></a>
-								<div class="tablet-search visible-phone">
+				</div>
+			</div>
+			<div class="navbar-inner hsc">
+				<div class="container">
+					<div class="row-fluid">
+						<div class="span3 logo">
+							<a class="btn btn-navbar" data-toggle="collapse" data-target=".med-nav-collapse">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<div class="sr-only">Menu</div>
+							</a>
+							<a href="page-homepage.html" class="logo">
+								<div class="sprite sprite-ligature"></div>
+								<div class="logo-name">
+									<span>Health Sciences Center</span>
+								</div>
+							</a>
+						</div>
+						<div class="span6">
+							<nav class="nav-collapse collapse med-nav-collapse">
+								<div class="visible-phone">
 									<form class="search" id="mobile-search-form">
 										<label for="search-box">Search UofL</label>
 										<div class="input-append">
@@ -115,1132 +407,844 @@
 										</div>
 									</form>
 								</div>
-							</div>
-							<div class="social hidden-phone">
-								<a href="#"><i class="sprite sprite-facebook-header-blue"></i></a>
-							</div>
-							<ul class="nav" id="masthead-nav">
-								<li>
-									<a href="#nav-academics" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed">Academics</a>
-									<div class="nav-pane collapse" id="nav-academics">
-										<div class="nav-pane-inner">
-											<div class="tabbable tabs-left">
-												<ul class="nav nav-tabs hidden-phone">
-													<li class="active"><a data-toggle="tab" href="#nav-future">Future Students</a></li>
-													<li><a data-toggle="tab" href="#nav-current">Current Students</a></li>
-													<li><a data-toggle="tab" href="#nav-faculty-staff">Faculty &amp; Staff</a></li>
-													<li><a data-toggle="tab" href="#nav-residents">Residents &amp; Fellows</a></li>
-													<li><a data-toggle="tab" href="#nav-alumni">Alumni &amp; Visitors</a></li>
-													<li><a data-toggle="tab" href="#nav-web">Site Templates</a></li>
-												</ul>
-												<div class="tab-content">
-													<div class="med-nav-pane-collapse visible-phone">
-														<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-future">Future Students<i class="glyphicon glyphicon-chevron-right"></i></a>
+								<ul class="nav" id="masthead-nav">
+									<li>
+										<a href="#nav-schools" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed"><small>4 Academic</small>Schools</a>
+										<div class="nav-pane collapse" id="nav-schools">
+											<div class="nav-pane-inner">
+												<div class="row-fluid">
+													<div class="span6">
+														<h3>Academic Schools</h3>
+														<p><a href="#">School of Medicine <i class="glyphicon glyphicon-share"></i></a></p>
+														<p><a href="#">School of Dentistry <i class="glyphicon glyphicon-share"></i></a></p>
+														<p><a href="#">School of Nursing <i class="glyphicon glyphicon-share"></i></a></p>
+														<p><a href="#">School of Public Health &amp; Information Systems <i class="glyphicon glyphicon-share"></i></a></p>
 													</div>
-													<div class="tab-pane active collapse" id="nav-future">
-														<h3><a href="#"><span class="visible-phone">View All </span>Future Students Information <i class="glyphicon glyphicon-share"></i></a></h3>
-														<div class="row-fluid">
-															<div class="span6">
-																<p><a href="#">Academic Programs</a></p>
-																<p><a href="#">Advising</a></p>
-																<p><a href="#">Clicinal Rotations</a></p>
-																<p><a href="#">Departments</a></p>
-																<p><a href="#">Financial Aid</a></p>
-																<p><a href="#">Housing</a></p>
-															</div>
-															<div class="span6">
-																<p><a href="#">Medical Student Affairs</a></p>
-																<p><a href="#">Patient Simulation Lab</a></p>
-																<p><a href="#">Residency Programs</a></p>
-																<p><a href="#">School of Medicine Admissions</a></p>
-																<p><a href="#">Standardized Patient Program</a></p>
-																<p><a href="#" class="btn">Contact us</a></p>
-															</div>
-														</div>
-													</div>
-													<div class="med-nav-pane-collapse visible-phone">
-														<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-current">Current Students<i class="glyphicon glyphicon-chevron-right"></i></a>
-													</div>
-													<div class="tab-pane collapse" id="nav-current">
-														<h3><a href="#"><span class="visible-phone">View All </span>Current Students Information <i class="glyphicon glyphicon-share"></i></a></h3>
-														<div class="row-fluid">
-															<div class="span6">
-																<p><a href="#">Academic Programs</a></p>
-																<p><a href="#">Advising</a></p>
-																<p><a href="#">Clicinal Rotations</a></p>
-																<p><a href="#">Departments</a></p>
-																<p><a href="#">Financial Aid</a></p>
-																<p><a href="#">Housing</a></p>
-															</div>
-															<div class="span6">
-																<p><a href="#">Medical Student Affairs</a></p>
-																<p><a href="#">Patient Simulation Lab</a></p>
-																<p><a href="#">Residency Programs</a></p>
-																<p><a href="#">School of Medicine Admissions</a></p>
-																<p><a href="#">Standardized Patient Program</a></p>
-																<p><a href="#" class="btn">Contact us</a></p>
-															</div>
-														</div>
-													</div>
-													<div class="med-nav-pane-collapse visible-phone">
-														<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-faculty-staff">Faculty &amp; Staff<i class="glyphicon glyphicon-chevron-right"></i></a>
-													</div>
-													<div class="tab-pane collapse" id="nav-faculty-staff">
-														<h3><a href="#"><span class="visible-phone">View All </span>Faculty &amp; Staff Information <i class="glyphicon glyphicon-share"></i></a></h3>
-														<div class="row-fluid">
-															<div class="span6">
-																<p><a href="#">Academic Programs</a></p>
-																<p><a href="#">Advising</a></p>
-																<p><a href="#">Clicinal Rotations</a></p>
-																<p><a href="#">Departments</a></p>
-																<p><a href="#">Financial Aid</a></p>
-																<p><a href="#">Housing</a></p>
-															</div>
-															<div class="span6">
-																<p><a href="#">Medical Student Affairs</a></p>
-																<p><a href="#">Patient Simulation Lab</a></p>
-																<p><a href="#">Residency Programs</a></p>
-																<p><a href="#">School of Medicine Admissions</a></p>
-																<p><a href="#">Standardized Patient Program</a></p>
-																<p><a href="#" class="btn">Contact us</a></p>
-															</div>
-														</div>
-													</div>
-													<div class="med-nav-pane-collapse visible-phone">
-														<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-residents">Residents &amp; Fellows<i class="glyphicon glyphicon-chevron-right"></i></a>
-													</div>
-													<div class="tab-pane collapse" id="nav-residents">
-														<h3><a href="#"><span class="visible-phone">View All </span>Residents &amp; Fellows Information <i class="glyphicon glyphicon-share"></i></a></h3>
-														<div class="row-fluid">
-															<div class="span6">
-																<p><a href="#">Academic Programs</a></p>
-																<p><a href="#">Advising</a></p>
-																<p><a href="#">Clicinal Rotations</a></p>
-																<p><a href="#">Departments</a></p>
-																<p><a href="#">Financial Aid</a></p>
-																<p><a href="#">Housing</a></p>
-															</div>
-															<div class="span6">
-																<p><a href="#">Medical Student Affairs</a></p>
-																<p><a href="#">Patient Simulation Lab</a></p>
-																<p><a href="#">Residency Programs</a></p>
-																<p><a href="#">School of Medicine Admissions</a></p>
-																<p><a href="#">Standardized Patient Program</a></p>
-																<p><a href="#" class="btn">Contact us</a></p>
-															</div>
-														</div>
-													</div>
-													<div class="med-nav-pane-collapse visible-phone">
-														<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-alumni">Alumni &amp; Visitors<i class="glyphicon glyphicon-chevron-right"></i></a>
-													</div>
-													<div class="tab-pane collapse" id="nav-alumni">
-														<h3><a href="#"><span class="visible-phone">View All </span>Alumni &amp; Visitors Information <i class="glyphicon glyphicon-share"></i></a></h3>
-														<div class="row-fluid">
-															<div class="span6">
-																<p><a href="#">Academic Programs</a></p>
-																<p><a href="#">Advising</a></p>
-																<p><a href="#">Clicinal Rotations</a></p>
-																<p><a href="#">Departments</a></p>
-																<p><a href="#">Financial Aid</a></p>
-																<p><a href="#">Housing</a></p>
-															</div>
-															<div class="span6">
-																<p><a href="#">Medical Student Affairs</a></p>
-																<p><a href="#">Patient Simulation Lab</a></p>
-																<p><a href="#">Residency Programs</a></p>
-																<p><a href="#">School of Medicine Admissions</a></p>
-																<p><a href="#">Standardized Patient Program</a></p>
-																<p><a href="#" class="btn">Contact us</a></p>
-															</div>
-														</div>
-													</div>
-													<div class="med-nav-pane-collapse visible-phone">
-														<a data-toggle="collapse" data-parent="#nav-academics" class="collapsed chevron-collapse" href="#nav-web">Site Templates<i class="glyphicon glyphicon-chevron-right"></i></a>
-													</div>
-													<div class="tab-pane collapse" id="nav-web">
-														<div class="row-fluid">
-															<div class="span12">
-																<p><a href="page-homepage.html">Medicine Homepage</a></p>
-																<p><a href="page-inside.html">3-Column Inside Page</a></p>
-																<p><a href="page-inside-noleft.html">2-Column Inside Page (Middle-Right Columns)</a></p>
-																<p><a href="page-inside-noright.html">2-Column Inside Page (Left-Middle Columns)</a></p>
-																<p><a href="page-inside-noleft-noright.html">1-Column Inside Page (Middle Column)</a></p>
-																<p><a href="page-landing-topnav.html">Landing Page - Top Nav</a></p>
-																<p><a href="page-landing-leftnav.html">Landing Page - Left Nav</a></p>
-																<p><a href="page-landing-dept.html">Landing Page - Simple (plain inside page)</a></p>
-																<p><a href="page-bio.html">Faculty/Staff Bio Page</a></p>
-															</div>
-														</div>
+													<div class="span6">
+														<h3>Programs &amp; Admissions</h3>
+														<p>Medicine: <a href="#" style="text-decoration:underline;">Programs</a>, <a href="#" style="text-decoration:underline;">Admissions</a></p>
+														<p>Dentistry: <a href="#" style="text-decoration:underline;">Programs</a>, <a href="#" style="text-decoration:underline;">Admissions</a></p>
+														<p>Nursing: <a href="#" style="text-decoration:underline;">Programs</a>, <a href="#" style="text-decoration:underline;">Admissions</a></p>
+														<p>Public Health: <a href="#" style="text-decoration:underline;">Programs</a>, <a href="#" style="text-decoration:underline;">Admissions</a></p>
 													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</li>
-								<li>
-									<a href="#nav-research" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed">Research</a>
-									<div class="nav-pane collapse" id="nav-research">
-										<div class="nav-pane-inner">
-											<h3><a href="#">Research Information <i class="glyphicon glyphicon-share"></i></a></h3>
-											<div class="row-fluid">
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
+									</li>
+									<li>
+										<a href="#nav-research" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed"><small>Research</small>Centers</a>
+										<div class="nav-pane collapse" id="nav-research">
+											<div class="nav-pane-inner">
+												<h3>Different Page Templates</h3>
+												<div class="row-fluid">
+													<div class="span6">
+														<p><a href="page-homepage.html">Homepage</a></p>
+														<p><a href="page-inside.html">3-column inside page</a></p>
+														<p><a href="page-inside-noleft.html">2 column (center, right) side page</a></p>
+													</div>
+													<div class="span6">
+														<p><a href="page-inside-noright.html">2 column (left, center) page</a></p>
+														<p><a href="page-inside-noleft-noright.html">1 column (center) page</a></p>
+														<p><a href="page-bio.html">Bio page</a></p>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</li>
-								<li>
-									<a href="#nav-patientcare" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed">Patient Care</a>
-									<div class="nav-pane collapse" id="nav-patientcare">
-										<div class="nav-pane-inner">
-											<h3><a href="#">Patient Care Information <i class="glyphicon glyphicon-share"></i></a></h3>
-											<div class="row-fluid">
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li>
-									<a href="#nav-outreach" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed">Outreach</a>
-									<div class="nav-pane collapse" id="nav-outreach">
-										<div class="nav-pane-inner">
-											<h3><a href="#">Community Outreach Information <i class="glyphicon glyphicon-share"></i></a></h3>
-											<div class="row-fluid">
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
+									</li>
+									<li>
+										<a href="#nav-patientcare" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed"><small>Local &amp; Regional</small>Patient Care</a>
+										<div class="nav-pane collapse" id="nav-patientcare">
+											<div class="nav-pane-inner">
+												<h3><a href="#">Patient Care Information <i class="glyphicon glyphicon-share"></i></a></h3>
+												<div class="row-fluid">
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="navbar-inner hsc">
-			<div class="container">
-				<div class="row-fluid">
-					<div class="span3 logo">
-						<a class="btn btn-navbar" data-toggle="collapse" data-target=".med-nav-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<div class="sr-only">Menu</div>
-						</a>
-						<a href="page-homepage.html" class="logo">
-							<div class="sprite sprite-ligature"></div>
-							<div class="logo-name">
-								<span>Health Sciences Center</span>
-							</div>
-						</a>
-					</div>
-					<div class="span6">
-						<nav class="nav-collapse collapse med-nav-collapse">
-							<div class="visible-phone">
-								<form class="search" id="mobile-search-form">
-									<label for="search-box">Search UofL</label>
-									<div class="input-append">
-										<input type="search" class="search" placeholder="Search pages, people" name="q" size="25" results="10" id="search-box" />
-										<button type="submit" value="Go" name="btnHeaderSearch" class="btn">Go</button>
-									</div>
-								</form>
-							</div>
-							<ul class="nav" id="masthead-nav">
-								<li>
-									<a href="#nav-schools" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed"><small>4 Academic</small>Schools</a>
-									<div class="nav-pane collapse" id="nav-schools">
-										<div class="nav-pane-inner">
-											<div class="row-fluid">
-												<div class="span6">
-													<h3>Academic Schools</h3>
-													<p><a href="#">School of Medicine <i class="glyphicon glyphicon-share"></i></a></p>
-													<p><a href="#">School of Dentistry <i class="glyphicon glyphicon-share"></i></a></p>
-													<p><a href="#">School of Nursing <i class="glyphicon glyphicon-share"></i></a></p>
-													<p><a href="#">School of Public Health &amp; Information Systems <i class="glyphicon glyphicon-share"></i></a></p>
-												</div>
-												<div class="span6">
-													<h3>Programs &amp; Admissions</h3>
-													<p>Medicine: <a href="#" style="text-decoration:underline;">Programs</a>, <a href="#" style="text-decoration:underline;">Admissions</a></p>
-													<p>Dentistry: <a href="#" style="text-decoration:underline;">Programs</a>, <a href="#" style="text-decoration:underline;">Admissions</a></p>
-													<p>Nursing: <a href="#" style="text-decoration:underline;">Programs</a>, <a href="#" style="text-decoration:underline;">Admissions</a></p>
-													<p>Public Health: <a href="#" style="text-decoration:underline;">Programs</a>, <a href="#" style="text-decoration:underline;">Admissions</a></p>
+									</li>
+									<li>
+										<a href="#nav-evpha" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed"><small>EVP for</small>Health Affairs</a>
+										<div class="nav-pane collapse" id="nav-evpha">
+											<div class="nav-pane-inner">
+												<h3><a href="#">Executive Vice President for Health Affairs <i class="glyphicon glyphicon-share"></i></a></h3>
+												<div class="row-fluid">
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+													<div class="span4">
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+														<p><a href="#">Sample Link</a></p>
+													</div>
+													<div class="span4">
+														<p style="text-align:center;"><a href="page-bio.html"><img src="misc/david-dunn.jpg" alt="David L. Dunn, M.D., Ph.D." class="img-fancy" /></a></p>
+														<p style="text-align:center;"><a href="page-bio.html">David L. Dunn, M.D., Ph.D.</a></p>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</li>
-								<li>
-									<a href="#nav-research" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed"><small>Research</small>Centers</a>
-									<div class="nav-pane collapse" id="nav-research">
-										<div class="nav-pane-inner">
-											<h3>Different Page Templates</h3>
-											<div class="row-fluid">
-												<div class="span6">
-													<p><a href="page-homepage.html">Homepage</a></p>
-													<p><a href="page-inside.html">3-column inside page</a></p>
-													<p><a href="page-inside-noleft.html">2 column (center, right) side page</a></p>
-												</div>
-												<div class="span6">
-													<p><a href="page-inside-noright.html">2 column (left, center) page</a></p>
-													<p><a href="page-inside-noleft-noright.html">1 column (center) page</a></p>
-													<p><a href="page-bio.html">Bio page</a></p>
-												</div>
-											</div>
+									</li>
+								</ul>
+							</nav>
+							<div class="visible-tablet dropdown">
+								<a class="btn btn-small" data-toggle="dropdown" data-target=".tablet-search"><i class="glyphicon glyphicon-search"></i></a>
+								<div class="tablet-search">
+									<form class="search" id="tablet-search-form">
+										<label for="search-box">Search UofL</label>
+										<div class="input-append">
+											<input type="search" class="search" placeholder="Search pages, people" name="q" size="25" results="10" id="search-box" />
+											<button type="submit" value="Go" name="btnHeaderSearch" class="btn">Go</button>
 										</div>
-									</div>
-								</li>
-								<li>
-									<a href="#nav-patientcare" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed"><small>Local &amp; Regional</small>Patient Care</a>
-									<div class="nav-pane collapse" id="nav-patientcare">
-										<div class="nav-pane-inner">
-											<h3><a href="#">Patient Care Information <i class="glyphicon glyphicon-share"></i></a></h3>
-											<div class="row-fluid">
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li>
-									<a href="#nav-evpha" data-toggle="collapse" data-parent="#masthead-nav" class="med-nav-toggle collapsed"><small>EVP for</small>Health Affairs</a>
-									<div class="nav-pane collapse" id="nav-evpha">
-										<div class="nav-pane-inner">
-											<h3><a href="#">Executive Vice President for Health Affairs <i class="glyphicon glyphicon-share"></i></a></h3>
-											<div class="row-fluid">
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-												<div class="span4">
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-													<p><a href="#">Sample Link</a></p>
-												</div>
-												<div class="span4">
-													<p style="text-align:center;"><a href="page-bio.html"><img src="misc/david-dunn.jpg" alt="David L. Dunn, M.D., Ph.D." class="img-fancy" /></a></p>
-													<p style="text-align:center;"><a href="page-bio.html">David L. Dunn, M.D., Ph.D.</a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</nav>
-						<div class="visible-tablet dropdown">
-							<a class="btn btn-small" data-toggle="dropdown" data-target=".tablet-search"><i class="glyphicon glyphicon-search"></i></a>
-							<div class="tablet-search">
-								<form class="search" id="tablet-search-form">
-									<label for="search-box">Search UofL</label>
-									<div class="input-append">
-										<input type="search" class="search" placeholder="Search pages, people" name="q" size="25" results="10" id="search-box" />
-										<button type="submit" value="Go" name="btnHeaderSearch" class="btn">Go</button>
-									</div>
-								</form>
+									</form>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="span3 visible-desktop">
-						<form class="search" id="search-form">
-							<label for="search-box">Search UofL</label>
-							<div class="input-append">
-								<input type="search" class="search" placeholder="Search pages, people" name="q" size="25" results="10" id="search-box" />
-								<button type="submit" value="Go" name="btnHeaderSearch" class="btn">Go</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
-
-<div class="page-wrapper homepage-wrapper">
-	<div id="alert" class="container" style="display: block;">
-	</div>
-
-	<div class="hero-content">
-		<div class="hero-inner">
-			<ul class="kwicks kwicks-horizontal hidden-phone">
-				<li class="panel-medicine">
-					<div class="panel-shadow"></div>
-					<div class="panel-image" style="background-image:url('misc/med-bg.jpg');"></div>
-					<div class="panel-content">
-						<p><a href="#">Medicine<span>learn more</span></a></p>
-					</div>
-				</li>
-				<li class="panel-dentistry">
-					<div class="panel-shadow"></div>
-					<div class="panel-image" style="background-image:url('misc/dental-bg.jpg');"></div>
-					<div class="panel-content">
-						<p><a href="#">Dentistry<span>learn more</span></a></p>
-					</div>
-				</li>
-				<li class="panel-nursing">
-					<div class="panel-shadow"></div>
-					<div class="panel-image" style="background-image:url('misc/nursing-bg.jpg');"></div>
-					<div class="panel-content">
-						<p><a href="#">Nursing<span>learn more</span></a></p>
-					</div>
-				</li>
-				<li class="panel-sphis">
-					<div class="panel-shadow"></div>
-					<div class="panel-image" style="background-image:url('misc/sphis-bg.jpg');"></div>
-					<div class="panel-content">
-						<p><a href="#">Public Health<span>learn more</span></a></p>
-					</div>
-				</li>
-				<li class="panel-research">
-					<div class="panel-shadow"></div>
-					<div class="panel-image" style="background-image:url('misc/research-bg.jpg');"></div>
-					<div class="panel-content">
-						<p><a href="#">Research<span>learn more</span></a></p>
-					</div>
-				</li>
-			</ul>
-			<ul class="kwicks kwicks-vertical visible-phone">
-				<li class="panel-medicine">
-					<div class="panel-shadow"></div>
-					<div class="panel-image" style="background-image:url('misc/med-bg.jpg');"></div>
-					<div class="panel-content">
-						<p><a href="#">Medicine<span>learn more</span></a></p>
-					</div>
-				</li>
-				<li class="panel-dentistry">
-					<div class="panel-shadow"></div>
-					<div class="panel-image" style="background-image:url('misc/dental-bg.jpg');"></div>
-					<div class="panel-content">
-						<p><a href="#">Dentistry<span>learn more</span></a></p>
-					</div>
-				</li>
-				<li class="panel-nursing">
-					<div class="panel-shadow"></div>
-					<div class="panel-image" style="background-image:url('misc/nursing-bg.jpg');"></div>
-					<div class="panel-content">
-						<p><a href="#">Nursing<span>learn more</span></a></p>
-					</div>
-				</li>
-				<li class="panel-sphis">
-					<div class="panel-shadow"></div>
-					<div class="panel-image" style="background-image:url('misc/sphis-bg.jpg');"></div>
-					<div class="panel-content">
-						<p><a href="#">Public Health<span>learn more</span></a></p>
-					</div>
-				</li>
-				<li class="panel-research">
-					<div class="panel-shadow"></div>
-					<div class="panel-image" style="background-image:url('misc/research-bg.jpg');"></div>
-					<div class="panel-content">
-						<p><a href="#">Research<span>learn more</span></a></p>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-
-	<a class="skip-marker" name="view-main-content"></a>
-
-	<div class="med-hero">
-		<div class="med-hero-wrapper">
-			<div class="slide slide-title-right slide-body-nobg slide-body-right slide-title-small" style="background:url('misc/slide1.jpg') no-repeat top center;background-size:cover;">
-				<div class="container">
-					<h1><span>A Sample Title that Explains what's going on in this Picture.</span></h1>
-					<div class="description">
-						<p>The University of Louisville Hospital is home to the nation's first trauma center.</p>
-					</div>
-				</div>
-			</div>
-			<div class="slide" style="background:url('misc/slide2.jpg') no-repeat top center;background-size:cover;">
-				<div class="container">
-					<h1><span>A Sample Title that Explains what's going on in this Picture.</span></h1>
-					<div class="description">
-						<p>The University of Louisville Hospital is home to the nation's first trauma center.</p>
-					</div>
-				</div>
-			</div>
-			<div class="slide slide-escher slide-title-body-nobg slide-title-body-noshadow slide-title-body-gold">
-				<div class="container">
-					<h1><span>Make a bold statement with no picture.</span></h1>
-					<div class="description">
-						<p>A pattern is a non-intrusive way of creating something effective, even when no picture is available.</p>
-					</div>
-				</div>
-			</div>
-			<div class="slide slide-topograph slide-picture slide-title-body-nobg slide-title-body-noshadow slide-body-gold slide-title-body-left slide-title-medium">
-				<div class="container">
-					<img src="misc/cardinal.png" alt="" class="pull-right hidden-phone" />
-					<h1><span>Or make a slide with a pattern and a smaller picture instead of a full-sized picture.</span></h1>
-					<div class="description hidden-phone">
-						<p>Mix and match all options available. You can customize each slide with HTML/CSS or use built-in classes to easily create engaging slides.</p>
+						<div class="span3 visible-desktop">
+							<form class="search" id="search-form">
+								<label for="search-box">Search UofL</label>
+								<div class="input-append">
+									<input type="search" class="search" placeholder="Search pages, people" name="q" size="25" results="10" id="search-box" />
+									<button type="submit" value="Go" name="btnHeaderSearch" class="btn">Go</button>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="med-hero-nav">
-			<div class="container">
-				<i class="glyphicon glyphicon-chevron-left"></i>
-				<i class="glyphicon glyphicon-chevron-right"></i>
-				<div class="button-nav">
-					<ul></ul>
+	</header>
+
+	<div class="page-wrapper homepage-wrapper">
+		<div id="alert" class="container" style="display: block;">
+		</div>
+
+		<div class="hero-content">
+			<div class="hero-inner">
+				<ul class="kwicks kwicks-horizontal hidden-phone">
+					<li class="panel-medicine">
+						<div class="panel-shadow"></div>
+						<div class="panel-image" style="background-image:url('misc/med-bg.jpg');"></div>
+						<div class="panel-content">
+							<p><a href="#">Medicine<span>learn more</span></a></p>
+						</div>
+					</li>
+					<li class="panel-dentistry">
+						<div class="panel-shadow"></div>
+						<div class="panel-image" style="background-image:url('misc/dental-bg.jpg');"></div>
+						<div class="panel-content">
+							<p><a href="#">Dentistry<span>learn more</span></a></p>
+						</div>
+					</li>
+					<li class="panel-nursing">
+						<div class="panel-shadow"></div>
+						<div class="panel-image" style="background-image:url('misc/nursing-bg.jpg');"></div>
+						<div class="panel-content">
+							<p><a href="#">Nursing<span>learn more</span></a></p>
+						</div>
+					</li>
+					<li class="panel-sphis">
+						<div class="panel-shadow"></div>
+						<div class="panel-image" style="background-image:url('misc/sphis-bg.jpg');"></div>
+						<div class="panel-content">
+							<p><a href="#">Public Health<span>learn more</span></a></p>
+						</div>
+					</li>
+					<li class="panel-research">
+						<div class="panel-shadow"></div>
+						<div class="panel-image" style="background-image:url('misc/research-bg.jpg');"></div>
+						<div class="panel-content">
+							<p><a href="#">Research<span>learn more</span></a></p>
+						</div>
+					</li>
+				</ul>
+				<ul class="kwicks kwicks-vertical visible-phone">
+					<li class="panel-medicine">
+						<div class="panel-shadow"></div>
+						<div class="panel-image" style="background-image:url('misc/med-bg.jpg');"></div>
+						<div class="panel-content">
+							<p><a href="#">Medicine<span>learn more</span></a></p>
+						</div>
+					</li>
+					<li class="panel-dentistry">
+						<div class="panel-shadow"></div>
+						<div class="panel-image" style="background-image:url('misc/dental-bg.jpg');"></div>
+						<div class="panel-content">
+							<p><a href="#">Dentistry<span>learn more</span></a></p>
+						</div>
+					</li>
+					<li class="panel-nursing">
+						<div class="panel-shadow"></div>
+						<div class="panel-image" style="background-image:url('misc/nursing-bg.jpg');"></div>
+						<div class="panel-content">
+							<p><a href="#">Nursing<span>learn more</span></a></p>
+						</div>
+					</li>
+					<li class="panel-sphis">
+						<div class="panel-shadow"></div>
+						<div class="panel-image" style="background-image:url('misc/sphis-bg.jpg');"></div>
+						<div class="panel-content">
+							<p><a href="#">Public Health<span>learn more</span></a></p>
+						</div>
+					</li>
+					<li class="panel-research">
+						<div class="panel-shadow"></div>
+						<div class="panel-image" style="background-image:url('misc/research-bg.jpg');"></div>
+						<div class="panel-content">
+							<p><a href="#">Research<span>learn more</span></a></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<a class="skip-marker" name="view-main-content"></a>
+
+		<div class="med-hero">
+			<div class="med-hero-wrapper">
+				<div class="slide slide-title-right slide-body-nobg slide-body-right slide-title-small" style="background:url('misc/slide1.jpg') no-repeat top center;background-size:cover;">
+					<div class="container">
+						<h1><span>A Sample Title that Explains what's going on in this Picture.</span></h1>
+						<div class="description">
+							<p>The University of Louisville Hospital is home to the nation's first trauma center.</p>
+						</div>
+					</div>
+				</div>
+				<div class="slide" style="background:url('misc/slide2.jpg') no-repeat top center;background-size:cover;">
+					<div class="container">
+						<h1><span>A Sample Title that Explains what's going on in this Picture.</span></h1>
+						<div class="description">
+							<p>The University of Louisville Hospital is home to the nation's first trauma center.</p>
+						</div>
+					</div>
+				</div>
+				<div class="slide slide-escher slide-title-body-nobg slide-title-body-noshadow slide-title-body-gold">
+					<div class="container">
+						<h1><span>Make a bold statement with no picture.</span></h1>
+						<div class="description">
+							<p>A pattern is a non-intrusive way of creating something effective, even when no picture is available.</p>
+						</div>
+					</div>
+				</div>
+				<div class="slide slide-topograph slide-picture slide-title-body-nobg slide-title-body-noshadow slide-body-gold slide-title-body-left slide-title-medium">
+					<div class="container">
+						<img src="misc/cardinal.png" alt="" class="pull-right hidden-phone" />
+						<h1><span>Or make a slide with a pattern and a smaller picture instead of a full-sized picture.</span></h1>
+						<div class="description hidden-phone">
+							<p>Mix and match all options available. You can customize each slide with HTML/CSS or use built-in classes to easily create engaging slides.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="med-hero-nav">
+				<div class="container">
+					<i class="glyphicon glyphicon-chevron-left"></i>
+					<i class="glyphicon glyphicon-chevron-right"></i>
+					<div class="button-nav">
+						<ul></ul>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div id="hsc-banner">
-		<div data-widget-host="hsc-banner">
-			<script type="text/props">
+		<div id="hsc-banner">
+			<div data-widget-host="hsc-banner">
+				<script type="text/props">
 				{ "href": "test"}
 			</script>
-		</div>
-		<script async src="//louisville.edu/hsc/js/hsc-banner.js"></script>
-	</div>
-
-	<div class="container cta">
-		<div class="row-fluid">
-			<div class="span9">
-				<p>Comprehensive medical education for today's complex medical environment</p>
 			</div>
-			<div class="span3">
-				<a href="#">Apply Today!</a>
-			</div>
-		</div>
-	</div>
-
-	<div class="container homepage main-content" id="main-content">
-		<div class="row-fluid focal">
-			<div class="span4">
-				<img src="misc/heart.jpg" alt="heart" />
-				<div class="wrapper">
-					<h1><a href="#">Nurture a Broken Heart</a></h1>
-					<p>Repairing a damaged heart takes skill, precision, and expertise. UofL’s School of Medicine trains the top heart surgeons.</p>
-					<a href="#" class="btn btn-med btn-block btn-large">Repair Damaged Hearts</a>
-				</div>
-			</div>
-			<div class="span4">
-				<img src="misc/children.jpg" alt="children" />
-				<div class="wrapper">
-					<h1><a href="#">Make Children Feel Better</a></h1>
-					<p>Child care and pediatrics are the core in creating a better tomorrow. Without healthy children, there wouldn’t be a tomorrow for humans.</p>
-					<a href="#" class="btn btn-dent btn-block btn-large">Help Care for Children</a>
-				</div>
-			</div>
-			<div class="span4">
-				<img src="misc/eye.jpg" alt="eye" />
-				<div class="wrapper">
-					<h1><a href="#">See the Future</a></h1>
-					<p>Ophthalmology isn’t just a hard word to say and spell, but it’s also the practice of taking care of eyes. I’ll save the pun for the button.</p>
-					<a href="#" class="btn btn-nursing btn-block btn-large">See for Yourself</a>
-				</div>
-			</div>
+			<script async src="//louisville.edu/hsc/js/hsc-banner.js"></script>
 		</div>
 
-		<hr class="hr-top" />
-
-		<div class="row-fluid">
-			<section class="span3 med-news">
-				<header>
-					<h1><a href="#">News</a></h1>
-					<h2><a href="#">More News</a></h2>
-				</header>
-				<ul>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title That Will Span Two Lines
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title
-						</a>
-					</li>
-				</ul>
-				<footer>
-					<a href="#">More News</a>
-				</footer>
-			</section>
-			<section class="span3 med-events">
-				<header>
-					<h1><a href="#">HSC Events</a></h1>
-					<h2><a href="#">More Events</a></h2>
-				</header>
-				<ul>
-					<li>
-						<a href="#">
-							<span class="date-bg">
-								<span class="date-month">Apr</span>
-								<span class="date-day">9</span>
-							</span>
-							<span class="date">Apr 9, 2013</span>
-							<span class="event-title">Some New Event that will be happening in a few short days</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date-bg">
-								<span class="date-month">May</span>
-								<span class="date-day">12</span>
-							</span>
-							<span class="date">May 12, 2013</span>
-							<span class="event-title">Here's another event that will take place over here</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date-bg">
-								<span class="date-month">Jul</span>
-								<span class="date-day">24</span>
-							</span>
-							<span class="date">July 24, 2013</span>
-							<span class="event-title">A Brand New Event</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date-bg">
-								<span class="date-month">Aug</span>
-								<span class="date-day">1</span>
-							</span>
-							<span class="date">August 1, 2013</span>
-							<span class="event-title">A New Event in a New Month</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date-bg">
-								<span class="date-month">Sept</span>
-								<span class="date-day">30</span>
-							</span>
-							<span class="date">September 30, 2013</span>
-							<span class="event-title">The Last Event... EVER!</span>
-						</a>
-					</li>
-				</ul>
-				<footer>
-					<a href="#">More Events</a>
-				</footer>
-			</section>
-			<section class="span3 med-spotlight">
-				<header>
-					<h1><a href="#">Spotlight</a></h1>
-				</header>
-				<div class="wrapper">
-					<a href="#" class="banner"><img src="misc/graduation.jpg" /></a>
-					<h1><a href="#">Commencement 2013</a></h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed neque eget mauris ullamcorper rutrum a ut massa. <a href="#">Nunc condimentum</a> sem non ipsum scelerisque congue. Sed quis bibendum urna. Praesent nisl magna, eleifend ac sollicitudin vitae, rutrum eget dolor. Sed.</p>
-				</div>
-			</section>
-			<section class="span3 med-news">
-				<header>
-					<h1><a href="#">HSC News</a></h1>
-					<h2><a href="#">More News</a></h2>
-				</header>
-				<ul>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title That Will Span Two Lines
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="date">May 20, 2013</span>
-							Sample News Title
-						</a>
-					</li>
-				</ul>
-				<footer>
-					<a href="#">More News</a>
-				</footer>
-			</section>
-		</div>
-
-		<hr class="hr-bottom" />
-
-		<div class="row-fluid row-nostyle">
-			<div class="span9">
-				<div class="tabs-info tabbable tabs-left row-fluid">
-					<ul class="nav nav-tabs span4 hidden-phone">
-						<li class="active"><a data-toggle="tab" href="#tab-academics">Academics</a></li>
-						<li><a data-toggle="tab" href="#tab-research">Research</a></li>
-						<li><a data-toggle="tab" href="#tab-patient-care">Patient Care</a></li>
-						<li><a data-toggle="tab" href="#tab-outreach">Community Engagement</a></li>
-					</ul>
-					<div class="tab-content span8" id="med-home-collapse">
-						<div class="tab-pane-collapse visible-phone">
-							<a data-toggle="collapse" data-parent="#med-home-collapse" href="#tab-academics">Academics</a>
-						</div>
-						<div class="tab-pane active collapse in" id="tab-academics">
-							<h1>This could be anything to create some level of final awareness for any visitor brave enough to venture this far down.</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et suscipit dui. Morbi semper consequat tellus, a sagittis est dapibus et. Maecenas ante turpis, euismod non urna eget, adipiscing aliquam elit. Donec imperdiet auctor mollis. Sed luctus, felis a elementum dapibus, sem sem aliquet libero, et lacinia felis tellus sed magna. Etiam dignissim nibh nec.</p>
-						</div>
-						<div class="tab-pane-collapse visible-phone">
-							<a data-toggle="collapse" data-parent="#med-home-collapse" class="collapsed" href="#tab-research">Research</a>
-						</div>
-						<div class="tab-pane collapse" id="tab-research">
-							<h1>I'm Dead Serious</h1>
-							<p>You can put whatever you want here.</p>
-						</div>
-						<div class="tab-pane-collapse visible-phone">
-							<a data-toggle="collapse" data-parent="#med-home-collapse" class="collapsed" href="#tab-patient-care">Patient Care</a>
-						</div>
-						<div class="tab-pane collapse" id="tab-patient-care">
-							<h1>Few people travel this far down web pages.</h1>
-							<p>So when they do get down here, be sure to put something here that's important, but not really mission critical.</p>
-						</div>
-						<div class="tab-pane-collapse visible-phone">
-							<a data-toggle="collapse" data-parent="#med-home-collapse" class="collapsed" href="#tab-outreach">Community Engagement</a>
-						</div>
-						<div class="tab-pane collapse" id="tab-outreach">
-							<h1>A good example of something to put here...</h1>
-							<p>...would be something along the lines of statistics of the School or some recent accomplishments that don't warrent being publicized near the top of the page.</p>
-							<p>Or some random information if that suits your fancy.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="span3">
-				<h1>Follow Us</h1>
-				<p><a href="#"><i class="sprite sprite-facebook"></i> /uoflmedschool</a></p>
-				<p><a href="#"><i class="sprite sprite-twitter"></i> @uoflmedschool</a></p>
-			</div>
-		</div>
-	</div>
-
-	<div id="prefooter">
-		<div class="container">
+		<div class="container cta">
 			<div class="row-fluid">
-				<div class="span3">
-					<address class="prefooter-address">
-						<h1>School of Medicine</h1>
-						<p>Abell Administration Building<br>
-						323 East Chestnut Street<br>
-						Louisville, KY 40202</p>
-					</address>
-				</div>
-				<div class="span2">
-					<h1><i class="glyphicon glyphicon-time"></i> Office Hours</h1>
-					<p>M-F 8:00 am to 4:00 pm</p>
-					<p>No Holiday Hours</p>
-				</div>
-				<div class="span2">
-					<h1><i class="glyphicon glyphicon-phone"></i> Phone</h1>
-					<p>Admissions: (502) 852-5193</p>
-					<p>Dean's Office: (502) 852-1499</p>
-				</div>
-				<div class="span2">
-					<h1><i class="glyphicon glyphicon-envelope"></i> Email</h1>
-					<p>Admissions: <a href="mailto:medadm@louisville.edu">medadm@louisville.edu</a></p>
-					<p>Dean's Office: <a href="mailto:meddean@louisville.edu">meddean@louisville.edu</a></p>
+				<div class="span9">
+					<p>Comprehensive medical education for today's complex medical environment</p>
 				</div>
 				<div class="span3">
-					<h1><i class="glyphicon glyphicon-comment"></i> Social Media</h1>
-					<div class="row-fluid">
-						<div class="span6">
-							<p><a href="#">Twitter</a></p>
-							<p><a href="#">Facebook</a></p>
-							<p><a href="#">LinkedIn</a></p>
+					<a href="#">Apply Today!</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="container homepage main-content" id="main-content">
+			<div class="row-fluid focal">
+				<div class="span4">
+					<img src="misc/heart.jpg" alt="heart" />
+					<div class="wrapper">
+						<h1><a href="#">Nurture a Broken Heart</a></h1>
+						<p>Repairing a damaged heart takes skill, precision, and expertise. UofL’s School of Medicine trains the top heart surgeons.</p>
+						<a href="#" class="btn btn-med btn-block btn-large">Repair Damaged Hearts</a>
+					</div>
+				</div>
+				<div class="span4">
+					<img src="misc/children.jpg" alt="children" />
+					<div class="wrapper">
+						<h1><a href="#">Make Children Feel Better</a></h1>
+						<p>Child care and pediatrics are the core in creating a better tomorrow. Without healthy children, there wouldn’t be a tomorrow for humans.</p>
+						<a href="#" class="btn btn-dent btn-block btn-large">Help Care for Children</a>
+					</div>
+				</div>
+				<div class="span4">
+					<img src="misc/eye.jpg" alt="eye" />
+					<div class="wrapper">
+						<h1><a href="#">See the Future</a></h1>
+						<p>Ophthalmology isn’t just a hard word to say and spell, but it’s also the practice of taking care of eyes. I’ll save the pun for the button.</p>
+						<a href="#" class="btn btn-nursing btn-block btn-large">See for Yourself</a>
+					</div>
+				</div>
+			</div>
+
+			<hr class="hr-bottom" />
+
+			<div class="row-fluid row-nostyle">
+				<div class="span9">
+					<div class="tabs-info tabbable tabs-left row-fluid">
+						<ul class="nav nav-tabs span4 hidden-phone">
+							<li class="active"><a data-toggle="tab" href="#tab-academics">Academics</a></li>
+							<li><a data-toggle="tab" href="#tab-research">Research</a></li>
+							<li><a data-toggle="tab" href="#tab-patient-care">Patient Care</a></li>
+							<li><a data-toggle="tab" href="#tab-outreach">Community Engagement</a></li>
+						</ul>
+						<div class="tab-content span8" id="med-home-collapse">
+							<div class="tab-pane-collapse visible-phone">
+								<a data-toggle="collapse" data-parent="#med-home-collapse" href="#tab-academics">Academics</a>
+							</div>
+							<div class="tab-pane active collapse in" id="tab-academics">
+								<h1>This could be anything to create some level of final awareness for any visitor brave enough to venture this far down.</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et suscipit dui. Morbi semper consequat tellus, a sagittis est dapibus et. Maecenas ante turpis, euismod non urna eget, adipiscing aliquam elit. Donec imperdiet auctor mollis. Sed luctus, felis a elementum dapibus, sem sem aliquet libero, et lacinia felis tellus sed magna. Etiam dignissim nibh nec.</p>
+							</div>
+							<div class="tab-pane-collapse visible-phone">
+								<a data-toggle="collapse" data-parent="#med-home-collapse" class="collapsed" href="#tab-research">Research</a>
+							</div>
+							<div class="tab-pane collapse" id="tab-research">
+								<h1>I'm Dead Serious</h1>
+								<p>You can put whatever you want here.</p>
+							</div>
+							<div class="tab-pane-collapse visible-phone">
+								<a data-toggle="collapse" data-parent="#med-home-collapse" class="collapsed" href="#tab-patient-care">Patient Care</a>
+							</div>
+							<div class="tab-pane collapse" id="tab-patient-care">
+								<h1>Few people travel this far down web pages.</h1>
+								<p>So when they do get down here, be sure to put something here that's important, but not really mission critical.</p>
+							</div>
+							<div class="tab-pane-collapse visible-phone">
+								<a data-toggle="collapse" data-parent="#med-home-collapse" class="collapsed" href="#tab-outreach">Community Engagement</a>
+							</div>
+							<div class="tab-pane collapse" id="tab-outreach">
+								<h1>A good example of something to put here...</h1>
+								<p>...would be something along the lines of statistics of the School or some recent accomplishments that don't warrent being publicized near the top of the page.</p>
+								<p>Or some random information if that suits your fancy.</p>
+							</div>
 						</div>
-						<div class="span6">
-							<p><a href="#">Flickr</a></p>
-							<p><a href="#">Pinterest</a></p>
-							<p><a href="#">Google+</a></p>
+					</div>
+				</div>
+				<div class="span3">
+					<h1>Follow Us</h1>
+					<p><a href="#"><i class="sprite sprite-facebook"></i> /uoflmedschool</a></p>
+					<p><a href="#"><i class="sprite sprite-twitter"></i> @uoflmedschool</a></p>
+				</div>
+			</div>
+
+			<hr class="hr-top" />
+
+			<div class="row-fluid">
+				<section class="span3 med-news">
+					<header>
+						<h1><a href="#">News</a></h1>
+						<h2><a href="#">More News</a></h2>
+					</header>
+					<ul>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title That Will Span Two Lines
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title
+							</a>
+						</li>
+					</ul>
+					<footer>
+						<a href="#">More News</a>
+					</footer>
+				</section>
+				<section class="span3 med-events">
+					<header>
+						<h1><a href="#">HSC Events</a></h1>
+						<h2><a href="#">More Events</a></h2>
+					</header>
+					<ul>
+						<li>
+							<a href="#">
+								<span class="date-bg">
+									<span class="date-month">Apr</span>
+									<span class="date-day">9</span>
+								</span>
+								<span class="date">Apr 9, 2013</span>
+								<span class="event-title">Some New Event that will be happening in a few short days</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date-bg">
+									<span class="date-month">May</span>
+									<span class="date-day">12</span>
+								</span>
+								<span class="date">May 12, 2013</span>
+								<span class="event-title">Here's another event that will take place over here</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date-bg">
+									<span class="date-month">Jul</span>
+									<span class="date-day">24</span>
+								</span>
+								<span class="date">July 24, 2013</span>
+								<span class="event-title">A Brand New Event</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date-bg">
+									<span class="date-month">Aug</span>
+									<span class="date-day">1</span>
+								</span>
+								<span class="date">August 1, 2013</span>
+								<span class="event-title">A New Event in a New Month</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date-bg">
+									<span class="date-month">Sept</span>
+									<span class="date-day">30</span>
+								</span>
+								<span class="date">September 30, 2013</span>
+								<span class="event-title">The Last Event... EVER!</span>
+							</a>
+						</li>
+					</ul>
+					<footer>
+						<a href="#">More Events</a>
+					</footer>
+				</section>
+				<section class="span3 med-spotlight">
+					<header>
+						<h1><a href="#">Spotlight</a></h1>
+					</header>
+					<div class="wrapper">
+						<a href="#" class="banner"><img src="misc/graduation.jpg" /></a>
+						<h1><a href="#">Commencement 2013</a></h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed neque eget mauris ullamcorper rutrum a ut massa. <a href="#">Nunc condimentum</a> sem non ipsum scelerisque congue. Sed quis bibendum urna. Praesent nisl magna, eleifend ac sollicitudin vitae, rutrum eget dolor. Sed.</p>
+					</div>
+				</section>
+				<section class="span3 med-news">
+					<header>
+						<h1><a href="#">HSC News</a></h1>
+						<h2><a href="#">More News</a></h2>
+					</header>
+					<ul>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title That Will Span Two Lines
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="date">May 20, 2013</span>
+								Sample News Title
+							</a>
+						</li>
+					</ul>
+					<footer>
+						<a href="#">More News</a>
+					</footer>
+				</section>
+			</div>
+		</div>
+
+		<div id="prefooter">
+			<div class="container">
+				<div class="row-fluid">
+					<div class="span3">
+						<address class="prefooter-address">
+							<h1>School of Medicine</h1>
+							<p>Abell Administration Building<br>
+								323 East Chestnut Street<br>
+								Louisville, KY 40202</p>
+						</address>
+					</div>
+					<div class="span2">
+						<h1><i class="glyphicon glyphicon-time"></i> Office Hours</h1>
+						<p>M-F 8:00 am to 4:00 pm</p>
+						<p>No Holiday Hours</p>
+					</div>
+					<div class="span2">
+						<h1><i class="glyphicon glyphicon-phone"></i> Phone</h1>
+						<p>Admissions: (502) 852-5193</p>
+						<p>Dean's Office: (502) 852-1499</p>
+					</div>
+					<div class="span2">
+						<h1><i class="glyphicon glyphicon-envelope"></i> Email</h1>
+						<p>Admissions: <a href="mailto:medadm@louisville.edu">medadm@louisville.edu</a></p>
+						<p>Dean's Office: <a href="mailto:meddean@louisville.edu">meddean@louisville.edu</a></p>
+					</div>
+					<div class="span3">
+						<h1><i class="glyphicon glyphicon-comment"></i> Social Media</h1>
+						<div class="row-fluid">
+							<div class="span6">
+								<p><a href="#">Twitter</a></p>
+								<p><a href="#">Facebook</a></p>
+								<p><a href="#">LinkedIn</a></p>
+							</div>
+							<div class="span6">
+								<p><a href="#">Flickr</a></p>
+								<p><a href="#">Pinterest</a></p>
+								<p><a href="#">Google+</a></p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
 	</div>
 
-</div>
-
-<footer class="grey">
-  <div class="container">
-    <div class="row hidden-phone">
-      <div class="span3">
-        <ul class="nav nav-pills">
-          <li id="copy">
-            <a title="Go to louisville.edu" rel="tooltip" href="http://louisville.edu/">
-                        © University of Louisville
-                    </a>
-          </li>
-        </ul>
-      </div>
-      <div class="span7">
-        <ul class="nav nav-pills">
-          <li>
-            <a href="http://louisville.edu/contact.html">Contact</a>
-          </li>
-          <li class="dropdown dropup">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                        Apply
-                    </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="http://louisville.edu/admissions/apply">Undergraduate</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://louisville.edu/admissions/apply/transfer/">Transfer</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://graduate.louisville.edu/">Graduate</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://louisville.edu/dental/dmd/admission/">Dentistry</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://www.law.louisville.edu/admissions">Law</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://louisville.edu/medschool/apply">Medicine</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://louisville.edu/business/apply">MBA</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://louisville.edu/admissions/apply/international">International</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://louisville.edu/online/admissions">Online Learning</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="http://louisville.edu/jobs">Jobs</a>
-          </li>
-          <li>
-            <a href="http://louisville.edu/giving">Donate</a>
-          </li>
-          <li>
-            <a href="http://louisville.edu/emergency">Emergency</a>
-          </li>
-        </ul>
-      </div>
-      <div class="span2">
-        <ul class="nav nav-pills pull-right">
-          <li id="login-bottom" class="dropdown dropup pull-right">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                        Login<i class="icon-cog icon-white"></i></a>
-            <ul class="dropdown-menu bottom-up">
-              <li>
-                <a href="https://exchange.louisville.edu/">Exchange</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://outlook.com/cardmail.louisville.edu">CardMail</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="https://hrprod.louisville.edu/">PeopleSoft HR</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="https://csprod.louisville.edu/">PeopleSoft Campus Solutions</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="https://fiprod.louisville.edu/">PeopleSoft Financials</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://blackboard.louisville.edu/">Blackboard</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="/medicine/login">Plone</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="row visible-phone">
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <a href="http://louisville.edu/contact.html"><i class="icon-chevron-right icon-white pull-right"></i>
-                        Contact
-                    </a>
-          </div>
-        </div>
-      </div>
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <button class="btn btn-navbar" data-target="#mobile-footer-about" data-toggle="collapse" type="button">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+	<footer class="grey">
+		<div class="container">
+			<div class="row hidden-phone">
+				<div class="span3">
+					<ul class="nav nav-pills">
+						<li id="copy">
+							<a title="Go to louisville.edu" rel="tooltip" href="http://louisville.edu/">
+								© University of Louisville
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="span7">
+					<ul class="nav nav-pills">
+						<li>
+							<a href="http://louisville.edu/contact.html">Contact</a>
+						</li>
+						<li class="dropdown dropup">
+							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
+								Apply
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="http://louisville.edu/admissions/apply">Undergraduate</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://louisville.edu/admissions/apply/transfer/">Transfer</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://graduate.louisville.edu/">Graduate</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://louisville.edu/dental/dmd/admission/">Dentistry</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://www.law.louisville.edu/admissions">Law</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://louisville.edu/medschool/apply">Medicine</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://louisville.edu/business/apply">MBA</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://louisville.edu/admissions/apply/international">International</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://louisville.edu/online/admissions">Online Learning</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="http://louisville.edu/jobs">Jobs</a>
+						</li>
+						<li>
+							<a href="http://louisville.edu/giving">Donate</a>
+						</li>
+						<li>
+							<a href="http://louisville.edu/emergency">Emergency</a>
+						</li>
+					</ul>
+				</div>
+				<div class="span2">
+					<ul class="nav nav-pills pull-right">
+						<li id="login-bottom" class="dropdown dropup pull-right">
+							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
+								Login<i class="icon-cog icon-white"></i></a>
+							<ul class="dropdown-menu bottom-up">
+								<li>
+									<a href="https://exchange.louisville.edu/">Exchange</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://outlook.com/cardmail.louisville.edu">CardMail</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="https://hrprod.louisville.edu/">PeopleSoft HR</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="https://csprod.louisville.edu/">PeopleSoft Campus Solutions</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="https://fiprod.louisville.edu/">PeopleSoft Financials</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://blackboard.louisville.edu/">Blackboard</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="/medicine/login">Plone</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row visible-phone">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<a href="http://louisville.edu/contact.html"><i class="icon-chevron-right icon-white pull-right"></i>
+								Contact
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<button class="btn btn-navbar" data-target="#mobile-footer-about" data-toggle="collapse" type="button">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<div class="sr-only">Menu</div>
+							</button>
+							<span class="footer-item">Apply</span>
+							<div id="mobile-footer-about" class="nav-collapse collapse">
+								<ul class="nav">
+									<li>
+										<a href="http://louisville.edu/admissions/apply">Undergraduate</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="http://louisville.edu/admissions/apply/transfer/">Transfer</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="http://graduate.louisville.edu/">Graduate</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="http://louisville.edu/dental/dmd/admission/">Dentistry</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="http://www.law.louisville.edu/admissions">Law</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="http://louisville.edu/medschool/apply">Medicine</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="http://louisville.edu/business/apply">MBA</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="http://louisville.edu/admissions/apply/international">International</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="http://louisville.edu/online/admissions">Online Learning</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<a href="http://louisville.edu/jobs"><i class="icon-chevron-right icon-white pull-right"></i>
+								Jobs
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<a href="http://louisville.edu/giving"><i class="icon-chevron-right icon-white pull-right"></i>
+								Donate
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<a href="http://louisville.edu/emergency"><i class="icon-chevron-right icon-white pull-right"></i>
+								Emergency
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="navbar">
+					<div class="navbar-inner">
+						<button class="btn btn-navbar" data-target="#mobile-footer-login" data-toggle="collapse" type="button">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
 							<div class="sr-only">Menu</div>
-            </button>
-            <span class="footer-item">Apply</span>
-            <div id="mobile-footer-about" class="nav-collapse collapse">
-              <ul class="nav">
-                <li>
-                  <a href="http://louisville.edu/admissions/apply">Undergraduate</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="http://louisville.edu/admissions/apply/transfer/">Transfer</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="http://graduate.louisville.edu/">Graduate</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="http://louisville.edu/dental/dmd/admission/">Dentistry</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="http://www.law.louisville.edu/admissions">Law</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="http://louisville.edu/medschool/apply">Medicine</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="http://louisville.edu/business/apply">MBA</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="http://louisville.edu/admissions/apply/international">International</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="http://louisville.edu/online/admissions">Online Learning</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <a href="http://louisville.edu/jobs"><i class="icon-chevron-right icon-white pull-right"></i>
-                        Jobs
-                    </a>
-          </div>
-        </div>
-      </div>
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <a href="http://louisville.edu/giving"><i class="icon-chevron-right icon-white pull-right"></i>
-                        Donate
-                    </a>
-          </div>
-        </div>
-      </div>
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <a href="http://louisville.edu/emergency"><i class="icon-chevron-right icon-white pull-right"></i>
-                        Emergency
-                    </a>
-          </div>
-        </div>
-      </div>
-      <div class="navbar">
-        <div class="navbar-inner">
-          <button class="btn btn-navbar" data-target="#mobile-footer-login" data-toggle="collapse" type="button">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-						<div class="sr-only">Menu</div>
-          </button>
-          <span class="footer-item">Login</span>
-          <div id="mobile-footer-login" class="nav-collapse collapse">
-            <ul class="nav">
-              <li>
-                <a href="https://exchange.louisville.edu/">Exchange</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://outlook.com/cardmail.louisville.edu">CardMail</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="https://hrprod.louisville.edu/">PeopleSoft HR</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="https://csprod.louisville.edu/">PeopleSoft Campus Solutions</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="https://fiprod.louisville.edu/">PeopleSoft Financials</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="http://blackboard.louisville.edu/">Blackboard</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="/medicine/login">Plone</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <a title="Go to louisville.edu" rel="tooltip" href="http://louisville.edu/">
-            © University of Louisville
-        </a>
-    </div>
-  </div>
-</footer>
+						</button>
+						<span class="footer-item">Login</span>
+						<div id="mobile-footer-login" class="nav-collapse collapse">
+							<ul class="nav">
+								<li>
+									<a href="https://exchange.louisville.edu/">Exchange</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://outlook.com/cardmail.louisville.edu">CardMail</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="https://hrprod.louisville.edu/">PeopleSoft HR</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="https://csprod.louisville.edu/">PeopleSoft Campus Solutions</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="https://fiprod.louisville.edu/">PeopleSoft Financials</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://blackboard.louisville.edu/">Blackboard</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="/medicine/login">Plone</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<a title="Go to louisville.edu" rel="tooltip" href="http://louisville.edu/">
+					© University of Louisville
+				</a>
+			</div>
+		</div>
+	</footer>
 
-<script src="js/jquery-1.7.2.js" type="text/javascript" class="noscript"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
-<script type="text/javascript" class="delete">var jqbs = jQuery.noConflict();</script>
-<script src="js/makeCarousel.js" class="carouseljs" type="text/javascript"></script>
-<script src="js/jquery.kwicks.min.js" type="text/javascript"></script>
-<script src="js/jquery.carouFredSel-6.2.1-packed.js" type="text/javascript"></script>
-<script src="js/jquery.touchSwipe.min.js" type="text/javascript"></script>
-<script src="js/marked.js" type="text/javascript"></script>
-<script src="js/theme.js" type="text/javascript"></script>
-<script class="calendarjs" type="text/javascript" src="js/calendar.js"></script>
+	<script src="js/jquery-1.7.2.js" type="text/javascript" class="noscript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script type="text/javascript" class="delete">var jqbs = jQuery.noConflict();</script>
+	<script src="js/makeCarousel.js" class="carouseljs" type="text/javascript"></script>
+	<script src="js/jquery.kwicks.min.js" type="text/javascript"></script>
+	<script src="js/jquery.carouFredSel-6.2.1-packed.js" type="text/javascript"></script>
+	<script src="js/jquery.touchSwipe.min.js" type="text/javascript"></script>
+	<script src="js/marked.js" type="text/javascript"></script>
+	<script src="js/theme.js" type="text/javascript"></script>
+	<script class="calendarjs" type="text/javascript" src="js/calendar.js"></script>
 </body>
+
 </html>
